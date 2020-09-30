@@ -13,6 +13,7 @@
 ?>
 <?php echo '<p> HELLO ITS MIKE </p>';
     echo '<p>Thanks for your service Mike </p>';
+echo '<p>No thank YOU collin ;)</p>';
     ?>
 
 <?= "I'm Short echo tag"; ?>
