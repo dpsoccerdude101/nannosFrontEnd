@@ -15,6 +15,8 @@
 //Adding comments for fun now.
 
 //Adding another comment because I want to change my commit comment.
+
+//I believe we have to leave out workspace.xml or everything will be screwy.
 ?>
 
 <?= "I'm Short echo tag"; ?>
