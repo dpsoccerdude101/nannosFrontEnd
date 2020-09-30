@@ -11,7 +11,9 @@
     must be inside the PHP tags or it will be
     output as HTML*/
 ?>
-<?php echo '<p> HELLO ITS MIKE </p>' ?>
+<?php echo '<p> HELLO ITS MIKE </p>';
+    echo '<p>Thanks for your service Mike </p>';
+    ?>
 
 <?= "I'm Short echo tag"; ?>
 </body>
