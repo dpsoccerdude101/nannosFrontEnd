@@ -1,7 +1,34 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:TestBranch1" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d558725-a426-4780-9a70-70ccdeea21b5" name="Default Changelist" comment="" />
+    <list default="true" id="2d558725-a426-4780-9a70-70ccdeea21b5" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloWorld.php" beforeDir="false" afterPath="$PROJECT_DIR$/helloWorld.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +38,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -20,7 +52,7 @@
       </set>
     </option>
   </component>
-  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP 7.3" />
+  <component name="PhpWorkspaceProjectConfiguration" interpreter_name="PHP" />
   <component name="ProjectId" id="1iCOWaqOggWW8gOe95xxnmCa4AF" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
@@ -62,11 +94,23 @@
       <workItem from="1601408142326" duration="549000" />
       <workItem from="1601410464960" duration="3028000" />
       <workItem from="1601496179023" duration="1107000" />
+      <workItem from="1601500121292" duration="477000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="23" key="#CLI_Interpreters" timestamp="1601415947615">
@@ -88,9 +132,10 @@
       <screen x="0" y="23" width="1376" height="877" />
     </state>
     <state x="507" y="392" key="NewPhpFileDialog/0.23.1376.877@0.23.1376.877" timestamp="1601408181395" />
-    <state x="190" y="100" key="SettingsEditor" timestamp="1601415950505">
-      <screen x="0" y="23" width="1376" height="877" />
+    <state x="189" y="77" key="SettingsEditor" timestamp="1601500185456">
+      <screen x="0" y="0" width="1368" height="882" />
     </state>
+    <state x="189" y="77" key="SettingsEditor/0.0.1368.882@0.0.1368.882" timestamp="1601500185456" />
     <state x="190" y="100" key="SettingsEditor/0.23.1376.877@0.23.1376.877" timestamp="1601415950505" />
     <state x="191" y="100" key="SettingsEditor/0.23.1385.877@0.23.1385.877" timestamp="1601413504908" />
     <state x="500" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601497634653">
