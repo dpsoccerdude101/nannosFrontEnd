@@ -10,6 +10,9 @@
     It appears to me that the comments
     must be inside the PHP tags or it will be
     output as HTML*/
+
+//Creating a work branch for myself.
+//Adding comments for fun now.
 ?>
 
 <?= "I'm Short echo tag"; ?>
