@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="2d558725-a426-4780-9a70-70ccdeea21b5" name="Default Changelist" comment="" />
+    <list default="true" id="2d558725-a426-4780-9a70-70ccdeea21b5" name="Default Changelist" comment="Joy to the world." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -11,6 +11,11 @@
     <execution />
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -61,12 +66,39 @@
       <updated>1601408140876</updated>
       <workItem from="1601408142326" duration="549000" />
       <workItem from="1601410464960" duration="3028000" />
-      <workItem from="1601496179023" duration="1107000" />
+      <workItem from="1601496179023" duration="1499000" />
     </task>
+    <task id="LOCAL-00001" summary="Still figuring out this VCS shiznit">
+      <created>1601497741503</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1601497741503</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Still figuring out this VCS shiznit">
+      <created>1601497824043</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1601497824043</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Joy to the world.">
+      <created>1601497875983</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1601497875983</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Still figuring out this VCS shiznit" />
+    <MESSAGE value="Joy to the world." />
+    <option name="LAST_COMMIT_MESSAGE" value="Joy to the world." />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="23" key="#CLI_Interpreters" timestamp="1601415947615">
@@ -93,10 +125,10 @@
     </state>
     <state x="190" y="100" key="SettingsEditor/0.23.1376.877@0.23.1376.877" timestamp="1601415950505" />
     <state x="191" y="100" key="SettingsEditor/0.23.1385.877@0.23.1385.877" timestamp="1601413504908" />
-    <state x="500" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601497634653">
+    <state x="500" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601497888284">
       <screen x="0" y="23" width="1376" height="877" />
     </state>
-    <state x="500" y="201" key="Vcs.Push.Dialog.v2/0.23.1376.877@0.23.1376.877" timestamp="1601497634653" />
+    <state x="500" y="201" key="Vcs.Push.Dialog.v2/0.23.1376.877@0.23.1376.877" timestamp="1601497888284" />
     <state x="698" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601497270894">
       <screen x="0" y="23" width="1376" height="877" />
     </state>
