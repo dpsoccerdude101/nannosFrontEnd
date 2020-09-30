@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <title>PHP Test</title>
 </head>
@@ -11,6 +11,7 @@
     must be inside the PHP tags or it will be
     output as HTML*/
 ?>
+<?php echo '<p> HELLO ITS MIKE </p>' ?>
 
 <?= "I'm Short echo tag"; ?>
 </body>
