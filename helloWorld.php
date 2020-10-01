@@ -20,5 +20,29 @@
 ?>
 
 <?= "I'm Short echo tag"; ?>
+
+<?php
+require 'database.php';
+
+$query = "SELECT * FROM 'login'";
+//I am going to attempt to connect to mySQL server on XAMPP.
+    if(array_key_exists('Submit', $_POST)) {
+    Submit();
+    }
+function Submit()
+{
+    echo "This is Button1 that is selected";
+}?>
+
+<form method="post">
+    <label for="user">Username:</label><br>
+    <input type="text" id="user" name="user"><br>
+    <label for="pword">Password:</label><br>
+    <input type="text" id="pword" name="pword">
+    <input type="submit" name="Submit"
+           class="button" value="Submit" />
+
+
+
 </body>
 </html>
