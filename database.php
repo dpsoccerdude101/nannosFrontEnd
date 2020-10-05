@@ -11,22 +11,10 @@ $mysql_user = 'root';
 
 $mysql_db = 'nannos_foods';
 
-// function to connect with database having
-// argument host and user name
-if (!@mysqli_connect ($mysql_host, $mysql_user))
-{
-    die('Cannot connect to database 1');
+global $link;
+$link = mysqli_connect("localhost", "root", null, "nannos-foods");
+
+if (mysqli_connect_errno()) {
+    printf("Connect failed: %s\n", mysqli_connect_error());
+    exit();
 }
-else
-{
-    // database name is nannos_foods
-    if (@mysqli_connect($mysql_host, $mysql_user, null, $mysql_db))
-    {
-        echo "Connected to the nannos_foods database";
-    }
-    else
-    {
-        die('Cannot connect to database 2');
-    }
-}
-?>
