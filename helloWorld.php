@@ -1,4 +1,4 @@
-<html>
+<html lang="en">
 <head>
     <title>PHP Test</title>
 </head>
@@ -17,6 +17,11 @@
 
 //I believe we have to leave out workspace.xml or everything will be screwy.
 ?>
+<?php echo '<p> HELLO ITS MIKE </p>';
+    echo '<p>Thanks for your service Mike </p>';
+echo '<p>No thank YOU collin ;)</p>';
+echo '<p>Heyyyyy :() </p>';
+    ?>
 
 <?= "I'm Short echo tag"; ?>
 
