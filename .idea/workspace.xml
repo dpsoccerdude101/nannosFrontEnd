@@ -1,7 +1,37 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="BRANCH:master" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </select>
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="2d558725-a426-4780-9a70-70ccdeea21b5" name="Default Changelist" comment="Joy to the world." />
+    <list default="true" id="2d558725-a426-4780-9a70-70ccdeea21b5" name="Default Changelist" comment="In progress of creating a login feature using php. Pushing for the case that Dr. Ajay would like to see progress in class.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/database.php" beforeDir="false" afterPath="$PROJECT_DIR$/database.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/empLogin.php" beforeDir="false" afterPath="$PROJECT_DIR$/empLogin.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/helloWorld.php" beforeDir="false" afterPath="$PROJECT_DIR$/helloWorld.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/success.html" beforeDir="false" afterPath="$PROJECT_DIR$/success.html" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -53,6 +83,7 @@
     <recent_temporary>
       <list>
         <item itemvalue="JavaScript Debug.helloWorld.php" />
+        <item itemvalue="JavaScript Debug.helloWorld.php" />
       </list>
     </recent_temporary>
   </component>
@@ -67,6 +98,9 @@
       <workItem from="1601408142326" duration="549000" />
       <workItem from="1601410464960" duration="3028000" />
       <workItem from="1601496179023" duration="1499000" />
+      <workItem from="1601575921653" duration="4916000" />
+      <workItem from="1601583564479" duration="672000" />
+      <workItem from="1601584968208" duration="3524000" />
     </task>
     <task id="LOCAL-00001" summary="Still figuring out this VCS shiznit">
       <created>1601497741503</created>
@@ -89,16 +123,48 @@
       <option name="project" value="LOCAL" />
       <updated>1601497875983</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="In progress of creating a login feature using php. Pushing for the case that Dr. Ajay would like to see progress in class.">
+      <created>1601580175120</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1601580175120</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Still figuring out this VCS shiznit" />
     <MESSAGE value="Joy to the world." />
-    <option name="LAST_COMMIT_MESSAGE" value="Joy to the world." />
+    <MESSAGE value="In progress of creating a login feature using php. Pushing for the case that Dr. Ajay would like to see progress in class." />
+    <option name="LAST_COMMIT_MESSAGE" value="In progress of creating a login feature using php. Pushing for the case that Dr. Ajay would like to see progress in class." />
   </component>
   <component name="WindowStateProjectService">
     <state x="549" y="23" key="#CLI_Interpreters" timestamp="1601415947615">
@@ -116,27 +182,52 @@
     <state x="356" y="111" key="#PHP/0.23.1379.877@0.23.1379.877" timestamp="1601408441069" />
     <state x="354" y="111" key="#PHP/0.23.1385.877@0.23.1385.877" timestamp="1601412763450" />
     <state x="356" y="111" key="#PHP/0.23.1393.877@0.23.1393.877" timestamp="1601411230997" />
-    <state x="507" y="392" key="NewPhpFileDialog" timestamp="1601408181395">
+    <state x="180" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1601576235693">
       <screen x="0" y="23" width="1376" height="877" />
     </state>
+    <state x="180" y="123" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.23.1376.877@0.23.1376.877" timestamp="1601576235693" />
+    <state x="155" y="123" width="1121" height="677" key="DiffContextDialog" timestamp="1601576239712">
+      <screen x="0" y="23" width="1376" height="877" />
+    </state>
+    <state x="155" y="123" width="1121" height="677" key="DiffContextDialog/0.23.1376.877@0.23.1376.877" timestamp="1601576239712" />
+    <state x="167" y="100" key="MergeDialog" timestamp="1601854153309">
+      <screen x="0" y="23" width="1389" height="877" />
+    </state>
+    <state x="165" y="100" key="MergeDialog/0.23.1376.877@0.23.1376.877" timestamp="1601576307794" />
+    <state x="167" y="100" key="MergeDialog/0.23.1389.877@0.23.1389.877" timestamp="1601854153309" />
+    <state x="167" y="100" key="MergeDialog/0.23.1391.877@0.23.1391.877" timestamp="1601853567596" />
+    <state x="512" y="392" key="NewPhpFileDialog" timestamp="1601578063913">
+      <screen x="0" y="23" width="1389" height="877" />
+    </state>
     <state x="507" y="392" key="NewPhpFileDialog/0.23.1376.877@0.23.1376.877" timestamp="1601408181395" />
+    <state x="512" y="392" key="NewPhpFileDialog/0.23.1389.877@0.23.1389.877" timestamp="1601578063913" />
     <state x="190" y="100" key="SettingsEditor" timestamp="1601415950505">
       <screen x="0" y="23" width="1376" height="877" />
     </state>
     <state x="190" y="100" key="SettingsEditor/0.23.1376.877@0.23.1376.877" timestamp="1601415950505" />
     <state x="191" y="100" key="SettingsEditor/0.23.1385.877@0.23.1385.877" timestamp="1601413504908" />
-    <state x="500" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601497888284">
-      <screen x="0" y="23" width="1376" height="877" />
+    <state x="503" y="201" key="Vcs.Push.Dialog.v2" timestamp="1601580181001">
+      <screen x="0" y="23" width="1385" height="877" />
     </state>
     <state x="500" y="201" key="Vcs.Push.Dialog.v2/0.23.1376.877@0.23.1376.877" timestamp="1601497888284" />
-    <state x="698" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601497270894">
-      <screen x="0" y="23" width="1376" height="877" />
+    <state x="503" y="201" key="Vcs.Push.Dialog.v2/0.23.1385.877@0.23.1385.877" timestamp="1601580181001" />
+    <state x="704" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1601859276714">
+      <screen x="0" y="23" width="1387" height="877" />
     </state>
     <state x="698" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1376.877@0.23.1376.877" timestamp="1601497270894" />
+    <state x="700" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1379.877@0.23.1379.877" timestamp="1601576078556" />
+    <state x="704" y="382" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/0.23.1387.877@0.23.1387.877" timestamp="1601859276714" />
     <state x="0" y="23" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog" timestamp="1601412227448">
       <screen x="0" y="23" width="1387" height="877" />
     </state>
     <state x="0" y="23" key="com.jetbrains.php.config.phpInfo.PhpInfo.PhpInfoDialog/0.23.1387.877@0.23.1387.877" timestamp="1601412227448" />
+    <state x="466" y="181" key="git4idea.branch.GitSmartOperationDialog" timestamp="1601854149109">
+      <screen x="0" y="23" width="1389" height="877" />
+    </state>
+    <state x="462" y="181" key="git4idea.branch.GitSmartOperationDialog/0.23.1376.877@0.23.1376.877" timestamp="1601576297467" />
+    <state x="463" y="181" key="git4idea.branch.GitSmartOperationDialog/0.23.1379.877@0.23.1379.877" timestamp="1601504946296" />
+    <state x="466" y="181" key="git4idea.branch.GitSmartOperationDialog/0.23.1389.877@0.23.1389.877" timestamp="1601854149109" />
+    <state x="467" y="181" key="git4idea.branch.GitSmartOperationDialog/0.23.1391.877@0.23.1391.877" timestamp="1601853564224" />
     <state x="722" y="362" key="git4idea.remote.GitConfigureRemotesDialog" timestamp="1601496971010">
       <screen x="0" y="23" width="1376" height="877" />
     </state>

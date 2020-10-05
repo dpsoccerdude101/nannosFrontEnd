@@ -11,8 +11,7 @@ $mysql_user = 'root';
 
 $mysql_db = 'nannos_foods';
 
-global $link;
-$link = mysqli_connect("localhost", "root", null, "nannos-foods");
+$link = mysqli_connect("localhost", "root", null, "nannos_foods");
 
 if (mysqli_connect_errno()) {
     printf("Connect failed: %s\n", mysqli_connect_error());

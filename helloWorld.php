@@ -4,7 +4,6 @@
 </head>
 <body>
 <?php echo '<p>Hello World</p>'; //php supports one line comments like this
-
 /*It will also support multi-line comments
     like this .
     It appears to me that the comments
