@@ -1,3 +1,6 @@
+
+<?php session_start();?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -30,7 +33,9 @@
 </head>
 <body>
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="index.html">Nanno's Foods</a>
+
+    <a class="navbar-brand" href="index.php">Nanno's Foods</a>
+
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
     </button>
@@ -40,7 +45,9 @@
                 <a class="nav-link" href="#">Nanno's Representative Login <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">Vendor Login</a>
+
+                <a class="nav-link" href="vendorLogin.php">Vendor Login</a>
+
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">About Us</a>
@@ -55,14 +62,23 @@
 <form action="empLogin.php" method="POST">
 <div class="container">
     <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" id="uname" required>
+
+    <input type="text" placeholder="Enter Username" name="uname" required>
 
     <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" id="psw" name="psw" required>
+    <input type="password" placeholder="Enter Password" name="psw" required>
+
 
     <button type="submit">Login</button>
 </div>
 </form>
+
+<?
+if (isset($_SESSION['error'])) {
+echo '<p class="error"> '.$_SESSION['error'].'</p>';
+unset($_SESSION['error']);
+}
+?>
 
 
 </body>
