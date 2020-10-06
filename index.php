@@ -7,7 +7,7 @@
     <title> Nanno's Foods </title>
     <style>
         body {
-            background-image: url('landing.jpg');
+            background-image: url('healthy-food.jpg');
         }
         body:before {
             content: "";
@@ -23,10 +23,13 @@
     </style>
 </head>
 <body>
+<!-- Nav Bar Creation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <a class="navbar-brand" href="#">Nanno's Foods</a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
+        <span class="navbar-toggler-icon">
+            <!-- Put something here -->
+        </span>
     </button>
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
@@ -44,6 +47,18 @@
       Bringing Food to You With Nanno's Foods
     </span>
     </div>
-</nav>
+</nav> <br><br><br><br>
+<!-- End Nav Bar -->
+<!-- Jumbotron -->
+<div style="background:transparent !important" class="jumbotron">
+    <h1 class="display-4">Welcome to Nanno's Foods!</h1>
+    <p class="lead">Nanno's Foods is a family owned grocery store with an abundant selection of foods and other products.</p>
+    <hr class="my-4">
+    <p> Click the button below to learn more about our store </p>
+    <p class="lead">
+        <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+    </p>
+</div>
+<!-- End Jumbotron -->
 </body>
 </html>
