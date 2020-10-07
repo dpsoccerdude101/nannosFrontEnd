@@ -55,9 +55,9 @@
         Manage Vendor
     </button>
     <div class="dropdown-menu">
-        <button class="dropdown-item" type="submit" >Register New</button>
-        <button class="dropdown-item" type="submit" >Modify Existing</button>
-        <button class="dropdown-item" type="submit" >Remove Existing</button>
+        <a class="dropdown-item"  href="registerVendor.php">Register New</a>
+        <a class="dropdown-item" href="VendorModify.php"  >Modify Existing</a>
+        <a class="dropdown-item" href="deleteVendor.php" >Remove Existing</a>
     </div>
 
     <div class="btn-group">
@@ -65,38 +65,38 @@
             Manage Store
         </button>
         <div class="dropdown-menu">
-            <button class="dropdown-item" type="submit" >Add New Store</button>
-            <button class="dropdown-item" type="submit" >Modify Existing</button>
-            <button class="dropdown-item" type="submit" >Remove Existing</button>
+            <a class="dropdown-item" href="AddNewStore.php" >Add New Store</a>
+            <a class="dropdown-item"  href="modifyStore.php">Modify Existing</a>
+            <a class="dropdown-item"  href="deleteVendor.php">Remove Store</a>
         </div>
         <div class="btn-group">
             <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 Manage Inventory
             </button>
             <div class="dropdown-menu">
-                <button class="dropdown-item" type="submit" >Add New Item</button>
-                <button class="dropdown-item" type="submit" >Modify Existing</button>
-                <button class="dropdown-item" type="submit" >Remove Existing</button>
-                <button class="dropdown-item" type="submit" >Process Delivery</button>
-                <button class="dropdown-item" type="submit" >Process Return</button>
+                <a class="dropdown-item" href="InventoryAdd.php" >Add New Item</a>
+                <a class="dropdown-item" href="InventoryModify.php" >Modify Existing</a>
+                <a class="dropdown-item" href="InventoryDelete.php" >Remove Existing</a>
+                <a class="dropdown-item" href="processDelivery.php" >Process Delivery</a>
+                <a class="dropdown-item" href="processReturn.php" >Process Return</a>
             </div>
             <div class="btn-group">
                 <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Manage Customer
                 </button>
                 <div class="dropdown-menu">
-                    <button class="dropdown-item" type="submit" >Add New Member</button>
-                    <button class="dropdown-item" type="submit" >Modify Member</button>
-                    <button class="dropdown-item" type="submit" >Remove Member</button>
-                    <button class="dropdown-item" type="submit" >New Purchase</button>
+                    <a class="dropdown-item" href="CustomerAdd.php" >Add New Member</a>
+                    <a class="dropdown-item" href="CustomerModify.php" >Modify Member</a>
+                    <a class="dropdown-item" href="CustomerDelete.php" >Remove Member</a>
+                    <a class="dropdown-item" href="CustomerNewPurchase.php" >New Purchase</a>
                 </div>
                 <div class="btn-group">
                     <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         Manage Order
                     </button>
                     <div class="dropdown-menu">
-                        <button class="dropdown-item" type="submit" >New Order</button>
-                        <button class="dropdown-item" type="submit" >Add to Existing</button>
+                        <a class="dropdown-item" href="OrderCreate.php" >New Order</a>
+                        <a class="dropdown-item" href="OrderAdd.php" >Add to Existing</a>
 
                     </div>
                     <div class="btn-group">
@@ -104,11 +104,11 @@
                             Look Up
                         </button>
                         <div class="dropdown-menu">
-                            <button class="dropdown-item" type="submit" >All Inventory Items</button>
-                            <button class="dropdown-item" type="submit" >All Low Items </button>
-                            <button class="dropdown-item" type="submit" >All Returns </button>
-                            <button class="dropdown-item" type="submit" >Completed Customer Purchase </button>
-                            <button class="dropdown-item" type="submit" >Paced Orders</button>
+                            <a class="dropdown-item" href="LookUpAllinv.php" >All Inventory Items</a>
+                            <a class="dropdown-item" href="LookupLowInv.php" >All Low Items </a>
+                            <a class="dropdown-item" href="LookUpReturns.php" >All Returns </a>
+                            <a class="dropdown-item" href="LookUpCustPurchase.php" >Completed Customer Purchase </a>
+                            <a class="dropdown-item" href="LookUpOrders.php" >Paced Orders</a>
                         </div>
                     </div>
                 </div>

@@ -1,12 +1,14 @@
-
 <?php session_start();?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
     <title>Employee Login</title>
@@ -14,18 +16,6 @@
     <style>
         body {
             background-image: url('landing.jpg');
-        }
-        body:before {
-            content: "";
-            display: block;
-            position: fixed;
-            width: 100%;
-            height: 100%;
-            left: 0;
-            top: 0;
-            z-index: -1;
-            background-color: rgba(255, 255, 255, 0.6);
-        }
     </style>
 
 
@@ -59,18 +49,21 @@
     </div>
 </nav>
 
-<form action="empLogin.php" method="POST">
-<div class="container">
-    <label for="uname"><b>Username</b></label>
-    <input type="text" placeholder="Enter Username" name="uname" required>
+<form action="VenModify.php" method="POST">
+    <div class="container">
+        <label for="VID" style="color:azure"><b>Vendor ID</b></label>
+        <input type="int" placeholder="Enter VendorID" name="VendorID" required>
 
-    <label for="psw"><b>Password</b></label>
-    <input type="password" placeholder="Enter Password" name="psw" required>
+        <label for="VName" style="color:azure"><b>Vendor Name</b></label>
+        <input type="VendorName" placeholder="Enter VendorName" name="VendorName" required>
 
-
-    <button type="submit">Login</button>
-</div>
+        <button type="submit">Search</button>
+    </div>
 </form>
+
+
+<p style="color:azure">This is a Vendor Modify.</p>
+
 
 
 
