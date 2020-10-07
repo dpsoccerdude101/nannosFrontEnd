@@ -73,12 +73,6 @@
 </div>
 </form>
 
-<?
-if (isset($_SESSION['error'])) {
-echo '<p class="error"> '.$_SESSION['error'].'</p>';
-unset($_SESSION['error']);
-}
-?>
 
 
 </body>
