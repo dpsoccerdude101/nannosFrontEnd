@@ -57,8 +57,7 @@
     <div class="dropdown-menu">
         <button class="dropdown-item" type="submit" >Register New</button>
         <button class="dropdown-item" type="submit" >Modify Existing</button>
-        <button class="dropdown-item" type="submit" >Action</button>
-        <button class="dropdown-item" type="submit" >Action</button>
+        <button class="dropdown-item" type="submit" >Remove Existing</button>
     </div>
 
     <div class="btn-group">
