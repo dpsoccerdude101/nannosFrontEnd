@@ -1,28 +1,34 @@
 <?php
 session_start();
-$vendorid = trim($_POST['VID']);
-$VendorName = trim($_POST['VName']);
+#error_reporting( error_reporting() & ~E_NOTICE );
+$vID = (int)$_POST['VenID'];
+$VName = trim($_POST['VenName']);
 $Error = "No Matching Vendors";
 
 $link = mysqli_connect("localhost", "root", null, "nannos_foods");
 
-$query = "SELECT * FROM vendors";
+$query = "SELECT * FROM vendor where VendorID='$vID'";
 
 $result = mysqli_query($link, $query);
-$count = 1;
 $rows = mysqli_num_rows($result);
 
-if ($rows > 0) {
-    while ($row = mysqli_fetch_assoc($result)) {
-        if ($vendorid == $row["VendorId"] || $VendorName == $row["VendorName"])
-            header("Location: success.php");
 
-        else {
-            header("Location: vendorModify.php");
-            echo "$Error";
-        }
-    }
+if(! $result ) {
+    die('Could not get data: ' .mysqli_error());
 }
+#else{
+   # header("Location: vendorModify2.php");
+#}
+
+while($row = mysqli_fetch_assoc($result)) {
+   echo"VendorID: {$row['vendorID']}  <br> ".
+        "VendorCode: {$row['VendorCode']} <br> ".
+        "VendorName: {$row['VendorName']} <br> ".
+        "---------------------------------<br>";
+}
+
+echo "Fetched data successfully\n";
 
 
 mysqli_close($link);
+?>

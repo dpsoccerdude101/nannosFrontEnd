@@ -11,7 +11,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
     <meta charset="UTF-8">
-    <title>Employee Login</title>
+    <title>VendorModify</title>
 
     <style>
         body {
@@ -49,23 +49,35 @@
     </div>
 </nav>
 
-<form action="VenModify.php" method="POST">
-    <div class="container">
-        <label for="VID" style="color:azure"><b>Vendor ID</b></label>
-        <input type="int" placeholder="Enter VendorID" name="VendorID" required>
-
-        <label for="VName" style="color:azure"><b>Vendor Name</b></label>
-        <input type="VendorName" placeholder="Enter VendorName" name="VendorName" required>
-
-        <button type="submit">Search</button>
-    </div>
+<form action="VenModify.php" method="post">
+    <p style="color:azure">
+        <label for="VenID" ><b>VendorID:</b></label>
+         <input type="number" name="VenID" >
+        <label style="color:azure for="VenName" ><b>VendorName:</b></label>
+         <input type="text" name="VenName" >
+        <input type="submit">
+    </p>
 </form>
+<br>
+
+<!--
+<p style="color:azure">
+#<?php
+#$venID="";
+#$VenName="";
+#error_reporting( error_reporting() & ~E_NOTICE );
+#if($_GET["VenID"] !==null){
+    #echo $_GET["VID"];
+    #echo $_GET["VenName"];
+#}
+
+#?>
+
+</p>
 
 
-<p style="color:azure">This is a Vendor Modify.</p>
 
-
-
+<p style="color:azure">This is a Vendor Modify.</p>-->
 
 </body>
 </html>
