@@ -53,7 +53,7 @@
     <p style="color:azure">
         <label for="VenID" ><b>VendorID:</b></label>
          <input type="number" name="VenID" >
-        <label style="color:azure for="VenName" ><b>VendorName:</b></label>
+        <label style="color:azure" for="VenName" ><b>VendorName:</b></label>
          <input type="text" name="VenName" >
         <input type="submit">
     </p>
