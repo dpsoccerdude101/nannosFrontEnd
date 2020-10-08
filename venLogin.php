@@ -4,7 +4,7 @@ $vendorid = trim($_POST['vid']);
 $password = trim($_POST['psw']);
 $Error = "Incorrect ID or Password";
 
-$link = mysqli_connect("localhost", "root", null, "nannos_foods");
+$link = mysqli_connect("localhost", "root", "KcS=MipppS4L", "nannos_foods");
 
 $query = "SELECT * FROM vendor";
 
