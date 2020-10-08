@@ -60,7 +60,6 @@
 <form action="empLogin.php" method="POST">
 <div class="container">
     <label for="uname"><b>Username</b></label>
-
     <input type="text" placeholder="Enter Username" name="uname" required>
 
     <label for="psw"><b>Password</b></label>
@@ -71,12 +70,14 @@
 </div>
 </form>
 
+
 <?php
 if(isset($_SESSION['error'])) {
     echo '<p class="error"> '.$_SESSION['error'].'</p>';
     unset($_SESSION['error']);
 }
 ?>
+
 
 
 </body>

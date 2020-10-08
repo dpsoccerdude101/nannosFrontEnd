@@ -17,7 +17,9 @@ $count = 1;
 if ($rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         if ($username == $row["Username"] && $password == $row["Password"]) {
-            header("Location: employeeMenu.php");
+
+            header("Location: SelectMenu.php");
+
         } else {
             $count = $count + 1;
         }
@@ -25,9 +27,9 @@ if ($rows > 0) {
             //header("Location: employeeLogin.php");
         }
     }
-
 if($count > $rows){
-$_SESSION['error'] = $Error;
-header("Location: employeeLogin.php");
+    $_SESSION['error'] = $Error;
+    header("Location: employeeLogin.php");
+
 }
     mysqli_close($link);
