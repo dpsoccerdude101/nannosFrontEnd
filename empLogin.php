@@ -25,9 +25,9 @@ if ($rows > 0) {
             //header("Location: employeeLogin.php");
         }
     }
-
 if($count > $rows){
-$_SESSION['error'] = $Error;
-header("Location: employeeLogin.php");
+    $_SESSION['error'] = $Error;
+    header("Location: employeeLogin.php");
+
 }
     mysqli_close($link);
