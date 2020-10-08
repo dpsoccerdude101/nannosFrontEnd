@@ -17,7 +17,7 @@ $count = 1;
 if ($rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         if ($username == $row["Username"] && $password == $row["Password"]) {
-            header("Location: success.php");
+            header("Location: employeeMenu.php");
         } else {
             $count = $count + 1;
         }

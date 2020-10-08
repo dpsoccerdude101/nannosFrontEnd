@@ -25,10 +25,8 @@
 <body>
 <!-- Nav Bar Creation-->
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Nanno's Foods</a>
-
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="true" aria-label="Toggle navigation">
-
+    <a class="navbar-brand" href="index.php">Nanno's Foods</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon">
             <!-- Put something here -->
         </span>
@@ -42,7 +40,7 @@
                 <a class="nav-link" href="vendorLogin.php">Vendor Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="aboutUs.php">About Us</a>
+                <a class="nav-link" href="#">About Us</a>
             </li>
         </ul>
         <span class="navbar-text">
@@ -53,14 +51,12 @@
 <!-- End Nav Bar -->
 <!-- Jumbotron -->
 <div style="background:transparent !important" class="jumbotron">
+
+
     <h1 class="display-4">Welcome to Nanno's Foods!</h1>
     <p class="lead">Nanno's Foods is a family owned grocery store with an abundant selection of foods and other products.</p>
     <hr class="my-4">
-    <p> Click the button below to learn more about our store </p>
     <p class="lead">
-
-        <a class="btn btn-primary btn-lg" href="aboutUs.php" role="button">Learn more</a>
-
     </p>
 </div>
 <!-- End Jumbotron -->

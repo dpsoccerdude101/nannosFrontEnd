@@ -36,13 +36,7 @@
     <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
             <li class="nav-item active">
-                <a class="nav-link" href="employeeLogin.php">Nanno's Representative Login <span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#">Vendor Login</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="aboutUs.php">About Us</a>
+                <a class="nav-link" href="employeeMenu.php">Employee Menu <span class="sr-only">(current)</span></a>
             </li>
         </ul>
         <span class="navbar-text">
@@ -52,24 +46,6 @@
 </nav>
 
 
-<form action="venLogin.php" method="POST">
-    <div class="container">
-        <label for="vid"><b>Vendor ID</b></label>
-        <input type="text" placeholder="Enter VendorID" name="vid" required>
 
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <button type="submit">Login</button>
-    </div>
-</form>
 
-<?php
-if (isset($_SESSION['error'])) {
-    echo '<p class="error"> '.$_SESSION['error'].'</p>';
-    unset($_SESSION['error']);
-}
-?>
-
-</body>
-</html>
