@@ -42,7 +42,7 @@
                 <a class="nav-link" href="#">Vendor Login</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">About Us</a>
+                <a class="nav-link" href="aboutUs.php">About Us</a>
             </li>
         </ul>
         <span class="navbar-text">
@@ -64,7 +64,7 @@
     </div>
 </form>
 
-<?
+<?php
 if (isset($_SESSION['error'])) {
     echo '<p class="error"> '.$_SESSION['error'].'</p>';
     unset($_SESSION['error']);

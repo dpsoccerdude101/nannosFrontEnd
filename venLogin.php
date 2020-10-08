@@ -6,7 +6,7 @@ $Error = "Incorrect ID or Password";
 
 $link = mysqli_connect("localhost", "root", null, "nannos_foods");
 
-$query = "SELECT * FROM vendors";
+$query = "SELECT * FROM vendor";
 
 $result = mysqli_query($link, $query);
 $count = 1;
@@ -14,7 +14,7 @@ $rows = mysqli_num_rows($result);
 
 if ($rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
-        if ($vendorid == $row["ID"] && $password == $row["PASSWORD"])
+        if ($vendorid == $row["VendorCode"] && $password == $row["Password"])
             header("Location: success.php");
 
         else {
