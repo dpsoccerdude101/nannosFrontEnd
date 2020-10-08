@@ -53,7 +53,7 @@ while($row = mysqli_fetch_assoc($result)) {
 
     echo "<div class='w-25 p-3'>
         <form action='#' method='POST'>
-        <label for='vid'><b>Vendor ID</b></label>
+        <label for='vid'><b>Vendor Name</b></label>
         <input class='form-control' margin-right='500px' type='text' placeholder='Enter VendorName' name='vname' value='{$row['VendorName']}' required><br>
         <label for='address'><b>Address</b></label>
         <input class = 'form-control' type='text' placeholder='Enter Address' name='address' value='{$row['Address']}' required><br>
