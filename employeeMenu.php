@@ -49,7 +49,8 @@ body:before {
     </button>
     <div class="dropdown-menu">
         <button onclick="location.href='registerVendor.php'" class="dropdown-item" type="button">Register New</button>
-        <button onclick="location.href='modifyVendor.php'" class="dropdown-item" type="button" >Modify Existing</button>
+        <button onclick="location.href='VendorModify.php'" class="dropdown-item" type="button" >
+            Modify Existing</button>
         <button onclick="location.href='deleteVendor.php'" class="dropdown-item" type="button" >Remove Existing</button>
     </div>
     <div class="btn-group">
@@ -107,5 +108,12 @@ body:before {
         </div>
     </div>
 </div>
+
+<?php
+if(isset($_SESSION['message'])) {
+    echo '<p class="error"> '.$_SESSION['message'].'</p>';
+    unset($_SESSION['message']);
+}
+?>
 </body>
 </html>
