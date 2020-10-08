@@ -30,7 +30,7 @@ $vID = (int)$_POST['VenID'];
 $VName = trim($_POST['VenName']);
 $Error = "No Matching Vendors";
 
-$link = mysqli_connect("localhost", "root", null, "nannos_foods");
+$link = mysqli_connect("localhost", "root", "KcS=MipppS4L", "nannos_foods");
 
 $query = "SELECT * FROM vendor where VendorID='$vID'";
 

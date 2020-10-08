@@ -1,9 +1,11 @@
 <?php
 session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
+
 $link = mysqli_connect("localhost", "root", null, "nannos_foods");
 $success = "Successfully Updated";
 $failure = "Successfully Updated";
+
 
     $Vi= (int)$_POST["vid"];
     $Vn= $_POST["vname"];
