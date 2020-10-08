@@ -1,11 +1,7 @@
 <?php
 session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
-
-$link = mysqli_connect("localhost", "root", null, "nannos_foods");
-$success = "Successfully Updated";
-$failure = "Successfully Updated";
-
+$link = mysqli_connect("localhost", "root", "KcS=MipppS4L", "nannos_foods");
 
     $Vi= (int)$_POST["vid"];
     $Vn= $_POST["vname"];
@@ -21,12 +17,10 @@ $failure = "Successfully Updated";
 $result = mysqli_query($link, $queryUp);
 
 if($result == true){
-    $_SESSION['message'] = $success;
-    header("Location: employeeMenu.php");
+    echo "success";
 }
 else{
-    $_SESSION['message'] = $failure;
-    header("Location: employeeMenu.php");
+    echo "unsuccessful";
 }
 
 #echo "Fetched data successfully\n";
