@@ -32,14 +32,13 @@ export function App() {
     down menu if the representative's login was succesful. -->
     ${wasLoginSuccesful
       ? html`<representative-navbar></representative-navbar>`
-      : ""}
+      : html`<employee-login
+          @login=${(event) => {
+            console.log(event);
+            setWasLoginSuccesful(event.detail.login);
+          }}
+        ></employee-login>`}
     <!-- this is what is listening for that 'bubble up' of state -->
-    <employee-login
-      @login=${(event) => {
-        console.log(event);
-        setWasLoginSuccesful(event.detail.login);
-      }}
-    ></employee-login>
   `;
 }
 customElements.define("my-app", component(App, { useShadowDOM: false }));

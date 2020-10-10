@@ -32,7 +32,7 @@ export function RepresentativeNavbar() {
           ><a
             tag="[object Object]"
             to="./VendorModify.php"
-            href="#"
+            href="VendorModify.php"
             class="dropdown-item"
             role="button"
             >Modify Existing</a

@@ -11,7 +11,6 @@ export function EmployeeLogin() {
   //setLoginSuccess is setter for that state
   const [loginSuccess, setLoginSuccess] = useState();
 
-
   //This is function that dispatches a custom event
   //so that state can move up the DOM tree
   //That is why 'bubbles' is set to true
@@ -29,7 +28,6 @@ export function EmployeeLogin() {
   useEffect(() => {
     login();
   }, [loginSuccess]);
-
 
   //This function makes the asynchronous call to submit the function
   /**
@@ -53,9 +51,13 @@ export function EmployeeLogin() {
       body: JSON.stringify(obj),
     })
       .then((res) => res.json())
+      .then((res) => JSON.parse(res))
       .then((obj) => {
+        console.log(typeof obj);
+        console.dir(obj);
+
         if (obj.login == "success") setLoginSuccess(true);
-        else set(false);
+        else setLoginSuccess(false);
       })
       .catch((error) => console.log(error));
   };
