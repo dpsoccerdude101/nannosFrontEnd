@@ -1,7 +1,7 @@
 <?php
 session_start();
 error_reporting( error_reporting() & ~E_NOTICE );
-$link = mysqli_connect("localhost", "root", "KcS=MipppS4L", "nannos_foods");
+$link = mysqli_connect("localhost", "root", "xXT@jyY2yg3P", "nannos_foods");
 
     $Vi= (int)$_POST["vid"];
     $Vn= $_POST["vname"];
