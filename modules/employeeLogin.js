@@ -5,6 +5,7 @@ import {
   useEffect,
 } from "https://unpkg.com/haunted/haunted.js";
 import { getAllRequiredInputs } from "../functions/functions.js";
+//This is an example of a change
 
 export function EmployeeLogin() {
   //loginSuccess holds state of login,
