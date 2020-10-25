@@ -47,7 +47,7 @@ export function EmployeeLogin() {
       //obj == {"uname" : "Slavko", "psw": "Slavko123"}
     }
     console.dir(obj);
-    fetch("http://nannosfoods.bitnamiapp.com//empLoginJSONResponse.php", {
+    fetch("http://nannosfoodsdev.bitnamiapp.com//empLoginJSONResponse.php", {
       method: "post",
       body: JSON.stringify(obj),
     })
