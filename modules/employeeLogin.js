@@ -60,7 +60,10 @@ export function EmployeeLogin() {
         console.log(typeof obj);
         console.dir(obj);
 
-        if (obj.login == "success") setLoginSuccess(true);
+        if (obj.login == "success") {
+          window.location.assign("./")
+          //setLoginSuccess(true);
+        } 
         else setLoginSuccess(false);
       })
       .catch((error) => console.log(error));
