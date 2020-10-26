@@ -27,7 +27,7 @@ if ($rows > 0) {
     while ($row = mysqli_fetch_assoc($result)) {
         if ($data->uname == $row["Username"] && $data->psw == $row["Password"]) {
             $success = '{"login": "success"}';
-            header('Content-Type: application/json, Access-Control-Allow-Origin : *, Access-Control-Allow-Credentials : true');
+            header('Content-Type: application/json, Access-Control-Allow-Origin : *');
             echo json_encode($success);
         } else {
             $count = $count + 1;
