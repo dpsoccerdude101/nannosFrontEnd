@@ -49,6 +49,9 @@ export function EmployeeLogin() {
     console.dir(obj);
     fetch("http://nannosfoodsdev.bitnamiapp.com//empLoginJSONResponse.php", {
       method: "post",
+      headers: {
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify(obj),
     })
       .then((res) => res.json())
