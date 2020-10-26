@@ -30,7 +30,7 @@ export function EmployeeLogin() {
     login();
   }, [loginSuccess]);
 
-  //This function makes the asynchronous call to submit the function
+  //This function makes the asynchronous call to submit the function.
   /**
    *
    * @param {Event} e
