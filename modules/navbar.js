@@ -43,7 +43,6 @@ export function Navbar() {
         </span>
       </div>
     </nav>
-    <br />
     <!-- End Nav Bar -->
   `;
 }
