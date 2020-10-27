@@ -52,7 +52,7 @@ export function EmployeeLogin() {
      * of http request we'd like to make (POST) and what type of content we are sending
      * over (JSON)
      */
-    fetch("https://nannosfoodsdev.bitnamiapp.com//empLoginJSONResponse.php", {
+    fetch("http://nannosfoodsdev.bitnamiapp.com//empLoginJSONResponse.php", {
       method: "post",
       headers: {
         "Content-Type": "application/json",

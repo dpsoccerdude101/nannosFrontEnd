@@ -4,7 +4,7 @@ import { component } from "https://unpkg.com/haunted/haunted.js";
 export function Navbar() {
   return html`
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="#">Nanno's Foods</a>
+      <a class="navbar-brand" href="/">Nanno's Foods</a>
 
       <button
         class="navbar-toggler"
