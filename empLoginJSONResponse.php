@@ -39,7 +39,7 @@ if ($rows > 0) {
 
 if($count > $rows){
 $_SESSION['error'] = $Error;
-$success = '{"login": "success"}';
+$success = '{"login": "failure"}';
 header('Content-Type: application/json, Access-Control-Allow-Origin" : *, Access-Control-Allow-Credentials : true');
 echo json_encode($success);
 }
