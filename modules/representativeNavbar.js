@@ -1,101 +1,200 @@
 import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component, useState } from "https://unpkg.com/haunted/haunted.js";
+import { component } from "https://unpkg.com/haunted/haunted.js";
 
 export function RepresentativeNavbar() {
   return html`
-    <div role="group" class="btn-group">
-      <div class="show dropdown">
-        <button
-          aria-haspopup="true"
-          aria-expanded="true"
-          type="button"
-          class="dropdown-toggle btn btn-primary"
+    <div class="btn-group">
+      <button
+        type="button"
+        class="btn btn-info dropdown-toggle"
+        data-toggle="dropdown"
+        aria-haspopup="true"
+        aria-expanded="false"
+      >
+        Manage Vendor
+      </button>
+      <div class="dropdown-menu">
+        <a
+          class="dropdown-item"
+          href="http://nannosfoodsdev.bitnamiapp.com/registerVendor.php"
+          >Register New</a
         >
-          Manage Vendor
-        </button>
-        <div
-          x-placement="bottom-start"
-          aria-labelledby=""
-          class="dropdown-menu show"
-          style="position: absolute; top: 0px; left: 0px; margin: 0px; right: auto; bottom: auto; transform: translate(0px, 35px);"
-          data-popper-reference-hidden="false"
-          data-popper-escaped="false"
-          data-popper-placement="bottom-start"
+        <a
+          class="dropdown-item"
+          href="http://nannosfoodsdev.bitnamiapp.com/VendorModify.php"
+          >Modify Existing</a
         >
-          <a
-            tag="[object Object]"
-            to="./registerVendor.php"
-            href="#"
-            class="dropdown-item"
-            role="button"
-            >Register New</a
-          ><a
-            tag="[object Object]"
-            to="./VendorModify.php"
-            href="VendorModify.php"
-            class="dropdown-item"
-            role="button"
-            >Modify Existing</a
-          ><a
-            tag="[object Object]"
-            to="./deleteVendor.php"
-            href="#"
-            class="dropdown-item"
-            role="button"
-            >Remove Existing</a
-          >
-        </div>
+        <a
+          class="dropdown-item"
+          href="http://nannosfoodsdev.bitnamiapp.com/deleteVendor.php"
+          >Remove Existing</a
+        >
       </div>
-      <div class="dropdown">
+
+      <div class="btn-group">
         <button
+          type="button"
+          class="btn btn-info dropdown-toggle"
+          data-toggle="dropdown"
           aria-haspopup="true"
           aria-expanded="false"
-          type="button"
-          class="dropdown-toggle btn btn-primary"
         >
           Manage Store
         </button>
-      </div>
-      <div class="dropdown">
-        <button
-          aria-haspopup="true"
-          aria-expanded="false"
-          type="button"
-          class="dropdown-toggle btn btn-primary"
-        >
-          Manage Inventory
-        </button>
-      </div>
-      <div class="dropdown">
-        <button
-          aria-haspopup="true"
-          aria-expanded="false"
-          type="button"
-          class="dropdown-toggle btn btn-primary"
-        >
-          Manage Customer
-        </button>
-      </div>
-      <div class="dropdown">
-        <button
-          aria-haspopup="true"
-          aria-expanded="false"
-          type="button"
-          class="dropdown-toggle btn btn-primary"
-        >
-          Manage Order
-        </button>
-      </div>
-      <div class="dropdown">
-        <button
-          aria-haspopup="true"
-          aria-expanded="false"
-          type="button"
-          class="dropdown-toggle btn btn-primary"
-        >
-          Look Up
-        </button>
+        <div class="dropdown-menu">
+          <a
+            class="dropdown-item"
+            href="http://nannosfoodsdev.bitnamiapp.com/AddNewStore.php"
+            >Add New Store</a
+          >
+          <a
+            class="dropdown-item"
+            href="http://nannosfoodsdev.bitnamiapp.com/modifyStore.php"
+            >Modify Existing</a
+          >
+          <a
+            class="dropdown-item"
+            href="http://nannosfoodsdev.bitnamiapp.com/deleteVendor.php"
+            >Remove Store</a
+          >
+        </div>
+        <div class="btn-group">
+          <button
+            type="button"
+            class="btn btn-info dropdown-toggle"
+            data-toggle="dropdown"
+            aria-haspopup="true"
+            aria-expanded="false"
+          >
+            Manage Inventory
+          </button>
+          <div class="dropdown-menu">
+            <a
+              class="dropdown-item"
+              href="http://nannosfoodsdev.bitnamiapp.com/InventoryAdd.php"
+              >Add New Item</a
+            >
+            <a
+              class="dropdown-item"
+              href="http://nannosfoodsdev.bitnamiapp.com/InventoryModify.php"
+              >Modify Existing</a
+            >
+            <a
+              class="dropdown-item"
+              href="http://nannosfoodsdev.bitnamiapp.com/InventoryDelete.php"
+              >Remove Existing</a
+            >
+            <a
+              class="dropdown-item"
+              href="http://nannosfoodsdev.bitnamiapp.com/processDelivery.php"
+              >Process Delivery</a
+            >
+            <a
+              class="dropdown-item"
+              href="http://nannosfoodsdev.bitnamiapp.com/processReturn.php"
+              >Process Return</a
+            >
+          </div>
+          <div class="btn-group">
+            <button
+              type="button"
+              class="btn btn-info dropdown-toggle"
+              data-toggle="dropdown"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Manage Customer
+            </button>
+            <div class="dropdown-menu">
+              <a
+                class="dropdown-item"
+                href="http://nannosfoodsdev.bitnamiapp.com/CustomerAdd.php"
+                >Add New Member</a
+              >
+              <a
+                class="dropdown-item"
+                href="http://nannosfoodsdev.bitnamiapp.com/CustomerModify.php"
+                >Modify Member</a
+              >
+              <a
+                class="dropdown-item"
+                href="http://nannosfoodsdev.bitnamiapp.com/CustomerDelete.php"
+                >Remove Member</a
+              >
+              <a
+                class="dropdown-item"
+                href="http://nannosfoodsdev.bitnamiapp.com/CustomerNewPurchase.php"
+                >New Purchase</a
+              >
+            </div>
+            <div class="btn-group">
+              <button
+                type="button"
+                class="btn btn-info dropdown-toggle"
+                data-toggle="dropdown"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Manage Order
+              </button>
+              <div class="dropdown-menu">
+                <a
+                  class="dropdown-item"
+                  href="http://nannosfoodsdev.bitnamiapp.com/OrderCreate.php"
+                  >New Order</a
+                >
+                <a
+                  class="dropdown-item"
+                  href="http://nannosfoodsdev.bitnamiapp.com/OrderAdd.php"
+                  >Add to Existing</a
+                >
+              </div>
+              <div class="btn-group">
+                <button
+                  type="button"
+                  class="btn btn-info dropdown-toggle"
+                  data-toggle="dropdown"
+                  aria-haspopup="true"
+                  aria-expanded="false"
+                >
+                  Look Up
+                </button>
+                <div class="dropdown-menu">
+                  <a
+                    class="dropdown-item"
+                    href="http://nannosfoodsdev.bitnamiapp.com/LookUpAllinv.php"
+                    >All Inventory Items</a
+                  >
+                  <a
+                    class="dropdown-item"
+                    href="http://nannosfoodsdev.bitnamiapp.com/LookupLowInv.php"
+                    >All Low Items
+                  </a>
+                  <a
+                    class="dropdown-item"
+                    href="http://nannosfoodsdev.bitnamiapp.com/LookUpReturns.php"
+                    >All Returns
+                  </a>
+                  <a
+                    class="dropdown-item"
+                    href="http://nannosfoodsdev.bitnamiapp.com/LookUpCustPurchase.php"
+                    >Completed Customer Purchase
+                  </a>
+                  <a
+                    class="dropdown-item"
+                    href="http://nannosfoodsdev.bitnamiapp.com/LookUpOrders.php"
+                    >Paced Orders</a
+                  >
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   `;
 }
+customElements.define(
+  "representative-navbar",
+  component(RepresentativeNavbar, { useShadowDOM: false })
+);

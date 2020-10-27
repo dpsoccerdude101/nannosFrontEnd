@@ -1,52 +1,57 @@
 import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import {
-  component,
-  useState,
-  useEffect,
-} from "https://unpkg.com/haunted/haunted.js";
+import { component } from "https://unpkg.com/haunted/haunted.js";
 import { getAllRequiredInputs } from "../functions/functions.js";
-//This is an example of a change
 
 export function EmployeeLogin() {
-  //loginSuccess holds state of login,
-  //setLoginSuccess is setter for that state
-  const [loginSuccess, setLoginSuccess] = useState();
-
-  //This is function that dispatches a custom event
-  //so that state can move up the DOM tree
-  //That is why 'bubbles' is set to true
-  //and detail 'bubbles up' the state of the application
-  const login = () => {
-    const event = new CustomEvent("login", {
-      bubbles: true,
-      detail: { login: loginSuccess },
-    });
-    this.dispatchEvent(event);
-  };
-
-  //useEffect means that the login function is only invoked
-  //when there are any changes made to loginSuccess (its dependancy)
-  useEffect(() => {
-    login();
-  }, [loginSuccess]);
-
   //This function makes the asynchronous call to submit the function.
   /**
    *
    * @param {Event} e
    */
   const submitForm = (e) => {
-    console.dir(e.target.querySelectorAll("input"));
+    //console.dir(e.target.querySelectorAll("input"));
+    /**
+     * Get all input elements from the form that have attribute 'required'
+     * as a HTMLElementList
+     */
     const requiredInputs = getAllRequiredInputs(e);
+
+    /**
+     * This is our javascript object that will hold our key-value pairs
+     * of the keys 'uname' and 'psw', respectively
+     */
     let obj = {};
+
+    /**
+     * This for loop iterates over the two input elements in the HTMLElementList
+     * in the submitted form
+     */
     for (const input of requiredInputs) {
+      /**
+       * We are using the HTML form validation explicitly in case
+       * of somebody was sneaky and invoked this function without submitting the form.
+       * Also, this lets us use custom HTML validation if we would like.
+       */
       input.reportValidity();
-      //obj = whatever the object previously has + a key, value pair  of [input.name]: input value
-      //if obj == {"uname" : "Slavko"}
+
+      /**
+       * This is terse.
+       * obj (called by reference) = {obj (called by value).concatenate(input element's
+       *  value of the name attribute (called by value) : input element's value of the
+       * the value attribute (called by value))}
+       */
       obj = { ...obj, [input.name]: input.value };
       //obj == {"uname" : "Slavko", "psw": "Slavko123"}
     }
-    console.dir(obj);
+
+    /**
+     * fetch is the api that Javascript gives us to send http requests easily.
+     * Fetch uses AJAX in the background to make the http request.
+     * The first argument in fetch is the URL of the API endpoint.
+     * The second argument in fetch is an object that describes what kind
+     * of http request we'd like to make (POST) and what type of content we are sending
+     * over (JSON)
+     */
     fetch("http://nannosfoodsdev.bitnamiapp.com//empLoginJSONResponse.php", {
       method: "post",
       headers: {
@@ -54,19 +59,50 @@ export function EmployeeLogin() {
       },
       body: JSON.stringify(obj),
     })
-      .then((res) => res.json())
-      .then((res) => JSON.parse(res))
-      .then((obj) => {
-        console.log(typeof obj);
-        console.dir(obj);
-
-        if (obj.login == "success") {
-          window.location.assign("./")
+      /**
+     * This architecture might seem unusual. This is called a Javascript promise.
+     * Basically, the .then() waits for the response from the server and then passes
+     * that as an argument into the next function.
+     * 
+     * You could rewrite this code like so:
+     * .then(function(res1) {return res1.json()})
+     * .then(function(res2) {return JSON.parse(res2)})
+     * .then(function(res3) {
+     *    if (res3.login == "success") {
+          window.location.assign("../employeeMenu/");
           //setLoginSuccess(true);
-        } 
-        else setLoginSuccess(false);
+        } else {
+          alert("Login Failed. Try a different username or password.");
+          //setLoginSuccess(false);
+        }
+     * })
+     */
+      /**
+       * This first .then() returns the body of the response from
+       * the server as a promise
+       */
+      .then((res) => res.json())
+      /**
+       * This second .then() parse the body of the response for a
+       * JavaScript Object Notation (JSON) string and converts it into
+       * a Javascript object and returns the object.
+       */
+      .then((res) => JSON.parse(res))
+      /**
+       * This last .then() checks if the value at the key of 'login' is "success"
+       * if so, it loads the employeeMenu html. If not, it alerts the user that there
+       * was a failure to login.
+       */
+      .then((obj) => {
+        if (obj.login == "success") {
+          window.location.assign("../employeeMenu/");
+        } else {
+          //Reset all input element's values.
+          e.target.reset();
+          alert("Login Failed. Try a different username or password.");
+        }
       })
-      .catch((error) => console.log(error));
+      .catch((error) => alert(error));
   };
 
   return html`
@@ -95,3 +131,7 @@ export function EmployeeLogin() {
     </form>
   `;
 }
+customElements.define(
+  "employee-login",
+  component(EmployeeLogin, { useShadowDOM: false })
+);

@@ -1,5 +1,5 @@
 import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component, useState } from "https://unpkg.com/haunted/haunted.js";
+import { component } from "https://unpkg.com/haunted/haunted.js";
 
 export function Navbar() {
   return html`
@@ -28,10 +28,14 @@ export function Navbar() {
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="vendorLogin.php">Vendor Login</a>
+            <a
+              class="nav-link"
+              href="http://nannosfoodsdev.bitnamiapp.com//vendorLogin.php"
+              >Vendor Login</a
+            >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="aboutUs.php">About Us</a>
+            <a class="nav-link" href="/">About Us</a>
           </li>
         </ul>
         <span class="navbar-text">
@@ -43,3 +47,4 @@ export function Navbar() {
     <!-- End Nav Bar -->
   `;
 }
+customElements.define("nav-bar", component(Navbar, { useShadowDOM: false }));
