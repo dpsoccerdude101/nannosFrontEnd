@@ -131,6 +131,10 @@ export function RegisterVendor() {
           <b>City</b>
         </label>
         <input type="text" placeholder="City"  maxlength="20" name="City" required /><br>
+        <label htmlFor="State">
+          <b>State</b>
+        </label>
+        <input type="text" placeholder="State"  pattern="[a-zA-Z]{2}" maxlength="2" name="State" required /><br>
         <label htmlFor="Zip">
           <b>Zip</b>
         </label>
