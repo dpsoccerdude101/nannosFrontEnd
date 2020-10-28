@@ -44,67 +44,7 @@ export function RegisterVendor() {
       //obj == {"uname" : "Slavko", "psw": "Slavko123"}
     }
 
-    /**
-     * fetch is the api that Javascript gives us to send http requests easily.
-     * Fetch uses AJAX in the background to make the http request.
-     * The first argument in fetch is the URL of the API endpoint.
-     * The second argument in fetch is an object that describes what kind
-     * of http request we'd like to make (POST) and what type of content we are sending
-     * over (JSON)
-     */
-    fetch("https://www.nannosfoodsdev.bitnamiapp.com/registerVendorJSONResponseMike.php", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(obj),
-    })
-      /**
-     * This architecture might seem unusual. This is called a Javascript promise.
-     * Basically, the .then() waits for the response from the server and then passes
-     * that as an argument into the next function.
-     * 
-     * You could rewrite this code like so:
-     * .then(function(res1) {return res1.json()})
-     * .then(function(res2) {return JSON.parse(res2)})
-     * .then(function(res3) {
-     *    if (res3.login == "success") {
-          window.location.assign("../employeeMenu/");
-          //setLoginSuccess(true);
-        } else {
-          alert("Login Failed. Try a different username or password.");
-          //setLoginSuccess(false);
-        }
-     * })
-     */
-      /**
-       * This first .then() returns the body of the response from
-       * the server as a promise
-       */
-      .then((res) => res.json())
-      /**
-       * This second .then() parse the body of the response for a
-       * JavaScript Object Notation (JSON) string and converts it into
-       * a Javascript object and returns the object.
-       */
-      .then((res) => JSON.parse(res))
-      /**
-       * This last .then() checks if the value at the key of 'login' is "success"
-       * if so, it loads the employeeMenu html. If not, it alerts the user that there
-       * was a failure to login.
-       */
-      .then((obj) => {
-        if (obj.result == "success") {
-            console.dir(obj);
-          window.location.assign("../employeeMenu/");
-        } else {
-          //Reset all input element's values.
-          e.target.reset();
-          alert("Insert Failed.");
-        }
-      })
-      .catch((error) => alert(error));
+    
   };
 
   return html`
