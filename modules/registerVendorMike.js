@@ -52,10 +52,11 @@ export function RegisterVendor() {
      * of http request we'd like to make (POST) and what type of content we are sending
      * over (JSON)
      */
-    fetch("http://nannosfoodsdev.bitnamiapp.com/registerVendorJSONResponseMike.php", {
+    fetch("https://www.nannosfoodsdev.bitnamiapp.com/registerVendorJSONResponseMike.php", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json"
       },
       body: JSON.stringify(obj),
     })
