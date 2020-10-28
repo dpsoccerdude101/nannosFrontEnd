@@ -122,15 +122,15 @@ export function RegisterVendor() {
         <label htmlFor="VendorName">
           <b>Vendor Name</b>
         </label>
-        <input type="text" placeholder="Vendor Name"  maxlength="20" name="VendorName" required /><br>
+        <input type="text" placeholder="Vendor Name"  pattern="[a-z A-Z]{1,20}" maxlength="20" name="VendorName" required /><br>
         <label htmlFor="Address">
           <b>Address</b>
         </label>
-        <input type="text" placeholder="Address"  maxlength="30" name="Address" required /><br>
+        <input type="text" placeholder="Address" maxlength="30" name="Address" required /><br>
         <label htmlFor="City">
           <b>City</b>
         </label>
-        <input type="text" placeholder="City"  maxlength="20" name="City" required /><br>
+        <input type="text" placeholder="City"  pattern="[a-z A-Z]{1,20}" maxlength="20" name="City" required /><br>
         <label htmlFor="State">
           <b>State</b>
         </label>
@@ -146,7 +146,7 @@ export function RegisterVendor() {
         <label htmlFor="ContactName">
           <b>Contact Name</b>
         </label>
-        <input type="text" placeholder="Contact Name" maxlength="20" name="ContactName" required /><br>
+        <input type="text" placeholder="Contact Name" pattern="[a-z A-Z]{1,20}" maxlength="20" name="ContactName" required /><br>
         <button type="submit">Register Vendor</button>
       </div>
     </form>
