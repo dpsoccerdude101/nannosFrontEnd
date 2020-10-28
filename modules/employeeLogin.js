@@ -52,10 +52,12 @@ export function EmployeeLogin() {
      * of http request we'd like to make (POST) and what type of content we are sending
      * over (JSON)
      */
-    fetch("https://nannosfoodsdev.bitnamiapp.com/empLoginJSONResponse.php", {
+    fetch("https://www.nannosfoodsdev.bitnamiapp.com/empLoginJSONResponse.php", {
       method: "post",
       headers: {
         "Content-Type": "application/json",
+        "Accept": "application/json",
+        "Referrer-Policy": "unsafe-url"
       },
       body: JSON.stringify(obj),
     })
@@ -95,7 +97,7 @@ export function EmployeeLogin() {
        */
       .then((obj) => {
         if (obj.login == "success") {
-          window.location.assign("../employeeMenu/");
+          //window.location.assign("../employeeMenu/");
         } else {
           //Reset all input element's values.
           e.target.reset();
