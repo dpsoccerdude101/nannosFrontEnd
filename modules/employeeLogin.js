@@ -56,8 +56,7 @@ export function EmployeeLogin() {
       method: "post",
       headers: {
         "Content-Type": "application/json",
-        "Accept": "application/json",
-        "Referrer-Policy": "unsafe-url"
+        "Accept": "application/json"
       },
       body: JSON.stringify(obj),
     })
@@ -97,7 +96,7 @@ export function EmployeeLogin() {
        */
       .then((obj) => {
         if (obj.login == "success") {
-          //window.location.assign("../employeeMenu/");
+          window.location.assign("../employeeMenu/");
         } else {
           //Reset all input element's values.
           e.target.reset();
