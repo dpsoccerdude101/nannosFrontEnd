@@ -9,7 +9,6 @@ export function RegisterVendor() {
    * @param {Event} e
    */
   const submitForm = (e) => {
-      console.log("ZOINKS");
     //console.dir(e.target.querySelectorAll("input"));
     /**
      * Get all input elements from the form that have attribute 'required'
@@ -34,7 +33,6 @@ export function RegisterVendor() {
        * Also, this lets us use custom HTML validation if we would like.
        */
       input.reportValidity();
-      console.log(input);
 
       /**
        * This is terse.
@@ -98,7 +96,7 @@ export function RegisterVendor() {
       .then((obj) => {
         if (obj.result == "success") {
             console.dir(obj);
-          //window.location.assign("../employeeMenu/");
+          window.location.assign("../employeeMenu/");
         } else {
           //Reset all input element's values.
           e.target.reset();
