@@ -2,7 +2,7 @@ import { html } from "https://unpkg.com/lit-html/lit-html.js";
 import { component } from "https://unpkg.com/haunted/haunted.js";
 import { getAllRequiredInputs } from "../functions/functions.js";
 
-export function RegisterVendor() {
+export function DeleteVendor() {
   //This function makes the asynchronous call to submit the function.
   /**
    *
@@ -62,6 +62,6 @@ export function RegisterVendor() {
   `;
 }
 customElements.define(
-  "register-vendor",
-  component(RegisterVendor, { useShadowDOM: false })
+  "delete-vendor",
+  component(DeleteVendor, { useShadowDOM: false })
 );
