@@ -65,6 +65,8 @@ export function EmployeeLogin() {
      * Basically, the .then() waits for the response from the server and then passes
      * that as an argument into the next function.
      * 
+     * throwing in a comment.
+     * 
      * You could rewrite this code like so:
      * .then(function(res1) {return res1.json()})
      * .then(function(res2) {return JSON.parse(res2)})
