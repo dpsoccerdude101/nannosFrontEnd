@@ -44,7 +44,7 @@ export function RepresentativeNavbar() {
         <div class="dropdown-menu">
           <a
             class="dropdown-item"
-            href="http://nannosfoodsdev.bitnamiapp.com/AddNewStore.php"
+            href="/AddStore"
             >Add New Store</a
           >
           <a
