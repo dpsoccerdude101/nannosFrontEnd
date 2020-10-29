@@ -71,7 +71,7 @@ export function RepresentativeNavbar() {
           <div class="dropdown-menu">
             <a
               class="dropdown-item"
-              href="http://nannosfoodsdev.bitnamiapp.com/InventoryAdd.php"
+              href="/AddItem/"
               >Add New Item</a
             >
             <a

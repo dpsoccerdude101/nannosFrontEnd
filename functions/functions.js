@@ -4,5 +4,6 @@
  * @return {NodeListOf<HTMLInputElement>}
  */
 export const getAllRequiredInputs = (e) => {
-    return e.target.querySelectorAll("input[required]");
-  };
+  return e.target.querySelectorAll("input[required]");
+};
+
