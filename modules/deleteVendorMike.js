@@ -9,7 +9,6 @@ export function DeleteVendor() {
    * @param {Event} e
    */
   const submitForm = (e) => {
-
     const requiredInputs = getAllRequiredInputs(e);
 
     let obj = {};
@@ -17,23 +16,25 @@ export function DeleteVendor() {
     for (const input of requiredInputs) {
       input.reportValidity();
 
-
       obj = { ...obj, [input.name]: input.value };
     }
 
-    fetch("https://www.nannosfoodsdev.bitnamiapp.com/deleteVendorJSONResponseMike.php", {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        "Accept": "application/json"
-      },
-      body: JSON.stringify(obj),
-    })
+    fetch(
+      "https://www.nannosfoodsdev.bitnamiapp.com/deleteVendorJSONResponseMike.php",
+      {
+        method: "post",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify(obj),
+      }
+    )
       .then((res) => res.json())
       .then((res) => JSON.parse(res))
       .then((obj) => {
         if (obj.result == "success") {
-            console.dir(obj);
+          console.dir(obj);
           window.location.assign("../employeeMenu/");
         } else {
           //Reset all input element's values.
@@ -55,7 +56,14 @@ export function DeleteVendor() {
         <label htmlFor="VendorID">
           <b>Vendor ID</b>
         </label>
-        <input type="text" placeholder="Enter Vendor ID"  maxlength="9" pattern="[0-9]{1,9}" name="VendorID" required /><br>
+        <input
+          type="text"
+          placeholder="Enter Vendor ID"
+          maxlength="9"
+          pattern="[0-9]{1,9}"
+          name="VendorID"
+          required
+        /><br />
         <button type="submit">Delete Vendor</button>
       </div>
     </form>
