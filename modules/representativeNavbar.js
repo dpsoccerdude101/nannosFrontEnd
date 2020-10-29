@@ -26,7 +26,7 @@ export function RepresentativeNavbar() {
         >
         <a
           class="dropdown-item"
-          href="http://nannosfoodsdev.bitnamiapp.com/deleteVendor.php"
+          href="/deleteVendor"
           >Remove Existing</a
         >
       </div>
