@@ -21,7 +21,7 @@ export function RepresentativeNavbar() {
         >
         <a
           class="dropdown-item"
-          href="http://nannosfoodsdev.bitnamiapp.com/VendorModify.php"
+          href="/modifyVendor"
           >Modify Existing</a
         >
         <a
