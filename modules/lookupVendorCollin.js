@@ -36,8 +36,11 @@ console.dir(obj);
       .then((res) => JSON.parse(res))
       .then((obj) => {
         if (obj.result == "success") {
-          console.dir(obj);
-          window.location.assign("../modifyVendor/result.html");
+          alert(JSON.stringify(obj));
+          //console.dir(obj);
+          // recieve a JSON object from the PHP and send it to another
+          // function to display the info in HTML???
+          //window.location.assign("../modifyVendor/result.html");
         } else {
           //Reset all input element's values.
           e.target.reset();
