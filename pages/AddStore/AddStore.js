@@ -8,7 +8,7 @@ export function AddStore() {
       @submit=${(e) => {
         submitForm(
           e,
-          "https://www.nannosfoodsdev.bitnamiapp.com/addStoreJSONResponseMike.php"
+          "https://www.nannosfoods.codes/addStoreJSONResponseMike.php"
         )
           .then((res) => res.json())
           .then((res) => JSON.parse(res))

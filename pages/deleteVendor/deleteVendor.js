@@ -8,7 +8,7 @@ export function DeleteVendor() {
       @submit=${(e) => {
         submitForm(
           e,
-          "https://www.nannosfoodsdev.bitnamiapp.com/deleteVendorJSONResponseMike.php"
+          "https://www.nannosfoods.codes/deleteVendorJSONResponseMike.php"
         )
           .then((res) => res.json())
           .then((res) => JSON.parse(res))

@@ -8,7 +8,7 @@ export function EmployeeLogin() {
       @submit=${(e) => {
         submitForm(
           e,
-          "https://www.nannosfoodsdev.bitnamiapp.com/empLoginJSONResponse.php"
+          "https://www.nannosfoods.codes/empLoginJSONResponse.php"
         )
           .then((res) => res.json())
           .then((res) => JSON.parse(res))
