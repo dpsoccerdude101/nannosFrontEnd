@@ -16,7 +16,7 @@ export function RegisterVendor() {
         } else {
           submitForm(
             e,
-            "https://www.nannosfoodsdev.bitnamiapp.com/registerVendorJSONResponseMike.php"
+            "https://www.nannosfoods.codes/registerVendorJSONResponseMike.php"
           )
             .then((res) => res.json())
             .then((res) => JSON.parse(res))

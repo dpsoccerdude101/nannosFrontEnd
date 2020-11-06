@@ -8,7 +8,7 @@ export function LookupVendor() {
       @submit=${(e) => {
         submitForm(
           e,
-          "https://www.nannosfoodsdev.bitnamiapp.com/venModifyJSONResponseCollin.php"
+          "https://www.nannosfoods.codes/venModifyJSONResponseCollin.php"
         )
           .then((res) => res.json())
           .then((res) => JSON.parse(res))
