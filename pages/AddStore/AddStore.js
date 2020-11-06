@@ -1,52 +1,28 @@
 import { html } from "https://unpkg.com/lit-html/lit-html.js";
 import { component } from "https://unpkg.com/haunted/haunted.js";
-import { getAllRequiredInputs } from "../functions/functions.js";
+import { submitForm } from "/functions/functions.js";
 
 export function AddStore() {
-  //This function makes the asynchronous call to submit the function.
-  /**
-   *
-   * @param {Event} e
-   */
-  const submitForm = (e) => {
-    const requiredInputs = getAllRequiredInputs(e);
-
-    let obj = {};
-    for (const input of requiredInputs) {
-      input.reportValidity();
-      obj = { ...obj, [input.name]: input.value };
-    }
-    fetch(
-      "https://www.nannosfoodsdev.bitnamiapp.com/addStoreJSONResponseMike.php",
-      {
-        method: "post",
-        headers: {
-          "Content-Type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(obj),
-      }
-    )
-      .then((res) => res.json())
-      .then((res) => JSON.parse(res))
-      .then((obj) => {
-        if (obj.result == "success") {
-          console.dir(obj);
-          window.location.assign("../employeeMenu/");
-        } else {
-          //Reset all input element's values.
-          e.target.reset();
-          alert("Insert Failed.");
-        }
-      })
-      .catch((error) => alert(error));
-  };
-
   return html`
     <form
       @submit=${(e) => {
-        e.preventDefault();
-          submitForm(e);
+        submitForm(
+          e,
+          "https://www.nannosfoodsdev.bitnamiapp.com/addStoreJSONResponseMike.php"
+        )
+          .then((res) => res.json())
+          .then((res) => JSON.parse(res))
+          .then((obj) => {
+            if (obj.result == "success") {
+              console.dir(obj);
+              window.location.assign("/pages/employeeMenu/");
+            } else {
+              //Reset all input element's values.
+              e.target.reset();
+              alert("Insert Failed.");
+            }
+          })
+          .catch((error) => alert(error));
       }}
     >
       <div className="container">

@@ -1,6 +1,6 @@
 import { html } from "https://unpkg.com/lit-html/lit-html.js";
 import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "../functions/functions.js";
+import { submitForm } from "/functions/functions.js";
 
 export function EmployeeLogin() {
   return html`
@@ -14,7 +14,7 @@ export function EmployeeLogin() {
           .then((res) => JSON.parse(res))
           .then((obj) => {
             if (obj.login == "success") {
-              window.location.assign("../employeeMenu/");
+              window.location.assign("/pages/employeeMenu/");
             } else {
               //Reset all input element's values.
               e.target.reset();

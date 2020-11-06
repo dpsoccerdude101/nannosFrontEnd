@@ -21,17 +21,13 @@ export function Navbar() {
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/employeeLogin"
+            <a class="nav-link" href="/pages/employeeLogin"
               >Nanno's Representative Login
               <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a
-              class="nav-link"
-              href="http://nannosfoodsdev.bitnamiapp.com//vendorLogin.php"
-              >Vendor Login</a
-            >
+            <a class="nav-link" href="/">Vendor Login</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/">About Us</a>
