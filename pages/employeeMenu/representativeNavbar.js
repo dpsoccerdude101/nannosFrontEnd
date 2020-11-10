@@ -108,7 +108,7 @@ export function RepresentativeNavbar() {
             <div class="dropdown-menu">
               <a
                 class="dropdown-item"
-                href="/"
+                href="/pages/AddMember"
                 >Add New Member</a
               >
               <a
