@@ -98,13 +98,13 @@ export function AddMember() {
         />
         <br />
 
-        <label htmlFor="E-mail">
+        <label htmlFor="Email">
           <b>E-mail</b>
         </label>
         <input
           type="email"
           placeholder="Enter email"
-          name="E-mail"
+          name="Email"
           required
         />
         <br />
