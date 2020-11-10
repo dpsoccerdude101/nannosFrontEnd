@@ -118,7 +118,7 @@ export function RepresentativeNavbar() {
               >
               <a
                 class="dropdown-item"
-                href="/"
+                href="/pages/deleteMember"
                 >Remove Member</a
               >
               <a
