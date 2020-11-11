@@ -1,60 +1,29 @@
 import { html } from "https://unpkg.com/lit-html/lit-html.js";
 import { component } from "https://unpkg.com/haunted/haunted.js";
-import { getAllRequiredInputs } from "../functions/functions.js";
+import { submitForm } from "/functions/functions.js";
 
 export function LookupVendor() {
-  //This function makes the asynchronous call to submit the function
-  /**
-   *
-   * @param {Event} e
-   */
-  const submitForm = (e) => {
-
-    const requiredInputs = getAllRequiredInputs(e);
-
-    let obj = {};
-
-    for (const input of requiredInputs) {
-      input.reportValidity();
-
-     
-      obj = { ...obj, [input.name]: input.value };
-    }
-console.dir(obj);
-    fetch(
-      "https://www.nannosfoodsdev.bitnamiapp.com/venModifyJSONResponseCollin.php",
-      {
-        method: "post",
-        headers: {
-          "content-type": "application/json",
-          Accept: "application/json",
-        },
-        body: JSON.stringify(obj),
-      }
-    )
-      .then((res) => res.json())
-      .then((res) => JSON.parse(res))
-      .then((obj) => {
-        if (obj.result == "success") {
-          alert(JSON.stringify(obj));
-          //console.dir(obj);
-          // recieve a JSON object from the PHP and send it to another
-          // function to display the info in HTML???
-          //window.location.assign("../modifyVendor/result.html");
-        } else {
-          //Reset all input element's values.
-          e.target.reset();
-          alert("No vendor was found.");
-        }
-      })
-      .catch((error) => alert(error));
-  };
-
   return html`
     <form
       @submit=${(e) => {
-        e.preventDefault();
-        submitForm(e);
+        submitForm(
+          e,
+          "https://www.nannosfoods.codes/venModifyJSONResponseCollin.php"
+        )
+          .then((res) => res.json())
+          .then((res) => JSON.parse(res))
+          .then((obj) => {
+            if (obj.result == "success") {
+              //console.dir(obj);
+              alert(JSON.stringify(obj))
+              //window.location.assign("/pages/modifyVendor/result.html");
+            } else {
+              //Reset all input element's values.
+              e.target.reset();
+              alert("No vendor was found.");
+            }
+          })
+          .catch((error) => alert(error));
       }}
     >
       <div className="container">

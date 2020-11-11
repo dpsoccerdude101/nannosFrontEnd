@@ -11,10 +11,12 @@ export function LookupVendor() {
           "https://www.nannosfoods.codes/venModifyJSONResponseCollin.php"
         )
           .then((res) => res.json())
-          .then((res) => JSON.parse(res))
+          .then((resp) => "" + JSON.stringify(resp) + "")
+          .then((resp) => JSON.parse(resp))
           .then((obj) => {
-            if (obj.result == "success") {
-              console.dir(obj);
+            if (obj.hasOwnProperty("VendorName")){
+              sessionStorage.vendors = JSON.stringify(obj);
+              //alert(JSON.stringify(obj))
               window.location.assign("/pages/modifyVendor/result.html");
             } else {
               //Reset all input element's values.
