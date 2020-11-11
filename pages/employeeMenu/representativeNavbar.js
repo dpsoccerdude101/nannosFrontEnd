@@ -54,7 +54,7 @@ export function RepresentativeNavbar() {
           >
           <a
             class="dropdown-item"
-            href="/"
+            href="/pages/deleteStore"
             >Remove Store</a
           >
         </div>
