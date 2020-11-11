@@ -38,7 +38,7 @@ export function DeleteStore() {
           name="StoreID"
           required
         /><br />
-        <button type="submit">Delete Member</button>
+        <button type="submit">Delete Store</button>
       </div>
     </form>
   `;
