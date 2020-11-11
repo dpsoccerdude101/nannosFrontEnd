@@ -13,21 +13,28 @@ export function ModifyVendor() {
           document.getElementById("Confirm_Password").value
         ) {
           alert("Error: Passwords Do not match.");
-        } else {
+        } else if(
+            document.getElementById("Password").value != 
+            JSON.parse(sessionStorage.vendors).Password
+        ) {
+          alert("Error: This is not the vendors Password.");
+        } 
+        else {
+          sessionStorage.clear();
           submitForm(
             e,
-            "https://www.nannosfoods.codes/registerVendorJSONResponseMike.php"
+            "https://www.nannosfoods.codes/venUpdateJSONResponseCollin.php"
           )
             .then((res) => res.json())
             .then((res) => JSON.parse(res))
             .then((obj) => {
               if (obj.result == "success") {
                 console.dir(obj);
-                window.location.assign("/pages/employeeMenu/");
+                //window.location.assign("/pages/employeeMenu/");
               } else {
                 //Reset all input element's values.
                 e.target.reset();
-                alert("Insert Failed.");
+                alert("Update Failed.");
               }
             })
             .catch((error) => alert(error));
@@ -35,6 +42,15 @@ export function ModifyVendor() {
       }}
     >
       <div className="container"><br />
+        <label htmlFor="VendorID">
+            <b>Vendor ID</b>
+        </label>
+        <input
+          type="text"
+          name="VendorID"
+          value="${JSON.parse(sessionStorage.vendors).VendorID}"
+          readonly
+        /></br>
         <label htmlFor="VendorName">
           <b>Vendor Name</b>
         </label>
@@ -56,6 +72,7 @@ export function ModifyVendor() {
           maxlength="30"
           name="Address"
           required
+          value="${JSON.parse(sessionStorage.vendors).Address}"
         /><br />
         <label htmlFor="City">
           <b>City</b>
@@ -67,6 +84,7 @@ export function ModifyVendor() {
           maxlength="20"
           name="City"
           required
+          value="${JSON.parse(sessionStorage.vendors).City}"
         /><br />
         <label htmlFor="State">
           <b>State</b>
@@ -78,6 +96,7 @@ export function ModifyVendor() {
           maxlength="2"
           name="State"
           required
+          value="${JSON.parse(sessionStorage.vendors).State}"
         /><br />
         <label htmlFor="Zip">
           <b>Zip</b>
@@ -89,6 +108,7 @@ export function ModifyVendor() {
           maxlength="5"
           name="Zip"
           required
+          value="${JSON.parse(sessionStorage.vendors).ZIP}"
         /><br />
         <label htmlFor="Phone">
           <b>Phone</b>
@@ -100,6 +120,7 @@ export function ModifyVendor() {
           maxlength="10"
           name="Phone"
           required
+          value="${JSON.parse(sessionStorage.vendors).Phone}"
         /><br />
         <label htmlFor="ContactName">
           <b>Contact Name</b>
@@ -111,9 +132,10 @@ export function ModifyVendor() {
           maxlength="20"
           name="ContactName"
           required
+          value="${JSON.parse(sessionStorage.vendors).ContactPersonName}"
         /><br />
         <label htmlFor="Password">
-          <b>Password</b>
+          <b>Vendor Password</b>
         </label>
         <input
           type="Password"
