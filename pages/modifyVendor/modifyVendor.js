@@ -20,7 +20,7 @@ export function ModifyVendor() {
           alert("Error: This is not the vendors Password.");
         } 
         else {
-          sessionStorage.clear();
+          //sessionStorage.clear();
           submitForm(
             e,
             "https://www.nannosfoods.codes/venUpdateJSONResponseCollin.php"
@@ -30,7 +30,7 @@ export function ModifyVendor() {
             .then((obj) => {
               if (obj.result == "success") {
                 console.dir(obj);
-                //window.location.assign("/pages/employeeMenu/");
+                window.location.assign("/pages/employeeMenu/");
               } else {
                 //Reset all input element's values.
                 e.target.reset();
@@ -49,6 +49,7 @@ export function ModifyVendor() {
           type="text"
           name="VendorID"
           value="${JSON.parse(sessionStorage.vendors).VendorID}"
+          required
           readonly
         /></br>
         <label htmlFor="VendorName">
