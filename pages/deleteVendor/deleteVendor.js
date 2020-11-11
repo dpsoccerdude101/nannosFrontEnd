@@ -34,6 +34,7 @@ export function DeleteVendor() {
           placeholder="Enter Vendor ID"
           maxlength="9"
           pattern="[0-9]{1,9}"
+          title="Please Enter a Numeric ID"
           name="VendorID"
           required
         /><br />

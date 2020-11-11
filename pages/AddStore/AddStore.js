@@ -33,6 +33,7 @@ export function AddStore() {
           type="text"
           placeholder="Enter Store Code"
           pattern="[0-9]{1,9}"
+          title="Please Enter a Numeric Store Code"
           name="StoreCode"
           required
         /><br />
@@ -42,7 +43,8 @@ export function AddStore() {
         <input
           type="text"
           placeholder="Store Name"
-          pattern="[a-z A-Z]{1,20}"
+          pattern="[a-z A-Z0-9]{1,20}"
+          title="Please Only use characters a-z A-Z 0-9 and ' '"
           maxlength="20"
           name="StoreName"
           required
@@ -65,6 +67,7 @@ export function AddStore() {
           placeholder="City"
           pattern="[a-z A-Z]{1,20}"
           maxlength="20"
+          title="Please only use Alphabetic Characters"
           name="City"
           required
         /><br />
@@ -75,6 +78,7 @@ export function AddStore() {
           type="text"
           placeholder="State"
           pattern="[a-zA-Z]{2}"
+          title="Please Enter State as a two character state code EX: New York => 'NY'"
           maxlength="2"
           name="State"
           required
@@ -86,6 +90,7 @@ export function AddStore() {
           type="text"
           placeholder="Zip Code"
           pattern="[0-9]{5}"
+          title="Please enter numeric 5 digit zip codes only"
           maxlength="5"
           name="Zip"
           required
@@ -97,6 +102,7 @@ export function AddStore() {
           type="text"
           placeholder="Phone Number"
           pattern="[0-9]{10}"
+          title="Please enter phone numbers in format ########## (No dashes)"
           maxlength="10"
           name="Phone"
           required
@@ -108,6 +114,7 @@ export function AddStore() {
           type="text"
           placeholder="Manager Name"
           pattern="[a-z A-Z]{1,20}"
+          title="Please use alphabetic characters only"
           maxlength="20"
           name="ManagerName"
           required

@@ -42,6 +42,7 @@ export function RegisterVendor() {
           type="text"
           placeholder="Enter Vendor Code"
           pattern="[0-9]{1,9}"
+          title="Please Enter a Numeric Vendor Code"
           name="VendorCode"
           required
         /><br />
@@ -51,8 +52,9 @@ export function RegisterVendor() {
         <input
           type="text"
           placeholder="Vendor Name"
-          pattern="[a-z A-Z]{1,20}"
+          pattern="[a-z A-Z0-9]{1,20}"
           maxlength="20"
+          title="Please only use characters a-z A-Z 0-9 and ' '"
           name="VendorName"
           required
         /><br />
@@ -73,6 +75,7 @@ export function RegisterVendor() {
           type="text"
           placeholder="City"
           pattern="[a-z A-Z]{1,20}"
+          title="Please Use Alphabetic Characters Only"
           maxlength="20"
           name="City"
           required
@@ -84,6 +87,7 @@ export function RegisterVendor() {
           type="text"
           placeholder="State"
           pattern="[a-zA-Z]{2}"
+          title="Please Enter State as a two character state code EX: New York => 'NY'"
           maxlength="2"
           name="State"
           required
@@ -95,6 +99,7 @@ export function RegisterVendor() {
           type="text"
           placeholder="Zip Code"
           pattern="[0-9]{5}"
+          title="Please enter numeric 5 digit zip codes only"
           maxlength="5"
           name="Zip"
           required
@@ -106,6 +111,7 @@ export function RegisterVendor() {
           type="text"
           placeholder="Phone Number"
           pattern="[0-9]{10}"
+          title="Please enter phone numbers in format ########## (No dashes)"
           maxlength="10"
           name="Phone"
           required
@@ -117,6 +123,7 @@ export function RegisterVendor() {
           type="text"
           placeholder="Contact Name"
           pattern="[a-z A-Z]{1,20}"
+          title="Please Use Alphabetic Characters Only"
           maxlength="20"
           name="ContactName"
           required
