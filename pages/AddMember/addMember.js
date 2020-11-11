@@ -32,6 +32,7 @@ export function AddMember() {
           type="text"
           placeholder="Enter Full Name Here"
           name="Name"
+          pattern="[a-z A-Z]{1,50}"
           maxlength="50"
           required
         />
@@ -42,6 +43,8 @@ export function AddMember() {
         <input type="text" 
         placeholder="Enter Street Address" 
         name="Address"
+        pattern="[a-z A-Z,0-9]{1,50}"
+        title="Please Only Use Characters a-z A-Z 0-9 , and ' '"
         maxlength="50" 
         required
          />
@@ -105,6 +108,7 @@ export function AddMember() {
           type="email"
           placeholder="Enter email"
           name="Email"
+          maxlength="50"
           required
         />
         <br />
