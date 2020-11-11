@@ -64,7 +64,9 @@ export function RegisterVendor() {
         <input
           type="text"
           placeholder="Address"
-          maxlength="30"
+          pattern="[a-z A-Z,0-9]{1,50}"
+          title="Please Only Use Characters a-z A-Z 0-9 , and ' '"
+          maxlength="50"
           name="Address"
           required
         /><br />
