@@ -1,0 +1,1 @@
+{"version":3,"sources":["index.css"],"names":[],"mappings":"AAAA,iBACE,2DACF","file":"frontend.94d085f0.css","sourceRoot":"..","sourcesContent":[".indexBackground {\r\n  background-image: url(\"/images/healthy-food.jpg\");\r\n}\r\n"]}

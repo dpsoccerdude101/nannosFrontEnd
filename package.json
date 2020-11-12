@@ -4,7 +4,8 @@
   "description": "Front-End for Nannos Foods",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "parcel index.html",
+    "build": "parcel build index.html"
   },
   "repository": {
     "type": "git",
@@ -20,9 +21,13 @@
     "bootstrap": "^4.5.3",
     "email-validator": "^2.0.4",
     "haunted": "^4.7.1",
+    "haunted-router": "^0.2.0",
+    "https": "^1.0.0",
     "jquery": "^3.5.1",
     "lit-html": "^1.3.0",
+    "parcel-plugin-import-as-url": "^1.0.0",
     "phone": "^2.4.17",
+    "popper": "^1.0.1",
     "popper.js": "^1.16.1"
   },
   "devDependencies": {
@@ -31,6 +36,7 @@
     "@babel/preset-env": "^7.12.1",
     "babel-preset-es2015": "^6.24.1",
     "babelify": "^10.0.0",
+    "parcel-bundler": "^1.12.4",
     "tinyify": "^3.0.0"
   }
 }

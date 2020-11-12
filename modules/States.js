@@ -1,5 +1,6 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { virtual } from "https://unpkg.com/haunted/haunted.js";
+/* import { html } from "https://unpkg.com/lit-html/lit-html.js";
+import { virtual } from "https://unpkg.com/haunted/haunted.js"; */
+import { html, virtual } from "haunted";
 export const States = virtual(() => {
   return html`
     <option value="AL">Alabama</option>
