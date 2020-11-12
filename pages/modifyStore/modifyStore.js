@@ -9,7 +9,7 @@ export function ModifyStore() {
       @submit=${(e) => {
         e.preventDefault();
         
-          //sessionStorage.clear();
+          sessionStorage.clear();
           submitForm(
             e,
             "https://www.nannosfoods.codes/storeUpdateJSONResponseCollin.php"

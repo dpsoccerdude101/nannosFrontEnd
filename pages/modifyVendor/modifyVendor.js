@@ -20,7 +20,7 @@ export function ModifyVendor() {
           alert("Error: This is not the vendors Password.");
         } 
         else {
-          //sessionStorage.clear();
+          sessionStorage.clear();
           submitForm(
             e,
             "https://www.nannosfoods.codes/venUpdateJSONResponseCollin.php"
