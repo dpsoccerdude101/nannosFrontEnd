@@ -17,7 +17,6 @@ export function DeleteVendor() {
               console.dir(obj);
               window.location.assign("/pages/employeeMenu/");
             } else {
-              //Reset all input element's values.
               e.target.reset();
               alert("Deletion Failed.");
             }

@@ -1,6 +1,7 @@
 import { html } from "https://unpkg.com/lit-html/lit-html.js";
 import { component } from "https://unpkg.com/haunted/haunted.js";
 import { submitForm } from "/functions/functions.js";
+import { States } from "/modules/States.js";
 
 export function AddStore() {
   return html`
@@ -76,15 +77,9 @@ export function AddStore() {
         <label htmlFor="State">
           <b>State</b>
         </label>
-        <input
-          type="text"
-          placeholder="State"
-          pattern="[a-zA-Z]{2}"
-          title="Please Enter State as a two character state code EX: New York => 'NY'"
-          maxlength="2"
-          name="State"
-          required
-        /><br />
+        <select name="State" required>
+          ${States()}</select
+        ><br />
         <label htmlFor="Zip">
           <b>Zip</b>
         </label>
