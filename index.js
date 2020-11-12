@@ -6,6 +6,7 @@ import "./libraries/bootstrap/js/bootstrap.min.js";
 import "./modules/navbar";
 import "./Jumbotron";
 import "./components/*.js";
+//just a comment
 
 export function App() {
   const routeResult = useRoutes(
