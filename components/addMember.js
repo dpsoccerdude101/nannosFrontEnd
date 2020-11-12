@@ -1,6 +1,6 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm, isPhoneNumberValid } from "../functions/functions.js";
+import { States } from "../modules/States.js";
 
 export function AddMember() {
   return html`
@@ -14,7 +14,7 @@ export function AddMember() {
           .then((res) => JSON.parse(res))
           .then((obj) => {
             if (obj.result == "success") {
-              window.location.assign("/pages/employeeMenu/");
+              window.location.assign("/employeeMenu");
             } else {
               //Reset all input element's values.
               e.target.reset();
@@ -40,14 +40,15 @@ export function AddMember() {
         <label htmlFor="Address">
           <b>Address</b>
         </label>
-        <input type="text" 
-        placeholder="Enter Street Address" 
-        name="Address"
-        pattern="[a-z A-Z,0-9]{1,50}"
-        title="Please Only Use Characters a-z A-Z 0-9 , and ' '"
-        maxlength="50" 
-        required
-         />
+        <input
+          type="text"
+          placeholder="Enter Street Address"
+          name="Address"
+          pattern="[a-z A-Z,0-9]{1,50}"
+          title="Please Only Use Characters a-z A-Z 0-9 , and ' '"
+          maxlength="50"
+          required
+        />
         <br />
         <label htmlFor="City">
           <b>City</b>
@@ -64,13 +65,9 @@ export function AddMember() {
         <label htmlFor="State">
           <b>State</b>
         </label>
-        <input
-          type="text"
-          placeholder="Enter State"
-          name="State"
-          maxlength="15"
-          required
-        />
+        <select name="State" required>
+          ${States()}
+        </select>
         <br />
 
         <label htmlFor="Zip">
@@ -94,10 +91,17 @@ export function AddMember() {
           type="text"
           placeholder="Enter Phone Number"
           name="Phone"
-          maxlength="10"
-          pattern="[0-9]{10}"
-          title="Please Enter a Numeric 10 Digit Phone Number In the Format ########## (No dashes)."
           required
+          onblur="${(e) => {
+            if (e.target.value.length > 0) {
+              if (!isPhoneNumberValid(e.target.value))
+                e.target.setCustomValidity(
+                  e.target.value +
+                    " is not valid. Try entering a different phone number"
+                );
+              else e.target.setCustomValidity("");
+            } else e.target.setCustomValidity("");
+          }}"
         />
         <br />
 
@@ -117,4 +121,7 @@ export function AddMember() {
     </form>
   `;
 }
-customElements.define("add-member", component(AddMember, { useShadowDOM: false }));
+customElements.define(
+  "add-member",
+  component(AddMember, { useShadowDOM: false })
+);

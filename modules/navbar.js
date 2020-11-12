@@ -1,6 +1,5 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-
+//import { html } from "https://unpkg.com/lit-html/lit-html.js";
+import { html, component } from "haunted";
 export function Navbar() {
   return html`
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -21,7 +20,7 @@ export function Navbar() {
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/pages/employeeLogin"
+            <a class="nav-link" href="/employeeLogin"
               >Nanno's Representative Login
               <span class="sr-only">(current)</span></a
             >

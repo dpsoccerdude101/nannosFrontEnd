@@ -1,6 +1,5 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm } from "../functions/functions.js";
 
 export function DeleteMember() {
   return html`
@@ -15,7 +14,7 @@ export function DeleteMember() {
           .then((obj) => {
             if (obj.result == "success") {
               console.dir(obj);
-              window.location.assign("/pages/employeeMenu/");
+              window.location.assign("/employeeMenu");
             } else {
               //Reset all input element's values.
               e.target.reset();

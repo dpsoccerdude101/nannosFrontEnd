@@ -1,20 +1,16 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm } from "../functions/functions.js";
 
 export function EmployeeLogin() {
   return html`
     <form
       @submit=${(e) => {
-        submitForm(
-          e,
-          "https://www.nannosfoods.codes/empLoginJSONResponse.php"
-        )
+        submitForm(e, "https://www.nannosfoods.codes/empLoginJSONResponse.php")
           .then((res) => res.json())
           .then((res) => JSON.parse(res))
           .then((obj) => {
             if (obj.login == "success") {
-              window.location.assign("/pages/employeeMenu/");
+              window.location.assign("/employeeMenu");
             } else {
               //Reset all input element's values.
               e.target.reset();

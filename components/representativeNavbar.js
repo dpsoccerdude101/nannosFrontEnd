@@ -1,5 +1,4 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
+import { html, component } from "haunted";
 
 export function RepresentativeNavbar() {
   return html`
@@ -16,17 +15,17 @@ export function RepresentativeNavbar() {
       <div class="dropdown-menu">
         <a
           class="dropdown-item"
-          href="/pages/registerVendor"
+          href="/registerVendor"
           >Register New</a
         >
         <a
           class="dropdown-item"
-          href="/pages/modifyVendor"
+          href="/lookupVendor"
           >Modify Existing</a
         >
         <a
           class="dropdown-item"
-          href="/pages/deleteVendor"
+          href="/deleteVendor"
           >Remove Existing</a
         >
       </div>
@@ -44,17 +43,17 @@ export function RepresentativeNavbar() {
         <div class="dropdown-menu">
           <a
             class="dropdown-item"
-            href="/pages/AddStore"
+            href="/AddStore"
             >Add New Store</a
           >
           <a
             class="dropdown-item"
-            href="/pages/modifyStore"
+            href="/lookupStore"
             >Modify Existing</a
           >
           <a
             class="dropdown-item"
-            href="/pages/deleteStore"
+            href="/deleteStore"
             >Remove Store</a
           >
         </div>
@@ -71,17 +70,17 @@ export function RepresentativeNavbar() {
           <div class="dropdown-menu">
             <a
               class="dropdown-item"
-              href="/pages/AddItem/"
+              href="/AddItem"
               >Add New Item</a
             >
             <a
               class="dropdown-item"
-              href="/pages/modifyItem"
+              href="/lookupItem"
               >Modify Existing</a
             >
             <a
               class="dropdown-item"
-              href="/pages/deleteItem"
+              href="/deleteItem"
               >Remove Existing</a
             >
             <a
@@ -108,7 +107,7 @@ export function RepresentativeNavbar() {
             <div class="dropdown-menu">
               <a
                 class="dropdown-item"
-                href="/pages/AddMember"
+                href="/AddMember"
                 >Add New Member</a
               >
               <a
@@ -118,7 +117,7 @@ export function RepresentativeNavbar() {
               >
               <a
                 class="dropdown-item"
-                href="/pages/deleteMember"
+                href="/deleteMember"
                 >Remove Member</a
               >
               <a

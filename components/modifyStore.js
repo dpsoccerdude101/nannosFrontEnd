@@ -1,53 +1,53 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm } from "../functions/functions.js";
+import { States } from "../modules/States.js";
 
-export function AddStore() {
+export function ModifyStore() {
   return html`
     <form
       @submit=${(e) => {
+        e.preventDefault();
         submitForm(
           e,
-          "https://www.nannosfoods.codes/addStoreJSONResponseMike.php"
+          "https://www.nannosfoods.codes/storeUpdateJSONResponseCollin.php"
         )
           .then((res) => res.json())
           .then((res) => JSON.parse(res))
           .then((obj) => {
             if (obj.result == "success") {
               console.dir(obj);
-              window.location.assign("/pages/employeeMenu/");
+              sessionStorage.removeItem("stores");
+              window.location.assign("/employeeMenu");
             } else {
               //Reset all input element's values.
-              e.target.reset();
-              alert("Insert Failed.");
+              alert("Update Failed.");
             }
           })
           .catch((error) => alert(error));
       }}
     >
-      <div className="container">
-        <label htmlFor="StoreCode">
-          <b>Store Code</b>
+      <div className="container"><br />
+        <label htmlFor="StoreId">
+            <b>Store ID</b>
         </label>
         <input
           type="text"
-          placeholder="Enter Store Code"
-          pattern="[0-9]{1,9}"
-          title="Please Enter a Numeric Store Code"
-          name="StoreCode"
+          name="StoreId"
+          value="${JSON.parse(sessionStorage.stores).StoreId}"
           required
-        /><br />
+          readonly
+        /></br>
         <label htmlFor="StoreName">
           <b>Store Name</b>
         </label>
         <input
           type="text"
           placeholder="Store Name"
-          pattern="[a-z A-Z0-9]{1,20}"
-          title="Please Only use characters a-z A-Z 0-9 and ' '"
+          pattern="[a-z A-Z]{1,20}"
           maxlength="20"
           name="StoreName"
           required
+          value="${JSON.parse(sessionStorage.stores).StoreName}"
         /><br />
         <label htmlFor="Address">
           <b>Address</b>
@@ -55,11 +55,10 @@ export function AddStore() {
         <input
           type="text"
           placeholder="Address"
-          pattern="[a-z A-Z,0-9]{1,50}"
-          title="Please Only Use Characters a-z A-Z 0-9 , and ' '"
-          maxlength="50"
+          maxlength="30"
           name="Address"
           required
+          value="${JSON.parse(sessionStorage.stores).Address}"
         /><br />
         <label htmlFor="City">
           <b>City</b>
@@ -69,33 +68,29 @@ export function AddStore() {
           placeholder="City"
           pattern="[a-z A-Z]{1,20}"
           maxlength="20"
-          title="Please only use Alphabetic Characters"
           name="City"
           required
+          value="${JSON.parse(sessionStorage.stores).City}"
         /><br />
         <label htmlFor="State">
           <b>State</b>
         </label>
-        <input
-          type="text"
-          placeholder="State"
-          pattern="[a-zA-Z]{2}"
-          title="Please Enter State as a two character state code EX: New York => 'NY'"
-          maxlength="2"
-          name="State"
-          required
-        /><br />
-        <label htmlFor="Zip">
+        <select name="State" 
+        selected="${JSON.parse(sessionStorage.stores).State}"
+        required>
+          ${States()}
+        </select><br />
+        <label htmlFor="ZIP">
           <b>Zip</b>
         </label>
         <input
           type="text"
           placeholder="Zip Code"
           pattern="[0-9]{5}"
-          title="Please enter numeric 5 digit zip codes only"
           maxlength="5"
-          name="Zip"
+          name="ZIP"
           required
+          value="${JSON.parse(sessionStorage.stores).ZIP}"
         /><br />
         <label htmlFor="Phone">
           <b>Phone</b>
@@ -104,29 +99,31 @@ export function AddStore() {
           type="text"
           placeholder="Phone Number"
           pattern="[0-9]{10}"
-          title="Please enter phone numbers in format ########## (No dashes)"
           maxlength="10"
           name="Phone"
           required
+          value="${JSON.parse(sessionStorage.stores).Phone}"
         /><br />
-        <label htmlFor="ManagerName">
+        <label htmlFor="ContactName">
           <b>Manager Name</b>
         </label>
         <input
           type="text"
           placeholder="Manager Name"
           pattern="[a-z A-Z]{1,20}"
-          title="Please use alphabetic characters only"
           maxlength="20"
           name="ManagerName"
           required
+          value="${JSON.parse(sessionStorage.stores).ManagerName}"
         /><br />
-        <button type="submit">Add Store</button>
+        
+        </label>
+        <button type="submit">Modify Store</button>
       </div>
     </form>
   `;
 }
 customElements.define(
-  "add-store",
-  component(AddStore, { useShadowDOM: false })
+  "modify-store",
+  component(ModifyStore, { useShadowDOM: false })
 );

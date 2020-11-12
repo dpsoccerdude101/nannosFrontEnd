@@ -1,6 +1,5 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm } from "../functions/functions.js";
 
 export function LookupVendor() {
   return html`
@@ -17,7 +16,7 @@ export function LookupVendor() {
             if (obj.hasOwnProperty("VendorName")){
               sessionStorage.vendors = JSON.stringify(obj);
               //alert(JSON.stringify(obj))
-              window.location.assign("/pages/modifyVendor/result.html");
+              window.location.assign("/modifyVendor");
             } else {
               //Reset all input element's values.
               e.target.reset();

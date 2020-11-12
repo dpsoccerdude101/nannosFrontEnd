@@ -1,6 +1,5 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm } from "../functions/functions.js";
 
 export function LookupStore() {
   return html`
@@ -17,10 +16,9 @@ export function LookupStore() {
             if (obj.hasOwnProperty("StoreName")){
               sessionStorage.stores = JSON.stringify(obj);
               //alert(JSON.stringify(obj))
-              window.location.assign("/pages/modifyStore/result.html");
+              window.location.assign("/modifyStore");
             } else {
               //Reset all input element's values.
-              e.target.reset();
               alert("No Store was found.");
             }
           })

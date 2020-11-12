@@ -1,6 +1,6 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm } from "../functions/functions.js";
+import { States } from "../modules/States.js";
 
 export function ModifyVendor() {
   return html`
@@ -28,7 +28,7 @@ export function ModifyVendor() {
               if (obj.result == "success") {
                 console.dir(obj);
                 sessionStorage.removeItem("vendors");
-                window.location.assign("/pages/employeeMenu/");
+                window.location.assign("/employeeMenu");
               } else {
                 //Reset all input element's values.
                 alert("Update Failed.");
@@ -87,15 +87,11 @@ export function ModifyVendor() {
         <label htmlFor="State">
           <b>State</b>
         </label>
-        <input
-          type="text"
-          placeholder="State"
-          pattern="[a-zA-Z]{2}"
-          maxlength="2"
-          name="State"
-          required
-          value="${JSON.parse(sessionStorage.vendors).State}"
-        /><br />
+        <select name="State" 
+        selected="${JSON.parse(sessionStorage.vendors).State}"
+        required>
+          ${States()}
+        </select><br />
         <label htmlFor="Zip">
           <b>Zip</b>
         </label>

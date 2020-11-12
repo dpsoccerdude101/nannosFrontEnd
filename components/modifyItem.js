@@ -1,6 +1,5 @@
-import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { component } from "https://unpkg.com/haunted/haunted.js";
-import { submitForm } from "/functions/functions.js";
+import { html, component } from "haunted";
+import { submitForm } from "../functions/functions.js";
 
 export function ModifyItem() {
 
@@ -18,7 +17,7 @@ export function ModifyItem() {
               if (obj.result == "success") {
                 console.dir(obj);
                 sessionStorage.removeItem("items");
-                window.location.assign("/pages/employeeMenu/");
+                window.location.assign("/employeeMenu");
               } else {
                 //Reset all input element's values.
                 alert("Update Failed.");
