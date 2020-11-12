@@ -88,7 +88,7 @@ export function ModifyVendor() {
           <b>State</b>
         </label>
         <select name="State" 
-        selected="${JSON.parse(sessionStorage.stores).State}"
+        selected="${JSON.parse(sessionStorage.vendors).State}"
         required>
           ${States()}
         </select><br />
