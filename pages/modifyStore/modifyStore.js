@@ -3,31 +3,27 @@ import { component } from "https://unpkg.com/haunted/haunted.js";
 import { submitForm } from "/functions/functions.js";
 
 export function ModifyStore() {
-
   return html`
     <form
       @submit=${(e) => {
         e.preventDefault();
-        
-          sessionStorage.clear();
-          submitForm(
-            e,
-            "https://www.nannosfoods.codes/storeUpdateJSONResponseCollin.php"
-          )
-            .then((res) => res.json())
-            .then((res) => JSON.parse(res))
-            .then((obj) => {
-              if (obj.result == "success") {
-                console.dir(obj);
-                window.location.assign("/pages/employeeMenu/");
-              } else {
-                //Reset all input element's values.
-                e.target.reset();
-                alert("Update Failed.");
-              }
-            })
-            .catch((error) => alert(error));
-        
+        submitForm(
+          e,
+          "https://www.nannosfoods.codes/storeUpdateJSONResponseCollin.php"
+        )
+          .then((res) => res.json())
+          .then((res) => JSON.parse(res))
+          .then((obj) => {
+            if (obj.result == "success") {
+              console.dir(obj);
+              sessionStorage.removeItem("stores");
+              window.location.assign("/pages/employeeMenu/");
+            } else {
+              //Reset all input element's values.
+              alert("Update Failed.");
+            }
+          })
+          .catch((error) => alert(error));
       }}
     >
       <div className="container"><br />
@@ -37,7 +33,7 @@ export function ModifyStore() {
         <input
           type="text"
           name="StoreId"
-          value="${JSON.parse(sessionStorage.vendors).StoreId}"
+          value="${JSON.parse(sessionStorage.stores).StoreId}"
           required
           readonly
         /></br>
@@ -51,7 +47,7 @@ export function ModifyStore() {
           maxlength="20"
           name="StoreName"
           required
-          value="${JSON.parse(sessionStorage.vendors).StoreName}"
+          value="${JSON.parse(sessionStorage.stores).StoreName}"
         /><br />
         <label htmlFor="Address">
           <b>Address</b>
@@ -62,7 +58,7 @@ export function ModifyStore() {
           maxlength="30"
           name="Address"
           required
-          value="${JSON.parse(sessionStorage.vendors).Address}"
+          value="${JSON.parse(sessionStorage.stores).Address}"
         /><br />
         <label htmlFor="City">
           <b>City</b>
@@ -74,7 +70,7 @@ export function ModifyStore() {
           maxlength="20"
           name="City"
           required
-          value="${JSON.parse(sessionStorage.vendors).City}"
+          value="${JSON.parse(sessionStorage.stores).City}"
         /><br />
         <label htmlFor="State">
           <b>State</b>
@@ -86,7 +82,7 @@ export function ModifyStore() {
           maxlength="2"
           name="State"
           required
-          value="${JSON.parse(sessionStorage.vendors).State}"
+          value="${JSON.parse(sessionStorage.stores).State}"
         /><br />
         <label htmlFor="ZIP">
           <b>Zip</b>
@@ -98,7 +94,7 @@ export function ModifyStore() {
           maxlength="5"
           name="ZIP"
           required
-          value="${JSON.parse(sessionStorage.vendors).ZIP}"
+          value="${JSON.parse(sessionStorage.stores).ZIP}"
         /><br />
         <label htmlFor="Phone">
           <b>Phone</b>
@@ -110,7 +106,7 @@ export function ModifyStore() {
           maxlength="10"
           name="Phone"
           required
-          value="${JSON.parse(sessionStorage.vendors).Phone}"
+          value="${JSON.parse(sessionStorage.stores).Phone}"
         /><br />
         <label htmlFor="ContactName">
           <b>Manager Name</b>
@@ -122,7 +118,7 @@ export function ModifyStore() {
           maxlength="20"
           name="ManagerName"
           required
-          value="${JSON.parse(sessionStorage.vendors).ManagerName}"
+          value="${JSON.parse(sessionStorage.stores).ManagerName}"
         /><br />
         
         </label>

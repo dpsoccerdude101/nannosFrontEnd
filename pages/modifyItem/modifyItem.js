@@ -8,8 +8,6 @@ export function ModifyItem() {
     <form
       @submit=${(e) => {
         e.preventDefault();
-        
-          sessionStorage.clear();
           submitForm(
             e,
             "https://www.nannosfoods.codes/itemUpdateJSONResponseCollin.php"
@@ -19,10 +17,10 @@ export function ModifyItem() {
             .then((obj) => {
               if (obj.result == "success") {
                 console.dir(obj);
+                sessionStorage.removeItem("items");
                 window.location.assign("/pages/employeeMenu/");
               } else {
                 //Reset all input element's values.
-                e.target.reset();
                 alert("Update Failed.");
               }
             })
@@ -37,7 +35,7 @@ export function ModifyItem() {
         <input
           type="text"
           name="ItemId"
-          value="${JSON.parse(sessionStorage.vendors).ItemId}"
+          value="${JSON.parse(sessionStorage.items).ItemId}"
           required
           readonly
         /></br>
@@ -50,7 +48,7 @@ export function ModifyItem() {
           maxlength="150"
           name="Description"
           required
-          value="${JSON.parse(sessionStorage.vendors).Description}"
+          value="${JSON.parse(sessionStorage.items).Description}"
         /><br />
         <label htmlFor="Size">
           <b>Size</b>
@@ -61,7 +59,7 @@ export function ModifyItem() {
           maxlength="30"
           name="Size"
           required
-          value="${JSON.parse(sessionStorage.vendors).Size}"
+          value="${JSON.parse(sessionStorage.items).Size}"
         /><br />
         <label htmlFor="Division">
           <b>Division</b>
@@ -72,7 +70,7 @@ export function ModifyItem() {
           maxlength="20"
           name="Division"
           required
-          value="${JSON.parse(sessionStorage.vendors).Division}"
+          value="${JSON.parse(sessionStorage.items).Division}"
         /><br />
         <label htmlFor="Department">
           <b>Department</b>
@@ -83,7 +81,7 @@ export function ModifyItem() {
           maxlength="25"
           name="Department"
           required
-          value="${JSON.parse(sessionStorage.vendors).Department}"
+          value="${JSON.parse(sessionStorage.items).Department}"
         /><br />
         <label htmlFor="Category">
           <b>Category</b>
@@ -94,7 +92,7 @@ export function ModifyItem() {
           maxlength="10"
           name="Category"
           required
-          value="${JSON.parse(sessionStorage.vendors).Category}"
+          value="${JSON.parse(sessionStorage.items).Category}"
         /><br />
         <label htmlFor="ItemCost">
           <b>Item Cost</b>
@@ -105,7 +103,7 @@ export function ModifyItem() {
           maxlength="10"
           name="ItemCost"
           required
-          value="${JSON.parse(sessionStorage.vendors).ItemCost}"
+          value="${JSON.parse(sessionStorage.items).ItemCost}"
         /><br />
         <label htmlFor="ItemRetail">
           <b>Item Retail</b>
@@ -116,7 +114,7 @@ export function ModifyItem() {
           maxlength="10"
           name="ItemRetail"
           required
-          value="${JSON.parse(sessionStorage.vendors).ItemRetail}"
+          value="${JSON.parse(sessionStorage.items).ItemRetail}"
         /><br />
         <label htmlFor="ImageFileName">
           <b>Image File Name</b>
@@ -127,7 +125,7 @@ export function ModifyItem() {
           maxlength="50"
           name="ImageFileName"
           required
-          value="${JSON.parse(sessionStorage.vendors).ImageFileName}"
+          value="${JSON.parse(sessionStorage.items).ImageFileName}"
         /><br />
         </label>
         <button type="submit">Modify Store</button>

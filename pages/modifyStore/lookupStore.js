@@ -15,7 +15,7 @@ export function LookupStore() {
           .then((resp) => JSON.parse(resp))
           .then((obj) => {
             if (obj.hasOwnProperty("StoreName")){
-              sessionStorage.vendors = JSON.stringify(obj);
+              sessionStorage.stores = JSON.stringify(obj);
               //alert(JSON.stringify(obj))
               window.location.assign("/pages/modifyStore/result.html");
             } else {

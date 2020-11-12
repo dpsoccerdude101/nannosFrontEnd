@@ -3,7 +3,6 @@ import { component } from "https://unpkg.com/haunted/haunted.js";
 import { submitForm } from "/functions/functions.js";
 
 export function ModifyVendor() {
-
   return html`
     <form
       @submit=${(e) => {
@@ -13,14 +12,12 @@ export function ModifyVendor() {
           document.getElementById("Confirm_Password").value
         ) {
           alert("Error: Passwords Do not match.");
-        } else if(
-            document.getElementById("Password").value != 
-            JSON.parse(sessionStorage.vendors).Password
+        } else if (
+          document.getElementById("Password").value !=
+          JSON.parse(sessionStorage.vendors).Password
         ) {
           alert("Error: This is not the vendors Password.");
-        } 
-        else {
-          sessionStorage.clear();
+        } else {
           submitForm(
             e,
             "https://www.nannosfoods.codes/venUpdateJSONResponseCollin.php"
@@ -30,10 +27,10 @@ export function ModifyVendor() {
             .then((obj) => {
               if (obj.result == "success") {
                 console.dir(obj);
+                sessionStorage.removeItem("vendors");
                 window.location.assign("/pages/employeeMenu/");
               } else {
                 //Reset all input element's values.
-                e.target.reset();
                 alert("Update Failed.");
               }
             })
