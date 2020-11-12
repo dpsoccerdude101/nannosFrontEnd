@@ -20,7 +20,7 @@ export function RepresentativeNavbar() {
         >
         <a
           class="dropdown-item"
-          href="/"
+          href="/lookupVendor"
           >Modify Existing</a
         >
         <a
@@ -48,7 +48,7 @@ export function RepresentativeNavbar() {
           >
           <a
             class="dropdown-item"
-            href="/"
+            href="/lookupStore"
             >Modify Existing</a
           >
           <a
@@ -75,7 +75,7 @@ export function RepresentativeNavbar() {
             >
             <a
               class="dropdown-item"
-              href="/"
+              href="/lookupItem"
               >Modify Existing</a
             >
             <a
