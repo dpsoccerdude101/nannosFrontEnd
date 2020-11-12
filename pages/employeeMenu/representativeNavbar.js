@@ -21,7 +21,7 @@ export function RepresentativeNavbar() {
         >
         <a
           class="dropdown-item"
-          href="/"
+          href="/pages/modifyVendor"
           >Modify Existing</a
         >
         <a
