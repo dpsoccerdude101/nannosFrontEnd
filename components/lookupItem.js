@@ -1,7 +1,9 @@
 import { html, component } from "haunted";
+import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
 export function LookupItem() {
+  useTitle("Lookup Item");
   return html`
     <form
       @submit=${(e) => {
@@ -16,7 +18,7 @@ export function LookupItem() {
             if (obj.hasOwnProperty("Description")){
               sessionStorage.items = JSON.stringify(obj);
               //alert(JSON.stringify(obj))
-              window.location.assign("/modifyItem");
+              navigateTo("/modifyItem");
             } else {
               //Reset all input element's values.
               e.target.reset();

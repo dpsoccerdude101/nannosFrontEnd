@@ -1,7 +1,9 @@
-import { html, component } from "haunted";
+import { html, component} from "haunted";
+import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
 export function EmployeeLogin() {
+  useTitle("Employee Login");
   return html`
     <form
       @submit=${(e) => {
@@ -10,7 +12,8 @@ export function EmployeeLogin() {
           .then((res) => JSON.parse(res))
           .then((obj) => {
             if (obj.login == "success") {
-              window.location.assign("/employeeMenu");
+              //sessionStorage.userCredentials = JSON.stringify({})
+              navigateTo("/employeeMenu");
             } else {
               //Reset all input element's values.
               e.target.reset();
