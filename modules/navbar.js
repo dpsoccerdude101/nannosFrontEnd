@@ -31,7 +31,13 @@ export function Navbar() {
             <a is="router-link" class="nav-link" href="/">About Us</a>
           </li>
           <li class="nav-item">
-            <a is="router-link" class="nav-link" href="/">Logout</a>
+            <a
+              is="router-link"
+              class="nav-link"
+              href="/"
+              @click="${() => sessionStorage.removeItem("userCredentials")}"
+              >Logout</a
+            >
           </li>
         </ul>
         <span class="navbar-text">

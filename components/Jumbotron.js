@@ -1,7 +1,8 @@
 import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
 
-export function Jumbotron() {
+ export function Jumbotron() {
+  useTitle("Home");
   return html`<!-- Jumbotron -->
     <div style="background: transparent !important" class="jumbotron">
       <h1 class="display-4">Welcome to Nanno's Foods!</h1>
