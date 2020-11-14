@@ -1,7 +1,9 @@
 import { html, component } from "haunted";
+import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
 export function DeleteVendor() {
+  useTitle("Delete Vendor");
   return html`
     <form
       @submit=${(e) => {
@@ -14,7 +16,7 @@ export function DeleteVendor() {
           .then((obj) => {
             if (obj.result == "success") {
               console.dir(obj);
-              window.location.assign("/employeeMenu");
+              navigateTo("/employeeMenu");
             } else {
               e.target.reset();
               alert("Deletion Failed.");

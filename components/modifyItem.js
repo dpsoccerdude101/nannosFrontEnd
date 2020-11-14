@@ -1,8 +1,9 @@
 import { html, component } from "haunted";
+import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
 export function ModifyItem() {
-
+  useTitle("Modify Item");
   return html`
     <form
       @submit=${(e) => {
@@ -17,7 +18,7 @@ export function ModifyItem() {
               if (obj.result == "success") {
                 console.dir(obj);
                 sessionStorage.removeItem("items");
-                window.location.assign("/employeeMenu");
+                navigateTo("/employeeMenu");
               } else {
                 //Reset all input element's values.
                 alert("Update Failed.");

@@ -1,9 +1,8 @@
-//import { html } from "https://unpkg.com/lit-html/lit-html.js";
 import { html, component } from "haunted";
 export function Navbar() {
   return html`
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
-      <a class="navbar-brand" href="/">Nanno's Foods</a>
+      <a is="router-link" class="navbar-brand" href="/">Nanno's Foods</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -20,16 +19,25 @@ export function Navbar() {
       <div class="collapse navbar-collapse" id="navbarText">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active">
-            <a class="nav-link" href="/employeeLogin"
+            <a is="router-link" class="nav-link" href="/employeeLogin"
               >Nanno's Representative Login
               <span class="sr-only">(current)</span></a
             >
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">Vendor Login</a>
+            <a is="router-link" class="nav-link" href="/">Vendor Login</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/">About Us</a>
+            <a is="router-link" class="nav-link" href="/">About Us</a>
+          </li>
+          <li class="nav-item">
+            <a
+              is="router-link"
+              class="nav-link"
+              href="/"
+              @click="${() => sessionStorage.removeItem("userCredentials")}"
+              >Logout</a
+            >
           </li>
         </ul>
         <span class="navbar-text">
