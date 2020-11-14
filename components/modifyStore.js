@@ -1,7 +1,7 @@
 import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
-import { States } from "../modules/States.js";
+import { States } from "./virtual/States";
 
 export function ModifyStore() {
   useTitle("Modify Store");

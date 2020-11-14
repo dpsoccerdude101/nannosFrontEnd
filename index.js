@@ -11,10 +11,10 @@ import "jquery";
 import "popper.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { mainRoutes, loggedInRoutes } from "./router.js";
-import "./modules/*.js";
+import { mainRoutes, loggedInRoutes } from "./router/router.js";
 import "./components/FourZeroFour.js";
-import "./components/representativeNavbar.js";
+import "./components/common/representativeNavbar.js";
+import "./components/common/navbar.js";
 
 export function App() {
   const routeResult = sessionStorage.userCredentials
