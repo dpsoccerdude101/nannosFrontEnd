@@ -1,8 +1,23 @@
 {
-  "name": "nannosFrontEnd",
+  "name": "frontend",
   "version": "1.0.0",
-  "description": "[![Netlify Status](https://api.netlify.com/api/v1/badges/7ddc6d3e-644c-4550-8031-a4e0057bd1ef/deploy-status)](https://app.netlify.com/sites/nannosfoodsdev/deploys) The repository shared by our group to practice the stuff applied in class. (And potentially for our product we will be building). --- ## This repository requires Node.JS v10+ for local deployment --- ### To run Deploy Server:     1. Run 'npm run i'     2. Run 'npm run dev'     3. Open http://localhost:1234",
+  "description": "Front-End for Nannos Foods",
   "main": "index.js",
+  "scripts": {
+    "dev": "parcel index.html",
+    "test": "jest index.html",
+    "build": "parcel build index.html && echo '/* /index.html 200' | cat >dist/_redirects "
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dpsoccerdude101/nannosFrontEnd.git"
+  },
+  "author": "Nannos Foods Dev Team",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dpsoccerdude101/nannosFrontEnd/issues"
+  },
+  "homepage": "https://github.com/dpsoccerdude101/nannosFrontEnd#readme",
   "dependencies": {
     "bootstrap": "^4.5.3",
     "email-validator": "^2.0.4",
@@ -20,25 +35,9 @@
     "@babel/plugin-syntax-jsx": "^7.12.1",
     "@babel/plugin-transform-modules-commonjs": "^7.12.1",
     "@babel/preset-env": "^7.12.1",
-    "parcel-bundler": "^1.12.4",
-    "jest": "^26.6.3"
+    "jest": "^26.6.3",
+    "parcel-bundler": "^1.12.4"
   },
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "parcel index.html",
-    "build": "parcel build index.html && echo '/* /index.html 200' | cat >dist/_redirects "
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dpsoccerdude101/nannosFrontEnd.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dpsoccerdude101/nannosFrontEnd/issues"
-  },
-  "homepage": "https://github.com/dpsoccerdude101/nannosFrontEnd#readme",
   "babel": {
     "plugins": [
       "@babel/plugin-syntax-jsx"
