@@ -3,7 +3,7 @@ import { component } from "https://unpkg.com/haunted/haunted.js";
 
 export function Navbar() {
   return html`
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav id="overboot" class="navbar navbar-expand-lg navbar-light bg-light">
       <a class="navbar-brand" href="/">Nanno's Foods</a>
       <button
         class="navbar-toggler"
@@ -26,16 +26,6 @@ export function Navbar() {
               <span class="sr-only">(current)</span></a
             >
           </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">Vendor Login</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="/">About Us</a>
-          </li>
-        </ul>
-        <span class="navbar-text">
-          Bringing Food to You With Nanno's Foods
-        </span>
       </div>
     </nav>
     <!-- End Nav Bar -->

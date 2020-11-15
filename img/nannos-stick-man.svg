@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+<svg width="129.01mm" height="131.23mm" version="1.1" viewBox="0 0 129.01 131.23" xmlns="http://www.w3.org/2000/svg" xmlns:cc="http://creativecommons.org/ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+ <metadata>
+  <rdf:RDF>
+   <cc:Work rdf:about="">
+    <dc:format>image/svg+xml</dc:format>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"/>
+    <dc:title/>
+   </cc:Work>
+  </rdf:RDF>
+ </metadata>
+ <g stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="4.2333">
+  <path d="m83.154 79.599c-0.77295 0.12882-2.9327 9.6126-11.403 9.2604-10.574-0.4396-7.8736-10.583-7.8736-10.583l8.129-31.75s2.7097-10.583 13.293-10.583c7.9375 0 6.5827 5.2917 6.5827 5.2917s9.157-4.4974 20.214-4.9137c17.721-0.6671 15.858 11.085 12.73 22.112l-1.2006 3.2128s-11.431 27.592-22.015 27.592c-10.583 0-5.9838-10.961-5.9838-10.961l4.0645-15.875s1.5922-5.4806-3.6995-5.4806c-5.2917 0-6.8839 5.4806-6.8839 5.4806z" fill="#007fff"/>
+  <g transform="translate(-41.106 -59.971)">
+   <circle cx="110.18" cy="156.62" r="6.9926"/>
+   <circle cx="138.15" cy="156.62" r="6.9926"/>
+   <circle cx="89.202" cy="77.585" r="15.497"/>
+  </g>
+  <g transform="translate(-41.106 -59.971)" fill="none">
+   <path d="m85.082 92.672-19.504 39.342 2.0789 16.253-17.954 6.0476 10.583 9.4494"/>
+   <path d="m65.579 132.01 20.411 6.9926-1.7009 18.521 13.772-6.4412"/>
+   <path d="m80.698 102.15 35.53-1.8899"/>
+   <path d="m80.698 102.15 33.052 2.5846"/>
+  </g>
+ </g>
+ <g transform="matrix(.87427 0 0 .87427 -37.232 -69.703)">
+  <rect x="42.763" y="202.12" width="129.63" height="27.529" ry="13.764" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width=".35278"/>
+  <text x="48.131794" y="224.8018" fill="#ffffff" font-family="Inter" font-size="26.565px" font-weight="900" letter-spacing="0px" stroke-width=".35578" word-spacing="0px" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal;line-height:1.25" xml:space="preserve"><tspan x="48.131794" y="224.8018" fill="#ffffff" font-family="Inter" font-size="26.565px" font-weight="900" stroke-width=".35578" style="font-feature-settings:normal;font-variant-caps:normal;font-variant-ligatures:normal;font-variant-numeric:normal">NANNO's</tspan></text>
+ </g>
+</svg>
