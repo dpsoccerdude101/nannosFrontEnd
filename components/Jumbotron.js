@@ -4,14 +4,6 @@ import { useTitle, navigateTo } from "haunted-router";
  export function Jumbotron() {
   useTitle("Home");
   return html`<!-- Jumbotron -->
-<<<<<<< HEAD:Jumbotron.js
-    <div class="jumbotron">
-      <div class="jumbotron-container">
-        <div class="jumbotron-welcome">Welcome!</div>
-          <img class="stick-man" alt="Happy Nanno's stick figure customer pushing a shopping cart." src="img/nannos-stick-man.svg" />
-      </div>
-  </div>
-=======
     <div style="background: transparent !important" class="jumbotron">
       <h1 class="display-4">Welcome to Nanno's Foods!</h1>
       <p class="lead">
@@ -26,7 +18,6 @@ import { useTitle, navigateTo } from "haunted-router";
         >
       </p>
     </div>
->>>>>>> 4bb2510d9568fe4c53fa95aeaa378c9c2585202f:components/Jumbotron.js
     <!-- End Jumbotron -->`;
 }
 customElements.define(
