@@ -37,4 +37,32 @@
 }
 #overboot button.navbar-toggler, #overboot .collapse, #overboot .show {
     outline: none;
+@font-face { font-family: 'Brush Hand New'; src: url('font/BrushHandNew.ttf'); }
+
+.indexBackground {
+    background-image: none;
+  }
+
+#stick-man{
+    width: 25em;
+    height: auto;
+    border: 5px;
+    border-color: black;
+}
+
+body{
+    font-family: Inter, Arial, Helvetica, sans-serif;
+    font-weight: 600;
+}
+
+.logo{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.brush-hand{
+    font-family: 'Brush Hand New', sans-serif;
+    font-size: 3.5em;
 }
