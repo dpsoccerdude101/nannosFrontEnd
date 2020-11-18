@@ -1,0 +1,12 @@
+<<<<<<< HEAD
+=======
+.indexBackground {
+  background-image: url("/images/healthy-food.jpg");
+}
+.pageNotFound {
+  background-size: 100% 100%;
+  background-image: url("/images/404.png");
+  height: 500px;
+  width: 50%;
+}
+>>>>>>> 4bb2510d9568fe4c53fa95aeaa378c9c2585202f
