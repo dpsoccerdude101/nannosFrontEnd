@@ -5,11 +5,12 @@ import { useTitle, navigateTo } from "haunted-router";
   useTitle("Home");
   return html`<!-- Jumbotron -->
     <div style="background: transparent !important" class="jumbotron">
-      <h1 class="display-4">Welcome to Nanno's Foods!</h1>
-      <p class="lead">
-        Nanno's Foods is a family owned grocery store with an abundant selection
-        of foods and other products.
+    <div class="logo">
+      <img id="stick-man" src="img/nannos-stick-man.svg" alt="Nanno's">
+      <p class="brush-hand">
+        Taste the Nanno-ness!
       </p>
+      </div>
       <hr class="my-4" />
       <p>Click the button below to learn more about our store</p>
       <p class="lead">
