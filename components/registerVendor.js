@@ -34,9 +34,9 @@ export function RegisterVendor() {
         }
       }}
     >
-      <div className="container">
+      <div class="form-container" className="container">
         <label htmlFor="VendorCode">
-          <b>Vendor Code</b>
+          Vendor Code
         </label>
         <input
           type="text"
@@ -45,9 +45,9 @@ export function RegisterVendor() {
           title="Please Enter a Numeric Vendor Code"
           name="VendorCode"
           required
-        /><br />
+        />
         <label htmlFor="VendorName">
-          <b>Vendor Name</b>
+          Vendor Name
         </label>
         <input
           type="text"
@@ -57,9 +57,9 @@ export function RegisterVendor() {
           title="Please only use characters a-z A-Z 0-9 and ' '"
           name="VendorName"
           required
-        /><br />
+        />
         <label htmlFor="Address">
-          <b>Address</b>
+          Address
         </label>
         <input
           type="text"
@@ -69,9 +69,9 @@ export function RegisterVendor() {
           maxlength="50"
           name="Address"
           required
-        /><br />
+        />
         <label htmlFor="City">
-          <b>City</b>
+          City
         </label>
         <input
           type="text"
@@ -81,9 +81,9 @@ export function RegisterVendor() {
           maxlength="20"
           name="City"
           required
-        /><br />
+        />
         <label htmlFor="State">
-          <b>State</b>
+          State
         </label>
         <input
           type="text"
@@ -93,9 +93,9 @@ export function RegisterVendor() {
           maxlength="2"
           name="State"
           required
-        /><br />
+        />
         <label htmlFor="Zip">
-          <b>Zip</b>
+          Zip
         </label>
         <input
           type="text"
@@ -105,9 +105,9 @@ export function RegisterVendor() {
           maxlength="5"
           name="Zip"
           required
-        /><br />
+        />
         <label htmlFor="Phone">
-          <b>Phone</b>
+          Phone
         </label>
         <input
           type="text"
@@ -117,9 +117,9 @@ export function RegisterVendor() {
           maxlength="10"
           name="Phone"
           required
-        /><br />
+        />
         <label htmlFor="ContactName">
-          <b>Contact Name</b>
+          Contact Name
         </label>
         <input
           type="text"
@@ -129,9 +129,9 @@ export function RegisterVendor() {
           maxlength="20"
           name="ContactName"
           required
-        /><br />
+        />
         <label htmlFor="Password">
-          <b>Password</b>
+          Password
         </label>
         <input
           type="Password"
@@ -140,9 +140,9 @@ export function RegisterVendor() {
           id="Password"
           name="Password"
           required
-        /><br />
+        />
         <label htmlFor="ConfirmPassword">
-          <b>Confirm Password</b>
+          Confirm Password
         </label>
         <input
           type="Password"
@@ -151,7 +151,7 @@ export function RegisterVendor() {
           id="Confirm_Password"
           name="Confirm_Password"
           required
-        /><br />
+        />
         <button type="submit">Register Vendor</button>
       </div>
     </form>

@@ -44,3 +44,20 @@
     background-image: url("/img/nannos-stick-man.svg"); 
     height: min(50vw, 18rem);
 }
+.form-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+}
+.form-container label{
+    grid-column-start: 1;
+    grid-column-end: 2;
+    text-align: right;
+    margin-bottom: 0;
+    vertical-align: center;
+}
+.form-container input{
+    grid-column-start: 2;
+    grid-column-end: 3;
+    vertical-align: center;
+}
