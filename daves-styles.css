@@ -103,3 +103,6 @@
 #overboot .phone{
     min-width: 12rem;
 }
+#overboot .email{
+    min-width: 15rem;
+}

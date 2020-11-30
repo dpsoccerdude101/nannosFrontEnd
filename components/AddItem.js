@@ -26,99 +26,82 @@ export function AddItem() {
           .catch((error) => alert(error));
       }}
     >
-      <div className="container">
+      <div class="form-container" className="container">
         <label htmlFor="Description">
-          <b>Description</b>
+          Description
         </label>
         <input
           type="text"
           placeholder="Enter a Description"
           name="Description"
-          required
-        />
-        <br />
+          required />
         <label htmlFor="Size">
-          <b>Size</b>
+          Size
         </label>
         <input type="text" placeholder="Enter the Size" name="Size" required />
-        <br />
 
         <label htmlFor="Division">
-          <b>Division</b>
+          Division
         </label>
         <input
           type="text"
           placeholder="Enter the Divison"
           name="Division"
-          required
-        />
-        <br />
+          required />
 
         <label htmlFor="Department">
-          <b>Department</b>
+          Department
         </label>
         <input
           type="text"
           placeholder="Enter the Department"
           name="Department"
-          required
-        />
-        <br />
+          required />
 
         <label htmlFor="Category">
-          <b>Category</b>
+          Category
         </label>
         <input
           type="text"
           placeholder="Enter the Category"
           name="Category"
-          required
-        />
-        <br />
+          required />
 
         <label htmlFor="ItemCost">
-          <b>ItemCost</b>
+          ItemCost
         </label>
         <input
           type="text"
           placeholder="Enter the ItemCost"
           name="ItemCost"
-          required
-        />
-        <br />
+          required />
 
         <label htmlFor="ItemRetail">
-          <b>ItemRetail</b>
+          ItemRetail
         </label>
         <input
           type="text"
           placeholder="Enter the ItemRetail"
           name="ItemRetail"
-          required
-        />
-        <br />
+          required />
 
         <label htmlFor="ImageFileName">
-          <b>ImageFileName</b>
+          ImageFileName
         </label>
         <input
           type="text"
           placeholder="Enter The Name of the Image File"
           name="ImageFileName"
-          required
-        />
-        <br />
+          required />
 
         <label htmlFor="VenID">
-          <b>VendorID</b>
+          VendorID
         </label>
         <input
           type="text"
           placeholder="Enter the VendorId"
           name="VenId"
-          required
-        />
-        <br />
+          required />
 
         <button type="submit">Add</button>
       </div>

@@ -40,7 +40,7 @@ export function ModifyVendor() {
         }
       }}
     >
-      <div class="form-container" className="container"><br />
+      <div class="form-container" className="container">
         <div class="form-row">
           <div class="label-and-input">
             <label htmlFor="VendorID">
@@ -176,7 +176,9 @@ export function ModifyVendor() {
                 required />
             </div>
           </div>
-        <button type="submit">Register Vendor</button>
+        <div class="form-row">
+          <button type="submit">Register Vendor</button>
+        </div>
       </div>
     </form>
   `;

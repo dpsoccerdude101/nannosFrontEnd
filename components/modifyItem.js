@@ -28,9 +28,9 @@ export function ModifyItem() {
         
       }}
     >
-      <div className="container"><br />
+      <div class="form-container" className="container">
         <label htmlFor="ItemId">
-            <b>Item ID</b>
+            Item ID
         </label>
         <input
           type="text"
@@ -38,9 +38,9 @@ export function ModifyItem() {
           value="${JSON.parse(sessionStorage.items).ItemId}"
           required
           readonly
-        /></br>
+        />
         <label htmlFor="Description">
-          <b>Description</b>
+          Description
         </label>
         <input
           type="text"
@@ -49,9 +49,9 @@ export function ModifyItem() {
           name="Description"
           required
           value="${JSON.parse(sessionStorage.items).Description}"
-        /><br />
+        />
         <label htmlFor="Size">
-          <b>Size</b>
+          Size
         </label>
         <input
           type="text"
@@ -60,9 +60,9 @@ export function ModifyItem() {
           name="Size"
           required
           value="${JSON.parse(sessionStorage.items).Size}"
-        /><br />
+        />
         <label htmlFor="Division">
-          <b>Division</b>
+          Division
         </label>
         <input
           type="text"
@@ -71,9 +71,9 @@ export function ModifyItem() {
           name="Division"
           required
           value="${JSON.parse(sessionStorage.items).Division}"
-        /><br />
+        />
         <label htmlFor="Department">
-          <b>Department</b>
+          Department
         </label>
         <input
           type="text"
@@ -82,9 +82,9 @@ export function ModifyItem() {
           name="Department"
           required
           value="${JSON.parse(sessionStorage.items).Department}"
-        /><br />
+        />
         <label htmlFor="Category">
-          <b>Category</b>
+          Category
         </label>
         <input
           type="text"
@@ -93,9 +93,9 @@ export function ModifyItem() {
           name="Category"
           required
           value="${JSON.parse(sessionStorage.items).Category}"
-        /><br />
+        />
         <label htmlFor="ItemCost">
-          <b>Item Cost</b>
+          Item Cost
         </label>
         <input
           type="text"
@@ -104,9 +104,9 @@ export function ModifyItem() {
           name="ItemCost"
           required
           value="${JSON.parse(sessionStorage.items).ItemCost}"
-        /><br />
+        />
         <label htmlFor="ItemRetail">
-          <b>Item Retail</b>
+          Item Retail
         </label>
         <input
           type="text"
@@ -115,9 +115,9 @@ export function ModifyItem() {
           name="ItemRetail"
           required
           value="${JSON.parse(sessionStorage.items).ItemRetail}"
-        /><br />
+        />
         <label htmlFor="ImageFileName">
-          <b>Image File Name</b>
+          Image File Name
         </label>
         <input
           type="text"
@@ -126,7 +126,7 @@ export function ModifyItem() {
           name="ImageFileName"
           required
           value="${JSON.parse(sessionStorage.items).ImageFileName}"
-        /><br />
+        />
         </label>
         <button type="submit">Modify Store</button>
       </div>
