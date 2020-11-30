@@ -44,20 +44,62 @@
     background-image: url("/img/nannos-stick-man.svg"); 
     height: min(50vw, 18rem);
 }
-.form-container{
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: auto;
+#overboot .form-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    margin-left: 1rem;
+    align-content: flex-start;
+    max-width: 40rem;
 }
-.form-container label{
-    grid-column-start: 1;
-    grid-column-end: 2;
-    text-align: right;
+
+#overboot .form-row{
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+}
+#overboot .label-and-input{
+    display: column;
+    flex-direction: row;
+    flex-basis: 0;
+    flex-grow: 1;
+}
+
+#overboot .form-container label{
+    text-align: left;
+    font-size: 0.7rem;
     margin-bottom: 0;
-    vertical-align: center;
+    width: 100%
 }
-.form-container input{
-    grid-column-start: 2;
-    grid-column-end: 3;
-    vertical-align: center;
+
+#overboot .form-container label, #overboot .form-container input, #overboot .form-container select{
+    width: 100%;
+}
+
+#overboot .form-container select{
+    height: 1.9rem;
+}
+
+#overboot .code{
+    min-width: 5rem;
+}
+
+#overboot .name{
+    min-width: 10rem;
+}
+
+#overboot .city{
+    min-width: 10rem;
+}
+
+#overboot .state{
+    min-width: 3rem;
+}
+
+#overboot .zip{
+    min-width: 5rem;
+}
+
+#overboot .phone{
+    min-width: 12rem;
 }
