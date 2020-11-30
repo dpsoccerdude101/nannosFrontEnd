@@ -26,7 +26,7 @@ export function AddMember() {
           .catch((error) => alert(error));
       }}
     >
-      <div className="container">
+      <div class="form-container" className="container">
         <label htmlFor="Name">
           <b>Name</b>
         </label>
