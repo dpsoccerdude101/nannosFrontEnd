@@ -21,5 +21,7 @@ const loggedInRoutes = {
   "/modifyItem": () => html`<modify-item></modify-item>`,
   "/lookupStore": () => html`<lookup-store></lookup-store>`,
   "/modifyStore": () => html`<modify-store></modify-store>`,
+  "/lookUpAllItems": () => html`<lookup-all-items></lookup-all-items>`,
+  "/viewAllItems": () => html`<view-all-items></view-all-items>`,
 };
 export { mainRoutes, loggedInRoutes };
