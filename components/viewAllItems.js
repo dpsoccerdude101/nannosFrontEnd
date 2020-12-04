@@ -13,14 +13,6 @@ export function ViewAllItems() {
     itemTemplates.push(html`</tr>`)
   )});
   return html`
-    <style>
-      table, th, td {
-        border: 1px solid black;
-      }
-      table {
-        width: 100%;
-      }
-    </style>
     <form
       @submit=${(e) => {
         e.preventDefault();
@@ -28,7 +20,7 @@ export function ViewAllItems() {
       }}
     >
       <div className="container"><br />
-        <table>
+        <table class="table table-dark">
           <tr>
             <th>ItemId</th>
             <th>Description</th>
