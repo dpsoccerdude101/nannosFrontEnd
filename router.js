@@ -3,6 +3,7 @@ import { html } from "haunted";
 const mainRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
   "/employeeLogin": () => html`<employee-login></employee-login>`,
+  "/vendorLogin": () => html`<vendor-login></vendor-login>`,
 };
 const loggedInRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
@@ -24,4 +25,9 @@ const loggedInRoutes = {
   "/lookUpAllItems": () => html`<lookup-all-items></lookup-all-items>`,
   "/viewAllItems": () => html`<view-all-items></view-all-items>`,
 };
-export { mainRoutes, loggedInRoutes };
+
+const vendorLoggedInRoutes = {
+  "/": () => html`<jumbo-tron></jumbo-tron>`,
+  "/vendorLogin": () => html`<vendor-logged-in></vendor-logged-in>`,
+};
+export { mainRoutes, loggedInRoutes, vendorLoggedInRoutes };
