@@ -5,7 +5,7 @@ The repository shared by our group to practice the stuff applied in class. (And 
 ## This repository requires Node.JS v10+ for local deployment
 ---
 ### To run Deploy Server:
-    1. Run 'npm run i'
+    1. Run 'npm i'
     2. Run 'npm run dev'
     3. Open http://localhost:1234
 
