@@ -8,6 +8,7 @@ const mainRoutes = {
 const loggedInRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
   "/employeeLogin": () => html`<employee-logged-in></employee-logged-in>`,
+  "/vendorLogin": () => html`<employee-logged-in></employee-logged-in>`,
   "/registerVendor": () => html`<register-vendor></register-vendor>`,
   "/deleteVendor": () => html`<delete-vendor></delete-vendor>`,
   "/AddStore": () => html`<add-store></add-store>`,
@@ -29,5 +30,6 @@ const loggedInRoutes = {
 const vendorLoggedInRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
   "/vendorLogin": () => html`<vendor-logged-in></vendor-logged-in>`,
+  "/employeeLogin": () => html`<vendor-logged-in></vendor-logged-in>`,
 };
 export { mainRoutes, loggedInRoutes, vendorLoggedInRoutes };

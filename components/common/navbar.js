@@ -35,7 +35,12 @@ export function Navbar() {
               is="router-link"
               class="nav-link"
               href="/"
-              @click="${() => sessionStorage.removeItem("userCredentials").removeItem("vendorCredentials")}"
+              @click="${() => 
+                {
+                sessionStorage.removeItem("userCredentials");
+                sessionStorage.removeItem("vendorCredentials");
+                }
+              }"
               >Logout</a>
           </li>
         </ul>

@@ -4,7 +4,7 @@ import { useTitle} from "haunted-router";
 export function EmployeeLoggedIn() {
   useTitle("Employee Logged In");
   return html`
-    <div>You are already logged in.</div>
+    <div>You are logged in as an employee. To log in as a vendor, please click Logout.</div>
   `;
 }
 customElements.define(
