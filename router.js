@@ -23,5 +23,7 @@ const loggedInRoutes = {
   "/modifyStore": () => html`<modify-store></modify-store>`,
   "/lookUpAllItems": () => html`<lookup-all-items></lookup-all-items>`,
   "/viewAllItems": () => html`<view-all-items></view-all-items>`,
+  "/ReportItemsReturned": () => html`<report-items-returned></report-items-returned>`,
+  "/viewItemsReturned": () => html`<view-items-returned></view-items-returned`,
 };
 export { mainRoutes, loggedInRoutes };

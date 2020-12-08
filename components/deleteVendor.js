@@ -16,7 +16,7 @@ export function DeleteVendor() {
           .then((obj) => {
             if (obj.result == "success") {
               console.dir(obj);
-              navigateTo("/employeeMenu");
+              navigateTo("/");
             } else {
               e.target.reset();
               alert("Deletion Failed.");
