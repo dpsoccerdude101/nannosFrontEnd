@@ -24,6 +24,8 @@ const loggedInRoutes = {
   "/lookUpAllItems": () => html`<lookup-all-items></lookup-all-items>`,
   "/viewAllItems": () => html`<view-all-items></view-all-items>`,
   "/ReportItemsReturned": () => html`<report-items-returned></report-items-returned>`,
-  "/viewItemsReturned": () => html`<view-items-returned></view-items-returned`,
+  "/viewItemsReturned": () => html`<view-items-returned></view-items-returned>`,
+  "/viewAllPurchasesMadeByCustomer": () => html`<view-all-purchases></view-all-purchases>`,
+  "/ReportPurchasesMadeByCustomer": () => html`<report-purchases></report-purchases>`,
 };
 export { mainRoutes, loggedInRoutes };
