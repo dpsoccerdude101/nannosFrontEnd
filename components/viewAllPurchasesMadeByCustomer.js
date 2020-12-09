@@ -4,6 +4,7 @@ import { submitForm } from "../functions/functions.js";
 
 export function ViewAllPurchases() {
   useTitle("View All Purchases");
+  try {
   const itemTemplates = [];
   JSON.parse(sessionStorage.items).map((item) => {
     itemTemplates.push(html`<tr>`);
@@ -31,7 +32,11 @@ export function ViewAllPurchases() {
         <button type="submit">Done</button>
       </div>
     </form>
-  `;
+  `;} catch {
+      return html`
+      <p>No Values Matched Your search</p>
+    `; 
+  }
 }
 customElements.define(
   "view-all-purchases",
