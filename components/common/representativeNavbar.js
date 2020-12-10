@@ -78,7 +78,7 @@ export function RepresentativeNavbar() {
                 Manage Order
               </button>
               <div class="dropdown-menu">
-                <a is="router-link" class="dropdown-item" href="/">New Order</a>
+                <a is="router-link" class="dropdown-item" href="/createOrder">New Order</a>
                 <a is="router-link" class="dropdown-item" href="/">Add to Existing</a>
               </div>
               <div class="btn-group">
