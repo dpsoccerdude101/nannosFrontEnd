@@ -6,7 +6,7 @@ const mainRoutes = {
 };
 const loggedInRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
-  "/employeeLogin": () => html`<employee-logged-in></employee-logged-in>`,
+  "/employeeLogin": () => html`<employee-login></employee-login>`,
   "/registerVendor": () => html`<register-vendor></register-vendor>`,
   "/deleteVendor": () => html`<delete-vendor></delete-vendor>`,
   "/AddStore": () => html`<add-store></add-store>`,

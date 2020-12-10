@@ -1,6 +1,5 @@
 import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
-//import "../images/404.png"
 
 export function FourZeroFour() {
   useTitle("Not Found");

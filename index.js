@@ -17,16 +17,17 @@ import "./components/FourZeroFour.js";
 import "./components/common/representativeNavbar.js";
 
 export function App() {
-  const routeResult = sessionStorage.userCredentials
-    ? useRoutes(loggedInRoutes, html`<four-zero-four></four-zero-four>`)
-    : useRoutes(mainRoutes, html`<four-zero-four></four-zero-four>`);
-
+  const loggedIn = sessionStorage.userCredentials;
+  const errorPage = html`<four-zero-four></four-zero-four>`;
+  const routeResult = loggedIn
+    ? useRoutes(loggedInRoutes, errorPage)
+    : useRoutes(mainRoutes, errorPage);
+  const subNavbar = loggedIn
+    ? html`<representative-navbar></representative-navbar>`
+    : html``;
   return html`
     <nav-bar></nav-bar>
-    ${sessionStorage.userCredentials
-      ? html`<representative-navbar></representative-navbar>`
-      : html``}
-    ${routeResult}
+    ${subNavbar} ${routeResult}
   `;
 }
 customElements.define("my-app", component(App, { useShadowDOM: false }));
