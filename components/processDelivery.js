@@ -28,7 +28,7 @@ export function ProcessDelivery() {
     >
       <div className="container">
         <label>OrderID: </label><br />
-        <input type="number" name="OrderId" id="OrderId" @change=${(e) => e.target.value<1? e.target.value = 1 : ''} min="1" required/>
+        <input type="number" name="OrderId" id="OrderId" @change=${(e) => e.target.value<1? e.target.value = '' : ''} min="1" required/>
         <br />
         <button type="submit">Process Delivery</button>
       </div>
