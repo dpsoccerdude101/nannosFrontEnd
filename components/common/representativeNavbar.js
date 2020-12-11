@@ -48,7 +48,7 @@ export function RepresentativeNavbar() {
             <a is="router-link" class="dropdown-item" href="/AddItem">Add New Item</a>
             <a is="router-link" class="dropdown-item" href="/lookupItem">Modify Existing</a>
             <a is="router-link" class="dropdown-item" href="/deleteItem">Remove Existing</a>
-            <a is="router-link" class="dropdown-item" href="/">Process Delivery</a>
+            <a is="router-link" class="dropdown-item" href="/processDelivery">Process Delivery</a>
             <a is="router-link" class="dropdown-item" href="/">Process Return</a>
           </div>
           <div class="btn-group">
