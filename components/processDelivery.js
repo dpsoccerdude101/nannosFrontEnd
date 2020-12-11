@@ -13,12 +13,15 @@ export function ProcessDelivery() {
         );
         if (response.ok) {
           const responseJSON = await response.json();
+          console.dir(responseJSON);
           const message = JSON.parse(responseJSON);
           if (message.result == "success") navigateTo("/");
-          else
+          else {
+            e.target.reset();
             alert(
               "Failed to process delivery, either the order has already been completed or the order ID entered does not exist"
             );
+          }
         } else alert("Error Code: " + response.status);
       }}
     >
