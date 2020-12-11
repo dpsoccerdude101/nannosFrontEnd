@@ -1,7 +1,5 @@
-/* import { html } from "https://unpkg.com/lit-html/lit-html.js";
-import { virtual } from "https://unpkg.com/haunted/haunted.js"; */
 import { html, virtual, useState } from "haunted";
-export const OrderItem = virtual((props) => {
+const OrderItem = virtual((props) => {
   const [modify, setModify] = useState(false);
   return html`<li>
     ${props.item.Description} x
@@ -48,3 +46,4 @@ export const OrderItem = virtual((props) => {
           </button> `}
   </li>`;
 });
+export default OrderItem;

@@ -1,4 +1,5 @@
 import "./components/*.js";
+import "./components/*/*.js";
 import { html } from "haunted";
 const mainRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
