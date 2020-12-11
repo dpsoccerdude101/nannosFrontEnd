@@ -29,5 +29,6 @@ const loggedInRoutes = {
   "/viewAllPurchasesMadeByCustomer": () => html`<view-all-purchases></view-all-purchases>`,
   "/ReportPurchasesMadeByCustomer": () => html`<report-purchases></report-purchases>`,
   "/createOrder": () => html`<create-order></create-order>`,
+  "/processDelivery": () => html`<process-delivery></process-delivery>`
 };
 export { mainRoutes, loggedInRoutes };
