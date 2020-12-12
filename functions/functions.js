@@ -40,7 +40,11 @@ export const login = () => {
     loggedIn: "true",
   });
 };
-
+export const logout = () => {
+  sessionStorage.userCredentials = JSON.stringify({
+    loggedIn: "false",
+  });
+};
 
 export const deleteItem = (setOrder, order, index) => {
   setOrder(() => {
