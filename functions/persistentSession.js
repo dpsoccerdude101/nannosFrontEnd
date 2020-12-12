@@ -1,7 +1,9 @@
 // transfers sessionStorage from one tab to another
 //Instantly Invoked Function (Singleton)
 (() => {
+  console.log("ran");
   const sessionStorageTransfer = (event = window.event) => {
+    console.dir(event)
     if (!event.newValue) return; // do nothing if no value to work with
     if (event.key == "getSessionStorage") {
       // another tab asked for the sessionStorage -> send it

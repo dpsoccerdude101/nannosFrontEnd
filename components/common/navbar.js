@@ -35,7 +35,10 @@ export function Navbar() {
               is="router-link"
               class="nav-link"
               href="/"
-              @click="${() => sessionStorage.removeItem("userCredentials")}"
+              @click="${() =>
+                (sessionStorage.userCredentials = JSON.stringify({
+                  loggedIn: "false",
+                }))}"
               >Logout</a
             >
           </li>
