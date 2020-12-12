@@ -93,11 +93,10 @@ export function RepresentativeNavbar() {
                 </button>
                 <div class="dropdown-menu">
                   <a is="router-link" class="dropdown-item" href="/lookUpAllItems">All Inventory Items</a>
+                  <a is="router-link" class="dropdown-item" href="/lookUpAllItemsThreshold">All Inventory Items Under Threshold</a>
                   <a is="router-link" class="dropdown-item" href="/">All Low Items </a>
                   <a is="router-link" class="dropdown-item" href="/">All Returns </a>
-                  <a is="router-link" class="dropdown-item" href="/"
-                    >Completed Customer Purchase
-                  </a>
+                  <a is="router-link" class="dropdown-item" href="/">Completed Customer Purchase </a>
                   <a is="router-link" class="dropdown-item" href="/">Paced Orders</a>
                 </div>
               </div>

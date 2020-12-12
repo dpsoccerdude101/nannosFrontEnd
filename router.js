@@ -23,5 +23,7 @@ const loggedInRoutes = {
   "/modifyStore": () => html`<modify-store></modify-store>`,
   "/lookUpAllItems": () => html`<lookup-all-items></lookup-all-items>`,
   "/viewAllItems": () => html`<view-all-items></view-all-items>`,
+  "/viewAllItemsThreshold": () => html`<lookup-all-items-threshold></lookup-all-items-threshold>`
 };
 export { mainRoutes, loggedInRoutes };
+
