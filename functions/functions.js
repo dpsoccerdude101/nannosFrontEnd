@@ -35,17 +35,30 @@ export const checkLogin = (storage) => {
   return JSON.parse(storage.userCredentials).loggedIn == "true";
 };
 
+/**
+ * @description Logs Employee In
+ */
 export const login = () => {
   sessionStorage.userCredentials = JSON.stringify({
     loggedIn: "true",
   });
 };
+
+/**
+ * @description Logs Employee Out
+ */
 export const logout = () => {
   sessionStorage.userCredentials = JSON.stringify({
     loggedIn: "false",
   });
 };
 
+/**
+ *
+ * @param {StateUpdater<any[]>} setOrder
+ * @param {Array} order
+ * @param {Number} index
+ */
 export const deleteItem = (setOrder, order, index) => {
   setOrder(() => {
     let tempOrder = [...order];
@@ -54,6 +67,14 @@ export const deleteItem = (setOrder, order, index) => {
   });
 };
 
+/**
+ *
+ * @param {Number} value
+ * @param {StateUpdater<any[]>} setOrder
+ * @param {Array} order
+ * @param {Number} index
+ * @param {Object} item
+ */
 export const modQuantity = (value, setOrder, order, index, item) => {
   setOrder(() => {
     let tempOrder = [...order];
@@ -67,6 +88,7 @@ export const modQuantity = (value, setOrder, order, index, item) => {
 
 /**
  * @returns {HTMLTemplateElement}
+ * @description 404 Page
  */
 export const errorPage = html`<div class="pageNotFound"></div>`;
 export const fetchOrderStores = async () => {
@@ -124,10 +146,11 @@ export const submitOrder = async (order) => {
   } else alert("Error Code: " + response.status);
 };
 
-//This function makes the asynchronous call to submit the function.
 /**
  *
  * @param {Event} e
+ * @param {URL} apiEndpoint
+ * @description This function makes the asynchronous call to submit the function.
  */
 export const submitForm = (e, apiEndpoint) => {
   e.preventDefault();
