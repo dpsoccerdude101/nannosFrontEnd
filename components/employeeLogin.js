@@ -5,12 +5,12 @@ import { submitForm, checkLogin, login } from "../functions/functions.js";
 export function EmployeeLogin() {
   useEffect(
     () =>
-      checkLogin(sessionStorage)
+      checkLogin()
         ? useTitle("Employee Logged In")
         : useTitle("Employee Login"),
     [sessionStorage.userCredentials, []]
   );
-  return html`${checkLogin(sessionStorage)
+  return html`${checkLogin()
     ? html` <div>You are already logged in.</div> `
     : html`<form
         @submit=${(e) => {

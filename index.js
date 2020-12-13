@@ -18,8 +18,8 @@ import "./components/common/*.js";
 import { checkLogin, errorPage } from "./functions/functions.js";
 
 export function App() {
-  const [loggedIn, setLoggedIn] = useState(checkLogin(sessionStorage));
-  useEffect(() => setLoggedIn(checkLogin(sessionStorage)), [
+  const [loggedIn, setLoggedIn] = useState(checkLogin());
+  useEffect(() => setLoggedIn(checkLogin()), [
     sessionStorage.userCredentials,
   ]);
   const routeResult = loggedIn
