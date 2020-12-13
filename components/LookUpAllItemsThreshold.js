@@ -3,7 +3,7 @@ import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
 export function LookupAllItems() {
-  useTitle("Lookup All Items");
+  useTitle("Lookup All Items Below Threshold");
   return html`
     <form
       @submit=${(e) => {
@@ -21,7 +21,7 @@ export function LookupAllItems() {
                 sessionStorage.items = JSON.stringify(obj);
                 console.dir(sessionStorage.items);
               //alert(JSON.stringify(obj))
-              navigateTo("/viewAllItems");
+              navigateTo("/viewAllItemsThreshold");
             } else {
               //Reset all input element's values.
               e.target.reset();
@@ -32,7 +32,7 @@ export function LookupAllItems() {
       }}
     >
       <div className="container">
-        <button type="submit">Lookup All Items</button>
+        <button type="submit">Lookup All Items Below Threshold</button>
       </div>
     </form>
   `;
