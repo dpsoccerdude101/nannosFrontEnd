@@ -25,14 +25,25 @@ export function LookupAllItemsThreshold() {
             } else {
               //Reset all input element's values.
               e.target.reset();
-              alert("No Item was found.");
+              alert("No Items were found within that threshold.");
             }
           })
           .catch((error) => alert(error));
       }}
     >
       <div className="container">
-        <button type="submit">Lookup All Items Below Threshold</button>
+      <label htmlFor="QuantityInStock">
+          <b>Threshold for Items</b>
+        </label>
+        <input
+          type="text"
+          placeholder="Enter Item Threshold"
+          maxlength="1000"
+          pattern="[0-1000]{1,1000}"
+          name="QuantityInStock"
+          required
+        /><br />
+        <button type="submit">Lookup Items</button>
       </div>
     </form>
   `;
