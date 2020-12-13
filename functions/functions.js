@@ -31,8 +31,11 @@ export const getAllMultipleSelectInputs = (e) => {
  * @param {Storage} storage
  * @returns {boolean}
  */
-export const checkLogin = (storage) => {
-  return JSON.parse(storage.userCredentials).loggedIn == "true";
+export const checkLogin = () => {
+  if (sessionStorage.userCredentials) {
+    return JSON.parse(sessionStorage.userCredentials).loggedIn == "true";
+  }
+  return false;
 };
 
 /**
