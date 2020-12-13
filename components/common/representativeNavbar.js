@@ -131,7 +131,9 @@ const RepresentativeNavbar = virtual(() => {
                     href="/lookUpAllItems"
                     >All Inventory Items</a
                   >
-                  <a is="router-link" class="dropdown-item" href="/"
+                  <a is="router-link" 
+                    class="dropdown-item" 
+                    href="/LookUpAllItemsThreshold"
                     >All Low Items
                   </a>
                   <a
