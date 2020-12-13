@@ -23,6 +23,7 @@ const loggedInRoutes = {
   "/lookupStore": () => html`<lookup-store></lookup-store>`,
   "/modifyStore": () => html`<modify-store></modify-store>`,
   "/lookUpAllItems": () => html`<lookup-all-items></lookup-all-items>`,
+  "/lookUpAllItemsBelowThreshold": () => html`<lookup-all-items-below-threshold></lookup-all-items-below-threshold>`,
   "/viewAllItems": () => html`<view-all-items></view-all-items>`,
   "/ReportItemsReturned": () => html`<report-items-returned></report-items-returned>`,
   "/viewItemsReturned": () => html`<view-items-returned></view-items-returned>`,

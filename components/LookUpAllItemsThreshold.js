@@ -2,7 +2,7 @@ import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
-export function LookupAllItems() {
+export function LookupAllItemsThreshold() {
   useTitle("Lookup All Items Below Threshold");
   return html`
     <form
