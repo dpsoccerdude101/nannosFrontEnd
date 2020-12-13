@@ -9,7 +9,7 @@ export function LookupAllItemsThreshold() {
       @submit=${(e) => {
         submitForm(
           e,
-          "https://www.nannosfoods.codes/LookupAllItemsThresholdSteveJSONResponse.php"
+          "https://www.nannosfoods.codes/LookUpAllItemsThresholdSteveJSONResponse.php"
         )
           .then((res) => res.json())
           .then((resp) => "" + JSON.stringify(resp) + "")
@@ -36,10 +36,10 @@ export function LookupAllItemsThreshold() {
           <b>Threshold for Items</b>
         </label>
         <input
-          type="text"
+          type="number"
           placeholder="Enter Item Threshold"
+          minlength="1"
           maxlength="1000"
-          pattern="[0-1000]{1,1000}"
           name="QuantityInStock"
           required
         /><br />
