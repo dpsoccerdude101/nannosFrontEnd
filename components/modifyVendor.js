@@ -30,7 +30,7 @@ export function ModifyVendor() {
               if (obj.result == "success") {
                 console.dir(obj);
                 sessionStorage.removeItem("vendors");
-                navigateTo("/employeeMenu");
+                navigateTo("/");
               } else {
                 //Reset all input element's values.
                 alert("Update Failed.");

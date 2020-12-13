@@ -1,4 +1,5 @@
 import "./components/*.js";
+import "./components/*/*.js";
 import { html } from "haunted";
 const mainRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
@@ -6,7 +7,7 @@ const mainRoutes = {
 };
 const loggedInRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
-  "/employeeLogin": () => html`<employee-logged-in></employee-logged-in>`,
+  "/employeeLogin": () => html`<employee-login></employee-login>`,
   "/registerVendor": () => html`<register-vendor></register-vendor>`,
   "/deleteVendor": () => html`<delete-vendor></delete-vendor>`,
   "/AddStore": () => html`<add-store></add-store>`,
@@ -23,7 +24,16 @@ const loggedInRoutes = {
   "/modifyStore": () => html`<modify-store></modify-store>`,
   "/lookUpAllItems": () => html`<lookup-all-items></lookup-all-items>`,
   "/viewAllItems": () => html`<view-all-items></view-all-items>`,
+<<<<<<< HEAD
   "/viewAllItemsThreshold": () => html`<lookup-all-items-threshold></lookup-all-items-threshold>`
+=======
+  "/ReportItemsReturned": () => html`<report-items-returned></report-items-returned>`,
+  "/viewItemsReturned": () => html`<view-items-returned></view-items-returned>`,
+  "/viewAllPurchasesMadeByCustomer": () => html`<view-all-purchases></view-all-purchases>`,
+  "/ReportPurchasesMadeByCustomer": () => html`<report-purchases></report-purchases>`,
+  "/createOrder": () => html`<create-order></create-order>`,
+  "/processDelivery": () => html`<process-delivery></process-delivery>`
+>>>>>>> 12f08fd84ddfb0e1c787b0b3b8f5cf36fc0bc591
 };
 export { mainRoutes, loggedInRoutes };
 

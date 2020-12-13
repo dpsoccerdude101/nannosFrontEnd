@@ -2,9 +2,10 @@ import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
-export function ViewAllItems() {
-  useTitle("View All Items");
+export function ViewItemsReturned() {
+  useTitle("View All Items Returned");
   const itemTemplates = [];
+  try {
   JSON.parse(sessionStorage.items).map((item) => {
     itemTemplates.push(html`<tr>`);
     Object.values(item).forEach((val) => {
@@ -22,18 +23,10 @@ export function ViewAllItems() {
       <div className="container"><br />
         <table class="table table-dark">
           <tr>
+            <th>StoreName</th>
             <th>ItemId</th>
-            <th>Description</th>
-            <th>Size</th>
-            <th>Division</th>
-            <th>Department</th>
-            <th>Category</th>
-            <th>ItemCost</th>
-            <th>ItemRetail</th>
-            <th>ImageFilename</th>
-            <th>VendorId</th>
-            <th>StoreId</th>
-            <th>QuantityInStock</th>
+            <th>DateTimeOfReturn</th>
+            <th>QuantityReturned</th>
           </tr>
           ${itemTemplates}
         </table>
@@ -41,8 +34,13 @@ export function ViewAllItems() {
       </div>
     </form>
   `;
-}
+    } catch {
+        return html`
+        <p>No Values Matched Your search</p>
+      `; 
+    }
+   }
 customElements.define(
-  "view-all-items",
-  component(ViewAllItems, { useShadowDOM: false })
+  "view-items-returned",
+  component(ViewItemsReturned, { useShadowDOM: false })
 );

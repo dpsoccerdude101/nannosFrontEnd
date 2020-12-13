@@ -16,7 +16,6 @@ export function LookupAllItems() {
           .then((resp) => JSON.parse(resp))
           .then((obj) => {
             if (obj){
-                var count = 0;
                 console.log(obj);
                 sessionStorage.items = JSON.stringify(obj);
                 console.dir(sessionStorage.items);

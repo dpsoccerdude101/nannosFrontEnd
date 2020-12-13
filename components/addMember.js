@@ -16,7 +16,7 @@ export function AddMember() {
           .then((res) => JSON.parse(res))
           .then((obj) => {
             if (obj.result == "success") {
-              navigateTo("/employeeMenu");
+              navigateTo("/");
             } else {
               //Reset all input element's values.
               e.target.reset();

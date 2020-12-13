@@ -15,7 +15,7 @@ export function AddItem() {
           .then((res) => JSON.parse(res))
           .then((obj) => {
             if (obj.result == "success") {
-              navigateTo("/employeeMenu");
+              navigateTo("/");
               //navigateTo("/employeeMenu");
             } else {
               //Reset all input element's values.

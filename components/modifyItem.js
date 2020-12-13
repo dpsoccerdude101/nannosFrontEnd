@@ -8,24 +8,23 @@ export function ModifyItem() {
     <form
       @submit=${(e) => {
         e.preventDefault();
-          submitForm(
-            e,
-            "https://www.nannosfoods.codes/itemUpdateJSONResponseCollin.php"
-          )
-            .then((res) => res.json())
-            .then((res) => JSON.parse(res))
-            .then((obj) => {
-              if (obj.result == "success") {
-                console.dir(obj);
-                sessionStorage.removeItem("items");
-                navigateTo("/employeeMenu");
-              } else {
-                //Reset all input element's values.
-                alert("Update Failed.");
-              }
-            })
-            .catch((error) => alert(error));
-        
+        submitForm(
+          e,
+          "https://www.nannosfoods.codes/itemUpdateJSONResponseCollin.php"
+        )
+          .then((res) => res.json())
+          .then((res) => JSON.parse(res))
+          .then((obj) => {
+            if (obj.result == "success") {
+              console.dir(obj);
+              sessionStorage.removeItem("items");
+              navigateTo("/");
+            } else {
+              //Reset all input element's values.
+              alert("Update Failed.");
+            }
+          })
+          .catch((error) => alert(error));
       }}
     >
       <div className="container"><br />
@@ -38,7 +37,7 @@ export function ModifyItem() {
           value="${JSON.parse(sessionStorage.items).ItemId}"
           required
           readonly
-        /></br>
+        /><br>
         <label htmlFor="Description">
           <b>Description</b>
         </label>

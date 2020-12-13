@@ -16,7 +16,7 @@ export function DeleteMember() {
           .then((obj) => {
             if (obj.result == "success") {
               console.dir(obj);
-              navigateTo("/employeeMenu");
+              navigateTo("/");
             } else {
               //Reset all input element's values.
               e.target.reset();
