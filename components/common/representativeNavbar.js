@@ -125,14 +125,12 @@ const RepresentativeNavbar = virtual(() => {
                   Look Up
                 </button>
                 <div class="dropdown-menu">
-<<<<<<< HEAD
                   <a is="router-link" class="dropdown-item" href="/lookUpAllItems">All Inventory Items</a>
                   <a is="router-link" class="dropdown-item" href="/lookUpAllItemsThreshold">All Inventory Items Under Threshold</a>
                   <a is="router-link" class="dropdown-item" href="/">All Low Items </a>
                   <a is="router-link" class="dropdown-item" href="/">All Returns </a>
                   <a is="router-link" class="dropdown-item" href="/">Completed Customer Purchase </a>
                   <a is="router-link" class="dropdown-item" href="/">Paced Orders</a>
-=======
                   <a
                     is="router-link"
                     class="dropdown-item"
@@ -158,7 +156,6 @@ const RepresentativeNavbar = virtual(() => {
                   <a is="router-link" class="dropdown-item" href="/"
                     >Placed Orders</a
                   >
->>>>>>> 12f08fd84ddfb0e1c787b0b3b8f5cf36fc0bc591
                 </div>
               </div>
             </div>
