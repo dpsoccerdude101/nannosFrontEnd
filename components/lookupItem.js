@@ -6,26 +6,22 @@ export function LookupItem() {
   useTitle("Lookup Item");
   return html`
     <form
-      @submit=${(e) => {
-        submitForm(
+      @submit=${async (e) => {
+        const response = await submitForm(
           e,
           "https://www.nannosfoods.codes/itemModifyJSONResponseCollin.php"
-        )
-          .then((res) => res.json())
-          .then((resp) => "" + JSON.stringify(resp) + "")
-          .then((resp) => JSON.parse(resp))
-          .then((obj) => {
-            if (obj.hasOwnProperty("Description")){
-              sessionStorage.items = JSON.stringify(obj);
-              //alert(JSON.stringify(obj))
-              navigateTo("/modifyItem");
-            } else {
-              //Reset all input element's values.
-              e.target.reset();
-              alert("No Item was found.");
-            }
-          })
-          .catch((error) => alert(error));
+        );
+        if (response.ok) {
+          const responseJSON = await response.json();
+          const item = JSON.parse("" + JSON.stringify(responseJSON) + "");
+          if (item.hasOwnProperty("Description")) {
+            navigateTo("/modifyItem", item);
+          } else {
+            //Reset all input element's values.
+            e.target.reset();
+            alert("No Item was found.");
+          }
+        } else alert("Error Code: " + response.status);
       }}
     >
       <div className="container">

@@ -6,28 +6,22 @@ export function LookupAllItems() {
   useTitle("Lookup All Items");
   return html`
     <form
-      @submit=${(e) => {
-        submitForm(
+      @submit=${async (e) => {
+        const response = await submitForm(
           e,
           "https://www.nannosfoods.codes/LookupAllItemsMikeJSONResponse.php"
-        )
-          .then((res) => res.json())
-          .then((resp) => "" + JSON.stringify(resp) + "")
-          .then((resp) => JSON.parse(resp))
-          .then((obj) => {
-            if (obj){
-                console.log(obj);
-                sessionStorage.items = JSON.stringify(obj);
-                console.dir(sessionStorage.items);
-              //alert(JSON.stringify(obj))
-              navigateTo("/viewAllItems");
-            } else {
-              //Reset all input element's values.
-              e.target.reset();
-              alert("No Item was found.");
-            }
-          })
-          .catch((error) => alert(error));
+        );
+        if (response.ok) {
+          const responseJSON = await response.json();
+          const items = JSON.parse("" + JSON.stringify(responseJSON) + "");
+          if (items) {
+            navigateTo("/viewAllItems", items);
+          } else {
+            //Reset all input element's values.
+            e.target.reset();
+            alert("No Item was found.");
+          }
+        } else alert("Error Code: " + response.status);
       }}
     >
       <div className="container">
