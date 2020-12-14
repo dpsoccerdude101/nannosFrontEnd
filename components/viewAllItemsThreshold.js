@@ -1,39 +1,32 @@
-import { html, component } from "haunted";
+import { html, useEffect, component, useState } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
-import { submitForm } from "../functions/functions.js";
 
-export function ViewAllItemsThreshold() {
-  useTitle("View All Items");
-  const itemTemplates = [];
-  JSON.parse(sessionStorage.items).map((item) => {
-    itemTemplates.push(html`<tr>`);
-    Object.values(item).forEach((val) => {
-      itemTemplates.push(html`<td>${val}</td>`);
-    },
-    itemTemplates.push(html`</tr>`)
-  )});
+export const ViewAllItemsThreshold = () => {
+  const [items, setItems] = useState([history.state]);
+  useEffect(() => {
+    useTitle("View All Items");
+  }, []);
   return html`
-    <form
-      @submit=${(e) => {
-        e.preventDefault();
-        navigateTo("/");        
-      }}
-    >
-      <div className="container"><br />
-        <table class="table table-dark">
-          <tr>
-            <th>InventoryId</th>
-            <th>StoreId</th>
-            <th>ItemId</th>
-            <th>QuantityInStock</th>
-          </tr>
-          ${itemTemplates}
-        </table>
-        <button type="submit">Done</button>
-      </div>
-    </form>
+    <div className="container">
+      <br />
+      <table class="table table-dark">
+        <tr>
+          <th>InventoryId</th>
+          <th>StoreId</th>
+          <th>ItemId</th>
+          <th>QuantityInStock</th>
+        </tr>
+        ${items[0].map(
+          (item) =>
+            html`<tr>
+              ${Object.values(item).map((value) => html`<td>${value}</td>`)}
+            </tr>`
+        )}
+      </table>
+      <button @click=${() => navigateTo("/")}>Done</button>
+    </div>
   `;
-}
+};
 customElements.define(
   "view-all-items-threshold",
   component(ViewAllItemsThreshold, { useShadowDOM: false })
