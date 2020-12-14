@@ -5,10 +5,10 @@ import {
   replaceTo,
   useSearchParams,
 } from "haunted-router";
+import "popper.js";
 import { html, component, useState, useEffect } from "haunted";
 import { nothing } from "lit-html";
 import "jquery";
-import "popper.js";
 import "regenerator-runtime/runtime.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
