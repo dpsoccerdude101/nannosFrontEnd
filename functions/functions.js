@@ -1,5 +1,5 @@
 import { html } from "haunted";
-import { useTitle, navigateTo } from "haunted-router";
+import { navigateTo } from "haunted-router";
 /**
  *
  * @param {Event} e
@@ -26,11 +26,74 @@ export const getAllMultipleSelectInputs = (e) => {
   return e.target.querySelectorAll("select[multiple]");
 };
 
-export const errorPage = () => {
-  useTitle("Not Found");
-  return html` <div class="pageNotFound"></div> `;
+/**
+ *
+ * @param {Storage} storage
+ * @returns {boolean}
+ */
+export const checkLogin = () => {
+  if (sessionStorage.userCredentials) {
+    return JSON.parse(sessionStorage.userCredentials).loggedIn == "true";
+  }
+  return false;
 };
 
+/**
+ * @description Logs Employee In
+ */
+export const login = () => {
+  sessionStorage.userCredentials = JSON.stringify({
+    loggedIn: "true",
+  });
+};
+
+/**
+ * @description Logs Employee Out
+ */
+export const logout = () => {
+  sessionStorage.userCredentials = JSON.stringify({
+    loggedIn: "false",
+  });
+};
+
+/**
+ *
+ * @param {StateUpdater<any[]>} setOrder
+ * @param {Array} order
+ * @param {Number} index
+ */
+export const deleteItem = (setOrder, order, index) => {
+  setOrder(() => {
+    let tempOrder = [...order];
+    tempOrder.splice(index, 1);
+    return tempOrder;
+  });
+};
+
+/**
+ *
+ * @param {Number} value
+ * @param {StateUpdater<any[]>} setOrder
+ * @param {Array} order
+ * @param {Number} index
+ * @param {Object} item
+ */
+export const modQuantity = (value, setOrder, order, index, item) => {
+  setOrder(() => {
+    let tempOrder = [...order];
+    tempOrder.splice(index, 1, {
+      ...item,
+      quantity: value,
+    });
+    return tempOrder;
+  });
+};
+
+/**
+ * @returns {HTMLTemplateElement}
+ * @description 404 Page
+ */
+export const errorPage = html`<div class="pageNotFound"></div>`;
 export const fetchOrderStores = async () => {
   const response = await fetch(
     "https://www.nannosfoods.codes/populateCreateOrderStoresMike.php",
@@ -86,10 +149,11 @@ export const submitOrder = async (order) => {
   } else alert("Error Code: " + response.status);
 };
 
-//This function makes the asynchronous call to submit the function.
 /**
  *
  * @param {Event} e
+ * @param {URL} apiEndpoint
+ * @description This function makes the asynchronous call to submit the function.
  */
 export const submitForm = (e, apiEndpoint) => {
   e.preventDefault();

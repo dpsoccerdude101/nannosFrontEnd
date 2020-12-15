@@ -55,7 +55,7 @@ export function createOrder() {
       );
     }
   }, [lockVendorSelection, selectedVendorID]);
-  //End of Select Logic
+
   return html` <style>
       * {
         box-sizing: border-box;
@@ -88,7 +88,7 @@ export function createOrder() {
         <br /><br />
         <br /><br />
         ${lockVendorSelection
-          ? html`${ItemSelection({
+          ? ItemSelection({
               selectedItem,
               setSelectedItem,
               items,
@@ -97,13 +97,13 @@ export function createOrder() {
               setOrder,
               selectedVendorID,
               order,
-            })}
-          <br>
-  </div>
-  <hr>
-  <div className="column">
-    ${CurrentOrder({ setOrder, order })}`
+            })
           : nothing}
+        <br />
+      </div>
+      <hr />
+      <div className="column">
+        ${lockVendorSelection ? CurrentOrder({ setOrder, order }) : nothing}
         <br />
         <button
           ?disabled=${!lockVendorSelection || order.length == 0}

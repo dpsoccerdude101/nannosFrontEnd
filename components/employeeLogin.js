@@ -1,15 +1,16 @@
 import { html, component, useEffect } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
-import { submitForm } from "../functions/functions.js";
+import { submitForm, checkLogin, login } from "../functions/functions.js";
 
 export function EmployeeLogin() {
-  useEffect(() => {
-    let title;
-    if (sessionStorage.userCredentials) title = "Employee Logged In";
-    else title = "Employee Login";
-    useTitle(title);
-  }, [sessionStorage.userCredentials, []]);
-  return html`${sessionStorage.userCredentials
+  useEffect(
+    () =>
+      checkLogin()
+        ? useTitle("Employee Logged In")
+        : useTitle("Employee Login"),
+    [sessionStorage.userCredentials, []]
+  );
+  return html`${checkLogin()
     ? html` <div>You are already logged in.</div> `
     : html`<form
         @submit=${(e) => {
@@ -21,9 +22,7 @@ export function EmployeeLogin() {
             .then((res) => JSON.parse(res))
             .then((obj) => {
               if (obj.login == "success") {
-                sessionStorage.userCredentials = JSON.stringify({
-                  loggedIn: "true",
-                });
+                login();
                 navigateTo("/");
               } else {
                 //Reset all input element's values.

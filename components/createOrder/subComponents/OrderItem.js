@@ -1,12 +1,12 @@
 import { html, virtual, useState } from "haunted";
-const OrderItem = virtual((props) => {
+import { deleteItem, modQuantity } from "../../../functions/functions.js";
+const OrderItem = virtual(({ item, index, setOrder, order }) => {
   const [modify, setModify] = useState(false);
   return html`<li>
-    ${props.item.Description} x
+    ${item.Description} x
     ${!modify
-      ? html`${props.item.quantity}<button
-            id=${Math.floor(Math.random() * Math.floor(1000000))}
-            @click=${(e) => {
+      ? html`${item.quantity}<button
+            @click=${() => {
               setModify(true);
             }}
           >
@@ -15,33 +15,24 @@ const OrderItem = virtual((props) => {
       : html`<input
             type="number"
             id="Quantity"
-            data-id=${props.item.ItemId}
+            data-id=${item.ItemId}
             name="Quantity"
-            max="1000"
-            min="1"
-            value=${props.item.quantity}
-            @change=${(e) => {
-              console.dir(props.index);
-              e.target.value >= 0
-                ? e.target.value == 0
-                  ? props.setOrder(() => {
-                      let tempOrder = [...props.order];
-                      tempOrder.splice(props.index, 1);
-                      return tempOrder;
-                    })
-                  : e.target.value < 1500
-                  ? props.setOrder(() => {
-                      let tempOrder = [...props.order];
-                      tempOrder.splice(props.index, 1, {
-                        ...props.item,
-                        quantity: e.target.value,
-                      });
-                      return tempOrder;
-                    })
-                  : ""
-                : "";
+            max="1500"
+            min="0"
+            value=${item.quantity}
+          /><button
+            @click=${(e) => {
+              if (e.target.previousSibling.reportValidity()) {
+                const value = e.target.previousSibling.value;
+                if (value >= 0) {
+                  if (value == 0) deleteItem(setOrder, order, index);
+                  else if (value < 1500)
+                    modQuantity(value, setOrder, order, index, item);
+                  setModify(false);
+                }
+              }
             }}
-          /><button @click=${() => setModify(false)}>
+          >
             Confirm Quantity
           </button> `}
   </li>`;

@@ -1,7 +1,6 @@
-import { html, component } from "haunted";
-import { useTitle, navigateTo } from "haunted-router";
+import { html, virtual } from "haunted";
 
-export function RepresentativeNavbar() {
+const RepresentativeNavbar = virtual(() => {
   return html`
     <div class="btn-group">
       <button
@@ -14,9 +13,15 @@ export function RepresentativeNavbar() {
         Manage Vendor
       </button>
       <div class="dropdown-menu">
-        <a is="router-link" class="dropdown-item" href="/registerVendor">Register New</a>
-        <a is="router-link" class="dropdown-item" href="/lookupVendor">Modify Existing</a>
-        <a is="router-link" class="dropdown-item" href="/deleteVendor">Remove Existing</a>
+        <a is="router-link" class="dropdown-item" href="/registerVendor"
+          >Register New</a
+        >
+        <a is="router-link" class="dropdown-item" href="/lookupVendor"
+          >Modify Existing</a
+        >
+        <a is="router-link" class="dropdown-item" href="/deleteVendor"
+          >Remove Existing</a
+        >
       </div>
 
       <div class="btn-group">
@@ -30,9 +35,15 @@ export function RepresentativeNavbar() {
           Manage Store
         </button>
         <div class="dropdown-menu">
-          <a is="router-link" class="dropdown-item" href="/AddStore">Add New Store</a>
-          <a is="router-link" class="dropdown-item" href="/lookupStore">Modify Existing</a>
-          <a is="router-link" class="dropdown-item" href="/deleteStore">Remove Store</a>
+          <a is="router-link" class="dropdown-item" href="/AddStore"
+            >Add New Store</a
+          >
+          <a is="router-link" class="dropdown-item" href="/lookupStore"
+            >Modify Existing</a
+          >
+          <a is="router-link" class="dropdown-item" href="/deleteStore"
+            >Remove Store</a
+          >
         </div>
         <div class="btn-group">
           <button
@@ -45,11 +56,21 @@ export function RepresentativeNavbar() {
             Manage Inventory
           </button>
           <div class="dropdown-menu">
-            <a is="router-link" class="dropdown-item" href="/AddItem">Add New Item</a>
-            <a is="router-link" class="dropdown-item" href="/lookupItem">Modify Existing</a>
-            <a is="router-link" class="dropdown-item" href="/deleteItem">Remove Existing</a>
-            <a is="router-link" class="dropdown-item" href="/processDelivery">Process Delivery</a>
-            <a is="router-link" class="dropdown-item" href="/">Process Return</a>
+            <a is="router-link" class="dropdown-item" href="/AddItem"
+              >Add New Item</a
+            >
+            <a is="router-link" class="dropdown-item" href="/lookupItem"
+              >Modify Existing</a
+            >
+            <a is="router-link" class="dropdown-item" href="/deleteItem"
+              >Remove Existing</a
+            >
+            <a is="router-link" class="dropdown-item" href="/processDelivery"
+              >Process Delivery</a
+            >
+            <a is="router-link" class="dropdown-item" href="/"
+              >Process Return</a
+            >
           </div>
           <div class="btn-group">
             <button
@@ -62,10 +83,18 @@ export function RepresentativeNavbar() {
               Manage Customer
             </button>
             <div class="dropdown-menu">
-              <a is="router-link" class="dropdown-item" href="/AddMember">Add New Member</a>
-              <a is="router-link" class="dropdown-item" href="/">Modify Member</a>
-              <a is="router-link" class="dropdown-item" href="/deleteMember">Remove Member</a>
-              <a is="router-link" class="dropdown-item" href="/">New Purchase</a>
+              <a is="router-link" class="dropdown-item" href="/AddMember"
+                >Add New Member</a
+              >
+              <a is="router-link" class="dropdown-item" href="/"
+                >Modify Member</a
+              >
+              <a is="router-link" class="dropdown-item" href="/deleteMember"
+                >Remove Member</a
+              >
+              <a is="router-link" class="dropdown-item" href="/"
+                >New Purchase</a
+              >
             </div>
             <div class="btn-group">
               <button
@@ -78,8 +107,12 @@ export function RepresentativeNavbar() {
                 Manage Order
               </button>
               <div class="dropdown-menu">
-                <a is="router-link" class="dropdown-item" href="/createOrder">New Order</a>
-                <a is="router-link" class="dropdown-item" href="/">Add to Existing</a>
+                <a is="router-link" class="dropdown-item" href="/createOrder"
+                  >New Order</a
+                >
+                <a is="router-link" class="dropdown-item" href="/"
+                  >Add to Existing</a
+                >
               </div>
               <div class="btn-group">
                 <button
@@ -92,13 +125,33 @@ export function RepresentativeNavbar() {
                   Look Up
                 </button>
                 <div class="dropdown-menu">
-                  <a is="router-link" class="dropdown-item" href="/lookUpAllItems">All Inventory Items</a>
-                  <a is="router-link" class="dropdown-item" href="/">All Low Items </a>
-                  <a is="router-link" class="dropdown-item" href="/ReportItemsReturned"> All Returns </a>
-                  <a is="router-link" class="dropdown-item" href="/ReportPurchasesMadeByCustomer"
+                  <a
+                    is="router-link"
+                    class="dropdown-item"
+                    href="/lookUpAllItems"
+                    >All Inventory Items</a
+                  >
+                  <a is="router-link" 
+                    class="dropdown-item" 
+                    href="/LookUpAllItemsThreshold"
+                    >All Low Items
+                  </a>
+                  <a
+                    is="router-link"
+                    class="dropdown-item"
+                    href="/ReportItemsReturned"
+                  >
+                    All Returns
+                  </a>
+                  <a
+                    is="router-link"
+                    class="dropdown-item"
+                    href="/ReportPurchasesMadeByCustomer"
                     >Completed Customer Purchase
                   </a>
-                  <a is="router-link" class="dropdown-item" href="/">Placed Orders</a>
+                  <a is="router-link" class="dropdown-item" href="/"
+                    >Placed Orders</a
+                  >
                 </div>
               </div>
             </div>
@@ -107,8 +160,5 @@ export function RepresentativeNavbar() {
       </div>
     </div>
   `;
-}
-customElements.define(
-  "representative-navbar",
-  component(RepresentativeNavbar, { useShadowDOM: false })
-);
+});
+export default RepresentativeNavbar;

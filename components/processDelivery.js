@@ -1,34 +1,33 @@
-import { html, component } from "haunted";
+import { html, component, useEffect } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
 export function ProcessDelivery() {
-  useTitle("Process A Delivery");
+  useEffect(() => useTitle("Process A Delivery"), []);
   return html`
     <form
-      @submit=${(e) => {
-        submitForm(
+      @submit=${async (e) => {
+        const response = await submitForm(
           e,
           "https://www.nannosfoods.codes/processDeliveryMike.php"
-        )
-          .then((res) => res.json())
-          .then((res) => JSON.parse(res))
-          .then((obj) => {
-            if (obj.result == "success") {
-              navigateTo("/");
-            } else {
-              e.target.reset();
-              console.dir(obj);
-              console.log(obj.result);
-              alert("Failed to process delivery, either the order has already been completed or the order ID entered does not exist");
-            }
-          })
-          .catch((error) => alert(error));
+        );
+        if (response.ok) {
+          const responseJSON = await response.json();
+          console.dir(responseJSON);
+          const message = JSON.parse(responseJSON);
+          if (message.result == "success") navigateTo("/");
+          else {
+            e.target.reset();
+            alert(
+              "Failed to process delivery, either the order has already been completed or the order ID entered does not exist"
+            );
+          }
+        } else alert("Error Code: " + response.status);
       }}
     >
       <div className="container">
         <label>OrderID: </label><br />
-        <input type="number" name="OrderId" id="OrderId" @change=${(e) => e.target.value<1? e.target.value = 1 : ''} min="1" required/>
+        <input type="number" name="OrderId" id="OrderId" min="1" required />
         <br />
         <button type="submit">Process Delivery</button>
       </div>
