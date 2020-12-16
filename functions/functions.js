@@ -39,9 +39,32 @@ export const checkLogin = () => {
 };
 
 /**
+ *
+ * @param {Storage} storage
+ * @returns {boolean}
+ */
+export const checkVendorLogin = () => {
+  if (sessionStorage.vendorCredentials) {
+    return JSON.parse(sessionStorage.vendorCredentials).loggedIn == "true";
+  }
+  return false;
+};
+
+/**
+ * @description Logs Vendor In
+ */
+export const vendorLogin = () => {
+  if (checkLogin()) { logout(); }
+  sessionStorage.vendorCredentials = JSON.stringify({
+    loggedIn: "true",
+  });
+};
+
+/**
  * @description Logs Employee In
  */
 export const login = () => {
+  if (checkVendorLogin()) { logout(); }
   sessionStorage.userCredentials = JSON.stringify({
     loggedIn: "true",
   });
@@ -52,6 +75,9 @@ export const login = () => {
  */
 export const logout = () => {
   sessionStorage.userCredentials = JSON.stringify({
+    loggedIn: "false",
+  });
+  sessionStorage.vendorCredentials = JSON.stringify({
     loggedIn: "false",
   });
 };

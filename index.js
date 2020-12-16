@@ -12,7 +12,7 @@ import "jquery";
 import "regenerator-runtime/runtime.js";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap/dist/js/bootstrap.bundle.min.js";
-import { mainRoutes, loggedInRoutes } from "./router.js";
+import { mainRoutes, employeeLoggedInRoutes } from "./router.js";
 import RepresentativeNavbar from "./components/common/representativeNavbar.js";
 import "./components/common/*.js";
 import { checkLogin, errorPage } from "./functions/functions.js";
@@ -23,7 +23,7 @@ export function App() {
     sessionStorage.userCredentials,
   ]);
   const routeResult = loggedIn
-    ? useRoutes(loggedInRoutes, errorPage)
+    ? useRoutes(employeeLoggedInRoutes, errorPage)
     : useRoutes(mainRoutes, errorPage);
   return html`
     <nav-bar></nav-bar>

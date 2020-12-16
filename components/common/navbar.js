@@ -26,7 +26,7 @@ export function Navbar() {
             >
           </li>
           <li class="nav-item">
-            <a is="router-link" class="nav-link" href="/">Vendor Login</a>
+            <a is="router-link" class="nav-link" href="/vendorLogin">Vendor Login</a>
           </li>
           <li class="nav-item">
             <a is="router-link" class="nav-link" href="/">About Us</a>
