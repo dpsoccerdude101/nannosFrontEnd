@@ -1,5 +1,6 @@
 import "./components/*.js";
 import "./components/*/*.js";
+import "./components/*/*/*.js";
 import { html } from "haunted";
 const mainRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
@@ -40,6 +41,7 @@ const employeeLoggedInRoutes = {
   "/viewOrderDetail": () => html`<view-order-detail></view-order-detail>`,
   "/lookupMember": () => html`<lookup-member></lookup-member>`,
   "/modifyMember": () => html`<modify-member></modify-member>`,
+  "/modifyOrder": () => html`<modify-order></modify-order>`,
 
 };
 
