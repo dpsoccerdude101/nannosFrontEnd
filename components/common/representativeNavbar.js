@@ -92,7 +92,7 @@ const RepresentativeNavbar = virtual(() => {
               <a is="router-link" class="dropdown-item" href="/deleteMember"
                 >Remove Member</a
               >
-              <a is="router-link" class="dropdown-item" href="/"
+              <a is="router-link" class="dropdown-item" href="/customerPurchase"
                 >New Purchase</a
               >
             </div>

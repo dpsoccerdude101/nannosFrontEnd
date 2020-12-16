@@ -42,6 +42,7 @@ const employeeLoggedInRoutes = {
   "/lookupMember": () => html`<lookup-member></lookup-member>`,
   "/modifyMember": () => html`<modify-member></modify-member>`,
   "/modifyOrder": () => html`<modify-order></modify-order>`,
+  "/customerPurchase": () => html`<customer-purchase></customer-purchase>`,
 
 };
 
