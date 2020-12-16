@@ -86,7 +86,7 @@ const RepresentativeNavbar = virtual(() => {
               <a is="router-link" class="dropdown-item" href="/AddMember"
                 >Add New Member</a
               >
-              <a is="router-link" class="dropdown-item" href="/"
+              <a is="router-link" class="dropdown-item" href="/lookupMember"
                 >Modify Member</a
               >
               <a is="router-link" class="dropdown-item" href="/deleteMember"

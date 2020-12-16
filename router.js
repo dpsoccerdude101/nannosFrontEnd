@@ -37,7 +37,10 @@ const employeeLoggedInRoutes = {
   "/processDelivery": () => html`<process-delivery></process-delivery>`,
   "/vendorLogin": () => html`<vendor-login></vendor-login>`,
   "/vendorDashboard": () => html`<vendor-dashboard></vendor-dashboard>`,
-  "/viewOrderDetail": () => html`<view-order-detail></view-order-detail>`
+  "/viewOrderDetail": () => html`<view-order-detail></view-order-detail>`,
+  "/lookupMember": () => html`<lookup-member></lookup-member>`,
+  "/modifyMember": () => html`<modify-member></modify-member>`,
+
 };
 
 export { mainRoutes, employeeLoggedInRoutes };
