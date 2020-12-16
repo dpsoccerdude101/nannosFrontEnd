@@ -6,6 +6,7 @@ const mainRoutes = {
   "/employeeLogin": () => html`<employee-login></employee-login>`,
   "/vendorLogin": () => html`<vendor-login></vendor-login>`,
   "/vendorDashboard": () => html`<vendor-dashboard></vendor-dashboard>`,
+  "/viewOrderDetail": () => html`<view-order-detail></view-order-detail>`
 };
 const employeeLoggedInRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
@@ -36,6 +37,7 @@ const employeeLoggedInRoutes = {
   "/processDelivery": () => html`<process-delivery></process-delivery>`,
   "/vendorLogin": () => html`<vendor-login></vendor-login>`,
   "/vendorDashboard": () => html`<vendor-dashboard></vendor-dashboard>`,
+  "/viewOrderDetail": () => html`<view-order-detail></view-order-detail>`
 };
 
 export { mainRoutes, employeeLoggedInRoutes };

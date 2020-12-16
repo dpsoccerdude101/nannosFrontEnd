@@ -3,18 +3,19 @@ import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 import "jquery";
 
-export const VendorDashboard = () => {
+export const ViewOrderDetail = () => {
   const [items, setItems] = useState([]);
+
   useEffect(async () => {
-    useTitle("Vendor Dashboard");
+    useTitle("View Order Detail");
     let itemsReturned;
-    const loginData = await history.state;
-    console.log(JSON.stringify(loginData));
+    const orderData = await history.state;
+    console.log(JSON.stringify(orderData));
     const response = await fetch(
-      "https://www.nannosfoods.codes/viewVendorOrdersJSONResponse.php",
+      "https://www.nannosfoods.codes/viewVendorOrderDetailJSONResponse.php",
       {
         method: "POST",
-        body: JSON.stringify(JSON.parse(loginData)),
+        body: JSON.stringify(JSON.parse(orderData)),
       }
     );
     if (response.ok) {
@@ -24,7 +25,7 @@ export const VendorDashboard = () => {
         setItems(itemsReturned);
         console.dir(itemsReturned);
       } else {
-        alert("No Orders were found.");
+        alert("No Order was found.");
       }
     } else alert("Error Code: " + response.status);
   }, []);
@@ -36,24 +37,14 @@ export const VendorDashboard = () => {
         <thead>
           <tr>
             <th>OrderId</th>
-            <th>StoreName</th>
-            <th>DateTimeOfOrder</th>
-            <th>Status</th>
+            <th>Description</th>
+            <th>QuantityOrdered</th>
           </tr>
         </thead>
         <tbody>
           ${items.map(
             (item) =>
-              html`<tr style="cursor: pointer;"
-                @click=${(e) => {
-                  const orderId = e.target.parentElement.innerText.split(
-                    /,?\s+/
-                  )[0];
-                  const data = '{ "OrderId":'+ orderId + ' }';
-                  console.dir(data);
-                  navigateTo("/viewOrderDetail", data);
-                }}
-              >
+              html`<tr>
                 ${Object.values(item).map((value) => html`<td>${value}</td>`)}
               </tr>`
           )}
@@ -64,6 +55,6 @@ export const VendorDashboard = () => {
   `;
 };
 customElements.define(
-  "vendor-dashboard",
-  component(VendorDashboard, { useShadowDOM: false })
+  "view-order-detail",
+  component(ViewOrderDetail, { useShadowDOM: false })
 );
