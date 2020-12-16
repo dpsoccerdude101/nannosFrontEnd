@@ -33,7 +33,7 @@
 }
 
 #overboot .navbar-light .navbar-toggler-icon {
-    background-image: url('hamburger.svg');
+    background-image: url('../images/hamburger.svg');
 }
 #overboot button.navbar-toggler, #overboot .collapse, #overboot .show {
     outline: none;

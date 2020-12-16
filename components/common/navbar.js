@@ -1,4 +1,5 @@
 import { html, component } from "haunted";
+import { logout } from "../../functions/functions.js";
 export function Navbar() {
   return html`
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -35,13 +36,9 @@ export function Navbar() {
               is="router-link"
               class="nav-link"
               href="/"
-              @click="${() => 
-                {
-                sessionStorage.removeItem("userCredentials");
-                sessionStorage.removeItem("vendorCredentials");
-                }
-              }"
-              >Logout</a>
+              @click="${() => logout()}"
+              >Logout</a
+            >
           </li>
         </ul>
         <span class="navbar-text">

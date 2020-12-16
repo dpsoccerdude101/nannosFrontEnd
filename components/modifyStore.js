@@ -19,7 +19,7 @@ export function ModifyStore() {
             if (obj.result == "success") {
               console.dir(obj);
               sessionStorage.removeItem("stores");
-              navigateTo("/employeeMenu");
+              navigateTo("/");
             } else {
               //Reset all input element's values.
               alert("Update Failed.");

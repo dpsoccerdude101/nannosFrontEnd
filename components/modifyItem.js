@@ -1,31 +1,28 @@
-import { html, component } from "haunted";
+import { html, component, useState, useEffect } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
 import { submitForm } from "../functions/functions.js";
 
 export function ModifyItem() {
-  useTitle("Modify Item");
+  useEffect(() => useTitle("Modify Item"), []);
+  console.dir(history.state);
+  const [item, setItem] = useState(history.state);
+
   return html`
     <form
-      @submit=${(e) => {
-        e.preventDefault();
-          submitForm(
-            e,
-            "https://www.nannosfoods.codes/itemUpdateJSONResponseCollin.php"
-          )
-            .then((res) => res.json())
-            .then((res) => JSON.parse(res))
-            .then((obj) => {
-              if (obj.result == "success") {
-                console.dir(obj);
-                sessionStorage.removeItem("items");
-                navigateTo("/employeeMenu");
-              } else {
-                //Reset all input element's values.
-                alert("Update Failed.");
-              }
-            })
-            .catch((error) => alert(error));
-        
+      @submit=${async (e) => {
+        const response = await submitForm(
+          e,
+          "https://www.nannosfoods.codes/itemUpdateJSONResponseCollin.php"
+        );
+        if (response.ok) {
+          const responseJSON = await response.json();
+          const responseObj = JSON.parse(responseJSON);
+          if (responseObj.result == "success") {
+            navigateTo("/");
+          } else {
+            alert("Update Failed.");
+          }
+        } else alert("Error Code: " + response.status);
       }}
     >
       <div class="form-container" className="container">
@@ -35,10 +32,10 @@ export function ModifyItem() {
         <input
           type="text"
           name="ItemId"
-          value="${JSON.parse(sessionStorage.items).ItemId}"
+          value="${item.ItemId}"
           required
           readonly
-        />
+        /><br>
         <label htmlFor="Description">
           Description
         </label>
@@ -48,8 +45,8 @@ export function ModifyItem() {
           maxlength="150"
           name="Description"
           required
-          value="${JSON.parse(sessionStorage.items).Description}"
-        />
+          value="${item.Description}"
+        /><br />
         <label htmlFor="Size">
           Size
         </label>
@@ -59,8 +56,8 @@ export function ModifyItem() {
           maxlength="30"
           name="Size"
           required
-          value="${JSON.parse(sessionStorage.items).Size}"
-        />
+          value="${item.Size}"
+        /><br />
         <label htmlFor="Division">
           Division
         </label>
@@ -70,8 +67,8 @@ export function ModifyItem() {
           maxlength="20"
           name="Division"
           required
-          value="${JSON.parse(sessionStorage.items).Division}"
-        />
+          value="${item.Division}"
+        /><br />
         <label htmlFor="Department">
           Department
         </label>
@@ -81,8 +78,8 @@ export function ModifyItem() {
           maxlength="25"
           name="Department"
           required
-          value="${JSON.parse(sessionStorage.items).Department}"
-        />
+          value="${item.Department}"
+        /><br />
         <label htmlFor="Category">
           Category
         </label>
@@ -92,8 +89,8 @@ export function ModifyItem() {
           maxlength="10"
           name="Category"
           required
-          value="${JSON.parse(sessionStorage.items).Category}"
-        />
+          value="${item.Category}"
+        /><br />
         <label htmlFor="ItemCost">
           Item Cost
         </label>
@@ -103,8 +100,8 @@ export function ModifyItem() {
           maxlength="10"
           name="ItemCost"
           required
-          value="${JSON.parse(sessionStorage.items).ItemCost}"
-        />
+          value="${item.ItemCost}"
+        /><br />
         <label htmlFor="ItemRetail">
           Item Retail
         </label>
@@ -114,8 +111,8 @@ export function ModifyItem() {
           maxlength="10"
           name="ItemRetail"
           required
-          value="${JSON.parse(sessionStorage.items).ItemRetail}"
-        />
+          value="${item.ItemRetail}"
+        /><br />
         <label htmlFor="ImageFileName">
           Image File Name
         </label>
@@ -125,10 +122,10 @@ export function ModifyItem() {
           maxlength="50"
           name="ImageFileName"
           required
-          value="${JSON.parse(sessionStorage.items).ImageFileName}"
-        />
+          value="${item.ImageFileName}"
+        /><br />
         </label>
-        <button type="submit">Modify Store</button>
+        <button type="submit">Modify Item</button>
       </div>
     </form>
   `;
