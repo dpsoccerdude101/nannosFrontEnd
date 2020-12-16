@@ -108,7 +108,7 @@ export function createOrder() {
         <button
           ?disabled=${!lockVendorSelection || order.length == 0}
           @click=${async (e) => {
-            submitOrder(order);
+            submitOrder(order, selectedStoreID);
           }}
         >
           Place Order

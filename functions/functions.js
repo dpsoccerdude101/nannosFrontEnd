@@ -151,7 +151,7 @@ export const fetchOrderItems = async () => {
   return orderItems;
 };
 
-export const submitOrder = async (order) => {
+export const submitOrder = async (order, selectedStoreID) => {
   const modOrder = order.map((item) => {
     return { ...item, StoreId: selectedStoreID };
   });
