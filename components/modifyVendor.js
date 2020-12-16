@@ -152,7 +152,7 @@ export function ModifyVendor() {
           name="Confirm_Password"
           required
         /><br />
-        <button type="submit">Register Vendor</button>
+        <button type="submit">Modify Vendor</button>
       </div>
     </form>
   `;

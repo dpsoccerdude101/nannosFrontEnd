@@ -4,8 +4,10 @@ import { html } from "haunted";
 const mainRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
   "/employeeLogin": () => html`<employee-login></employee-login>`,
+  "/vendorLogin": () => html`<vendor-login></vendor-login>`,
+  "/vendorDashboard": () => html`<vendor-dashboard></vendor-dashboard>`,
 };
-const loggedInRoutes = {
+const employeeLoggedInRoutes = {
   "/": () => html`<jumbo-tron></jumbo-tron>`,
   "/employeeLogin": () => html`<employee-login></employee-login>`,
   "/registerVendor": () => html`<register-vendor></register-vendor>`,
@@ -31,6 +33,9 @@ const loggedInRoutes = {
   "/viewAllPurchasesMadeByCustomer": () => html`<view-all-purchases></view-all-purchases>`,
   "/ReportPurchasesMadeByCustomer": () => html`<report-purchases></report-purchases>`,
   "/createOrder": () => html`<create-order></create-order>`,
-  "/processDelivery": () => html`<process-delivery></process-delivery>`
+  "/processDelivery": () => html`<process-delivery></process-delivery>`,
+  "/vendorLogin": () => html`<vendor-login></vendor-login>`,
+  "/vendorDashboard": () => html`<vendor-dashboard></vendor-dashboard>`,
 };
-export { mainRoutes, loggedInRoutes };
+
+export { mainRoutes, employeeLoggedInRoutes };
