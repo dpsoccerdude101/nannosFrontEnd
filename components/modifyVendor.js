@@ -1,6 +1,6 @@
 import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
-import { submitForm } from "../functions/functions.js";
+import { submitForm, isPhoneNumberValid } from "../functions/functions.js";
 import { States } from "./virtual/States";
 
 export function ModifyVendor() {
@@ -132,6 +132,17 @@ export function ModifyVendor() {
                 name="Phone"
                 required
                 value="${JSON.parse(sessionStorage.vendors).Phone}"
+                @blur="${(e) => {
+                console.dir(e);
+                if (e.target.value.length > 0) {
+                  if (!isPhoneNumberValid(e.target.value))
+                    e.target.setCustomValidity(
+                      e.target.value +
+                        " is not valid. Try entering a different phone number"
+                    );
+                  else e.target.setCustomValidity("");
+                } else e.target.setCustomValidity("");
+              }}"
               />
             </div>
             <div class="label-and-input">
