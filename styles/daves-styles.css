@@ -106,3 +106,8 @@
 #overboot .email{
     min-width: 15rem;
 }
+#overboot .rep-navbar button{
+    background-color: black;
+    color:white;
+    border-color: black;
+}

@@ -3,7 +3,7 @@ import { html, virtual } from "haunted";
 const RepresentativeNavbar = virtual(() => {
   return html`
   <div class="btn-toolbar" role="toolbar" aria-label="Toolbar with button groups">
-    <div class="btn-group">
+    <div class="btn-group rep-navbar">
       <button
         type="button"
         class="btn btn-info dropdown-toggle"
@@ -25,7 +25,7 @@ const RepresentativeNavbar = virtual(() => {
         >
       </div>
     </div>
-    <div class="btn-group">
+    <div class="btn-group rep-navbar">
       <button
         type="button"
         class="btn btn-info dropdown-toggle"
@@ -47,7 +47,7 @@ const RepresentativeNavbar = virtual(() => {
         >
       </div>
     </div>  
-    <div class="btn-group">
+    <div class="btn-group rep-navbar">
       <button
         type="button"
         class="btn btn-info dropdown-toggle"
@@ -75,7 +75,7 @@ const RepresentativeNavbar = virtual(() => {
         >
       </div>
     </div>
-    <div class="btn-group">
+    <div class="btn-group rep-navbar">
       <button
         type="button"
         class="btn btn-info dropdown-toggle"
@@ -100,7 +100,7 @@ const RepresentativeNavbar = virtual(() => {
         >
       </div>
     </div>
-    <div class="btn-group">
+    <div class="btn-group rep-navbar">
       <button
         type="button"
         class="btn btn-info dropdown-toggle"
@@ -119,7 +119,7 @@ const RepresentativeNavbar = virtual(() => {
         >
       </div>
     </div>
-        <div class="btn-group">
+        <div class="btn-group rep-navbar">
           <button
             type="button"
             class="btn btn-info dropdown-toggle"
