@@ -94,7 +94,7 @@ export function ModifyStore() {
             </select>
           </div>
           <div class="label-and-input">
-            <label htmlFor="ZIP">
+            <label htmlFor="Zip">
               Zip
             </label>
             <input class="zip"
@@ -102,7 +102,7 @@ export function ModifyStore() {
               placeholder="Zip Code"
               pattern="[0-9]{5}"
               maxlength="5"
-              name="ZIP"
+              name="Zip"
               required
               value="${JSON.parse(sessionStorage.stores).ZIP}" />
           </div>
