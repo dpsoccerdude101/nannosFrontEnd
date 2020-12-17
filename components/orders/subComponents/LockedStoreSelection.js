@@ -7,12 +7,14 @@ const LockedStoreSelection = virtual(
     storeNames,
     lockStoreSelection,
     setLockStoreSelection,
+    setReturnOrder
   }) => {
     return html`
       ${StoreSelection({
         selectedStoreID,
         setselectedStoreID,
         storeNames,
+        lockStoreSelection,
       })}
       <button
         @click=${() => setLockStoreSelection(true)}
@@ -23,7 +25,7 @@ const LockedStoreSelection = virtual(
       <button
         @click=${() => {
           setLockStoreSelection(false);
-          setOrder([]);
+          setReturnOrder([]);
         }}
         ?disabled=${!lockStoreSelection}
       >

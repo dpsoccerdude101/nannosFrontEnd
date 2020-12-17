@@ -5,12 +5,14 @@ import {
   fetchOrderStores,
   fetchOrderItems,
   fetchOrderVendors,
-  submitOrder,
+  submitReturn,
 } from "../../functions/functions.js";
 import VendorSelection from "./subComponents/VendorSelection.js";
 import LockedStoreSelection from "./subComponents/LockedStoreSelection.js";
 import ItemSelection from "./subComponents/ItemSelection.js";
+import ItemsInStock from "./subComponents/ItemsInStock.js";
 import CurrentOrder from "./subComponents/CurrentOrder.js";
+import CurrentReturn from "./subComponents/CurrentReturn.js";
 export function ProcessReturn() {
   /**
    * State
@@ -22,8 +24,7 @@ export function ProcessReturn() {
   const [selectedStoreID, setselectedStoreID] = useState(1);
   const [selectedItem, setSelectedItem] = useState({});
   const [lockVendorSelection, setLockVendorSelection] = useState(false);
-  const [order, setOrder] = useState([]);
-  const [quantity, setQuantity] = useState(1);
+  const [returnOrder, setReturnOrder] = useState([]);
   const [lockStoreSelection, setLockStoreSelection] = useState(false);
 
   /**
@@ -38,9 +39,6 @@ export function ProcessReturn() {
     const vendorNames = await fetchOrderVendors();
     setVendorNames(vendorNames);
     setselectedVendorID(vendorNames[0].VendorID);
-
-    /* const items = await fetchOrderItems();
-    setItems(items); */
   }, []);
 
   /**
@@ -66,18 +64,21 @@ export function ProcessReturn() {
         }
       );
       if (response.ok) {
-        const itemsStoreHasInStock = await response.json();
-        console.dir(itemsStoreHasInStock);
-        /* const message = JSON.parse(responseJSON);
-        if (message.result == "success") navigateTo("/");
-        else alert("Insert Failed. " + message.result); */
+        const message = await response.json();
+        console.dir(message);
+        if (message.hasOwnProperty("result"))
+          alert("Store Does not have any items in stock");
+        else {
+          const itemsStoreHasInStock = message.map((item) => {
+            return {
+              ...item,
+              StoreId: selectedStoreID,
+              VendorId: selectedVendorID,
+            };
+          });
+          setItems(itemsStoreHasInStock);
+        }
       } else alert("Error Code: " + response.status);
-
-      /* const filteredItems = items.filter(
-        (item) => item.VendorId == selectedVendorID
-      );
-      if (filteredItems.length > 0) setSelectedItem(filteredItems[0].ItemId);
-      else alert("This Vendor does not have any items."); */
     }
   }, [
     lockVendorSelection,
@@ -85,6 +86,9 @@ export function ProcessReturn() {
     lockStoreSelection,
     selectedStoreID,
   ]);
+  useEffect(() => {
+    if (items.length > 0) setSelectedItem(items.ItemId);
+  }, [items]);
 
   return html` <style>
       * {
@@ -105,17 +109,15 @@ export function ProcessReturn() {
     <div className="row">
       <div className="column">
         <h2>Select Items to Return</h2>
-        <label>Who is your vendor?</label>
         ${VendorSelection({
           lockVendorSelection,
           selectedVendorID,
           setselectedVendorID,
           vendorNames,
           setLockVendorSelection,
-          setOrder,
+          setReturnOrder,
         })}
         <br /><br />
-        <label>What Store?</label>
         ${lockVendorSelection
           ? LockedStoreSelection({
               selectedStoreID,
@@ -123,35 +125,40 @@ export function ProcessReturn() {
               storeNames,
               lockStoreSelection,
               setLockStoreSelection,
+              setReturnOrder,
             })
           : nothing}
         <br /><br />
         <br /><br />
         ${lockStoreSelection
-          ? ItemSelection({
+          ? ItemsInStock({
               selectedItem,
               setSelectedItem,
               items,
-              quantity,
-              setQuantity,
-              setOrder,
-              selectedVendorID,
-              order,
+              setItems,
+              returnOrder,
+              setReturnOrder,
             })
           : nothing}
         <br />
       </div>
       <hr />
       <div className="column">
-        ${lockVendorSelection ? CurrentOrder({ setOrder, order }) : nothing}
+        ${lockStoreSelection
+          ? CurrentReturn({
+              returnOrder,
+              setReturnOrder,
+            })
+          : nothing}
         <br />
         <button
-          ?disabled=${!lockVendorSelection || order.length == 0}
+          ?disabled=${!lockStoreSelection || returnOrder.length == 0}
           @click=${async (e) => {
-            submitOrder(order, selectedStoreID);
+            console.dir(returnOrder);
+            submitReturn(returnOrder);
           }}
         >
-          Place Order
+          Place Return
         </button>
       </div>
     </div>`;
