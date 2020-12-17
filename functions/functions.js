@@ -89,7 +89,7 @@ export const login = () => {
 };
 
 /**
- * @description Logs Employee Out
+ * @description Logs Employee and Vendor Out
  */
 export const logout = () => {
   sessionStorage.userCredentials = JSON.stringify({
