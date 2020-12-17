@@ -7,8 +7,10 @@ const ItemSelection = virtual(
     quantity,
     setQuantity,
     setOrder,
+    order,
     selectedVendorID,
-    order
+    orderID,
+    itemRandoArg,
   }) => {
     return html`<label>Select an Item from This Vendor</label><br />
       <select
@@ -18,12 +20,21 @@ const ItemSelection = virtual(
         value=${selectedItem}
         @change=${(e) => setSelectedItem(e.target.value)}
       >
-        ${items
-          .filter((item) => item.VendorId == selectedVendorID)
-          .map(
-            (item) =>
-              html`<option value="${item.ItemId}">${item.Description}</option>`
-          )}</select
+        ${itemRandoArg
+          ? items.map(
+              (item) =>
+                html`<option value="${item.ItemId}">
+                  ${item.Description}
+                </option>`
+            )
+          : items
+              .filter((item) => item.VendorId == selectedVendorID)
+              .map(
+                (item) =>
+                  html`<option value="${item.ItemId}">
+                    ${item.Description}
+                  </option>`
+              )}</select
       ><br /><br />
       <label>Quantity</label><br />
       <input
@@ -42,7 +53,8 @@ const ItemSelection = virtual(
         type="button"
         @click=${() => {
           let selItem = items.find((item) => item.ItemId == selectedItem);
-          selItem = { ...selItem, quantity: quantity };
+          selItem = { ...selItem, quantity: quantity, OrderId: orderID };
+          console.dir(selItem);
           setOrder([...order, selItem]);
           setQuantity(1);
         }}

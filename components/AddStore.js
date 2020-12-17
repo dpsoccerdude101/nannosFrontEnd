@@ -1,6 +1,6 @@
 import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
-import { submitForm } from "../functions/functions.js";
+import { submitForm, isPhoneNumberValid, isEmailValid } from "../functions/functions.js";
 import { States } from "./virtual/States";
 
 export function AddStore() {
@@ -114,11 +114,20 @@ export function AddStore() {
               <input class="phone"
                 type="text"
                 placeholder="Phone Number"
-                pattern="[0-9]{10}"
-                title="Please enter phone numbers in format ########## (No dashes)"
                 maxlength="10"
                 name="Phone"
-                required />
+                required 
+                @blur="${(e) => {
+                console.dir(e);
+                if (e.target.value.length > 0) {
+                  if (!isPhoneNumberValid(e.target.value))
+                    e.target.setCustomValidity(
+                      e.target.value +
+                        " is not valid. Try entering a different phone number"
+                    );
+                  else e.target.setCustomValidity("");
+                } else e.target.setCustomValidity("");
+              }}"/>
             </div>
             <div class="label-and-input">
               <label htmlFor="ManagerName">

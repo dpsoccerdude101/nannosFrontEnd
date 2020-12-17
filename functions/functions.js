@@ -1,5 +1,19 @@
 import { html } from "haunted";
 import { navigateTo } from "haunted-router";
+import phone from "phone";
+import { validate } from "email-validator";
+
+export const isPhoneNumberValid = (phoneNumber) => {
+  return phone(phoneNumber, "", true).length > 0;
+};
+
+export const isEmailValid = (email) => {
+  const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  /**
+   * Make sure that email passes regex test and emailValidator test
+   */
+  return re.test(email.toLowerCase()) && validate(email);
+};
 /**
  *
  * @param {Event} e
@@ -54,7 +68,9 @@ export const checkVendorLogin = () => {
  * @description Logs Vendor In
  */
 export const vendorLogin = () => {
-  if (checkLogin()) { logout(); }
+  if (checkLogin()) {
+    logout();
+  }
   sessionStorage.vendorCredentials = JSON.stringify({
     loggedIn: "true",
   });
@@ -64,7 +80,9 @@ export const vendorLogin = () => {
  * @description Logs Employee In
  */
 export const login = () => {
-  if (checkVendorLogin()) { logout(); }
+  if (checkVendorLogin()) {
+    logout();
+  }
   sessionStorage.userCredentials = JSON.stringify({
     loggedIn: "true",
   });
@@ -165,6 +183,26 @@ export const submitOrder = async (order, selectedStoreID) => {
         Accept: "application/json",
       },
       body: JSON.stringify(modOrder),
+    }
+  );
+  if (response.ok) {
+    const responseJSON = await response.json();
+    const message = JSON.parse(responseJSON);
+    if (message.result == "success") navigateTo("/");
+    else alert("Insert Failed. " + message.result);
+  } else alert("Error Code: " + response.status);
+};
+
+export const submitModifiedOrder = async (order) => {
+  const response = await fetch(
+    "https://www.nannosfoods.codes/addToOrder.php",
+    {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(order),
     }
   );
   if (response.ok) {
