@@ -1,6 +1,10 @@
 import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
-import { submitForm, isPhoneNumberValid, isEmailValid } from "../functions/functions.js";
+import {
+  submitForm,
+  setPhoneValidity,
+  setEmailValidity,
+} from "../functions/functions.js";
 import { States } from "./virtual/States";
 
 export function AddMember() {
@@ -97,17 +101,7 @@ export function AddMember() {
               placeholder="Enter Phone Number"
               name="Phone"
               required
-              @blur="${(e) => {
-                console.dir(e);
-                if (e.target.value.length > 0) {
-                  if (!isPhoneNumberValid(e.target.value))
-                    e.target.setCustomValidity(
-                      e.target.value +
-                        " is not valid. Try entering a different phone number"
-                    );
-                  else e.target.setCustomValidity("");
-                } else e.target.setCustomValidity("");
-              }}"
+              @blur="${(e) => setPhoneValidity(e)}"
             />
           </div>
           <div class="label-and-input">
@@ -118,17 +112,7 @@ export function AddMember() {
               name="Email"
               maxlength="50"
               required
-              @blur="${(e) => {
-                console.dir(e);
-                if (e.target.value.length > 0) {
-                  if (!isEmailValid(e.target.value))
-                    e.target.setCustomValidity(
-                      e.target.value +
-                        " is not valid. Try entering a different email address"
-                    );
-                  else e.target.setCustomValidity("");
-                } else e.target.setCustomValidity("");
-              }}"
+              @blur="${(e) => setEmailValidity(e)}"
             />
           </div>
         </div>
