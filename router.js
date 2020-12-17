@@ -46,7 +46,7 @@ const employeeLoggedInRoutes = {
   "/viewOrderDetail": () => html`<view-order-detail></view-order-detail>`,
   "/lookupMember": () => html`<lookup-member></lookup-member>`,
   "/modifyMember": () => html`<modify-member></modify-member>`,
-  "/modifyOrder": () => html`<modify-order></modify-order>`,
+  "/addToOrder": () => html`<add-to-order></add-to-order>`,
   "/customerPurchase": () => html`<customer-purchase></customer-purchase>`,
 };
 
