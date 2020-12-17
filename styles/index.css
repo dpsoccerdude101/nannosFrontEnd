@@ -6,11 +6,3 @@
   background-image: url("../images/404.svg");
   height: 40vw;
 }
-.btn-info {
-  color: #fff;
-  background-color: black;
-  border-color: #17a2b8;
-}
-.btn-info.active {
-  background-color: limegreen;
-}
