@@ -154,6 +154,24 @@ export const modQuantity = (value, setOrder, order, index, item) => {
     return tempOrder;
   });
 };
+/**
+ *
+ * @param {Number} value
+ * @param {StateUpdater<any[]>} setOrder
+ * @param {Array} order
+ * @param {Number} index
+ * @param {Object} item
+ */
+export const modReceiptQuantity = (value, setOrder, order, index, item) => {
+  setOrder(() => {
+    let tempOrder = [...order];
+    tempOrder.splice(index, 1, {
+      ...item,
+      QuantityReturning: value,
+    });
+    return tempOrder;
+  });
+};
 
 /**
  * @returns {HTMLTemplateElement}
@@ -205,6 +223,31 @@ export const submitOrder = async (order, selectedStoreID) => {
         Accept: "application/json",
       },
       body: JSON.stringify(modOrder),
+    }
+  );
+  if (response.ok) {
+    const responseJSON = await response.json();
+    const message = JSON.parse(responseJSON);
+    if (message.result == "success") navigateTo("/");
+    else alert("Insert Failed. " + message.result);
+  } else alert("Error Code: " + response.status);
+};
+
+export const submitReturn = async (returnOrder) => {
+  const modReturnedOrder = returnOrder.map((item) => {
+    const tempItem = { ...item };
+    delete tempItem.QuantityInStock;
+    return tempItem;
+  });
+  const response = await fetch(
+    "https://www.nannosfoods.codes/processReturn.php",
+    {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+      },
+      body: JSON.stringify(modReturnedOrder),
     }
   );
   if (response.ok) {

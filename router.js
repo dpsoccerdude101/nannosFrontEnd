@@ -48,6 +48,7 @@ const employeeLoggedInRoutes = {
   "/modifyMember": () => html`<modify-member></modify-member>`,
   "/addToOrder": () => html`<add-to-order></add-to-order>`,
   "/customerPurchase": () => html`<customer-purchase></customer-purchase>`,
+  "/processReturn": () => html`<process-return></process-return>`,
 };
 
 const vendorLoggedInRoutes = {
