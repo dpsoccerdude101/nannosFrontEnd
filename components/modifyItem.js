@@ -25,9 +25,9 @@ export function ModifyItem() {
         } else alert("Error Code: " + response.status);
       }}
     >
-      <div className="container"><br />
+      <div class="form-container" className="container">
         <label htmlFor="ItemId">
-            <b>Item ID</b>
+            Item ID
         </label>
         <input
           type="text"
@@ -37,7 +37,7 @@ export function ModifyItem() {
           readonly
         /><br>
         <label htmlFor="Description">
-          <b>Description</b>
+          Description
         </label>
         <input
           type="text"
@@ -48,7 +48,7 @@ export function ModifyItem() {
           value="${item.Description}"
         /><br />
         <label htmlFor="Size">
-          <b>Size</b>
+          Size
         </label>
         <input
           type="text"
@@ -59,7 +59,7 @@ export function ModifyItem() {
           value="${item.Size}"
         /><br />
         <label htmlFor="Division">
-          <b>Division</b>
+          Division
         </label>
         <input
           type="text"
@@ -70,7 +70,7 @@ export function ModifyItem() {
           value="${item.Division}"
         /><br />
         <label htmlFor="Department">
-          <b>Department</b>
+          Department
         </label>
         <input
           type="text"
@@ -81,7 +81,7 @@ export function ModifyItem() {
           value="${item.Department}"
         /><br />
         <label htmlFor="Category">
-          <b>Category</b>
+          Category
         </label>
         <input
           type="text"
@@ -92,7 +92,7 @@ export function ModifyItem() {
           value="${item.Category}"
         /><br />
         <label htmlFor="ItemCost">
-          <b>Item Cost</b>
+          Item Cost
         </label>
         <input
           type="text"
@@ -103,7 +103,7 @@ export function ModifyItem() {
           value="${item.ItemCost}"
         /><br />
         <label htmlFor="ItemRetail">
-          <b>Item Retail</b>
+          Item Retail
         </label>
         <input
           type="text"
@@ -114,7 +114,7 @@ export function ModifyItem() {
           value="${item.ItemRetail}"
         /><br />
         <label htmlFor="ImageFileName">
-          <b>Image File Name</b>
+          Image File Name
         </label>
         <input
           type="text"
