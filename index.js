@@ -31,9 +31,6 @@ export function App() {
    */
   const [employeeLoggedIn, setEmployeeLoggedIn] = useState(checkLogin());
   const [vendorLoggedIn, setVendorLoggedIn] = useState(checkVendorLogin());
-  const [routeResult, setRouteResult] = useState(
-    useRoutes(mainRoutes, errorPage)
-  );
 
   /**
    * Side-Effect Code check is Employee is Logged In or Vendor
@@ -42,25 +39,19 @@ export function App() {
   useEffect(() => setEmployeeLoggedIn(checkLogin()), [
     sessionStorage.userCredentials,
   ]);
-  useEffect(() => setEmployeeLoggedIn(checkLogin()), [
+  useEffect(() => setVendorLoggedIn(checkVendorLogin()), [
     sessionStorage.vendorCredentials,
   ]);
 
   /**
-   * Side-Effect Code Assigns New Route based on changed 
-   * Employee/Vendor Login State
-   */
-  useEffect(() => {
-    if (employeeLoggedIn)
-      setRouteResult(useRoutes(employeeLoggedInRoutes, errorPage));
-    else if (vendorLoggedIn)
-      setRouteResult(useRoutes(vendorLoggedInRoutes, errorPage));
-    else setRouteResult(useRoutes(mainRoutes, errorPage));
-  }, [employeeLoggedIn, vendorLoggedIn]);
-
-  /**
    * Declared Routes for Router.js
    */
+  const routeResult = employeeLoggedIn
+    ? useRoutes(employeeLoggedInRoutes, errorPage)
+    : vendorLoggedIn
+    ? useRoutes(vendorLoggedInRoutes, errorPage)
+    : useRoutes(mainRoutes, errorPage);
+
   return html`
     <nav-bar></nav-bar>
     ${employeeLoggedIn ? RepresentativeNavbar() : nothing} ${routeResult}

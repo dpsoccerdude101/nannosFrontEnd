@@ -1,9 +1,9 @@
-@font-face { font-family: 'Brush Hand New'; src: url('font/BrushHandNew.ttf'); }
+@font-face { font-family: 'Brush Hand New'; src: url('../font/BrushHandNew.ttf'); }
 
 #overboot body{
     font-family: Intra, Helvetica, Arial, sans-serif;
     line-height: 0rem;
-    background-color: #81e6ff;
+    /* background-color: #81e6ff; */
 }
 
 #overboot .jumbotron{
