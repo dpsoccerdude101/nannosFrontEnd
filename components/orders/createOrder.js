@@ -50,9 +50,11 @@ export function createOrder() {
    */
   useEffect(() => {
     if (lockVendorSelection) {
-      setSelectedItem(
-        items.filter((item) => item.VendorId == selectedVendorID)[0].ItemId
+      const filteredItems = items.filter(
+        (item) => item.VendorId == selectedVendorID
       );
+      if (filteredItems.length > 0) setSelectedItem(filteredItems[0].ItemId);
+      else alert("This Vendor does not have any items.");
     }
   }, [lockVendorSelection, selectedVendorID]);
 

@@ -100,6 +100,28 @@ export const logout = () => {
   });
 };
 
+export const setEmailValidity = (e) => {
+  console.dir(e);
+  if (e.target.value.length > 0) {
+    if (!isEmailValid(e.target.value))
+      e.target.setCustomValidity(
+        e.target.value + " is not valid. Try entering a different email address"
+      );
+    else e.target.setCustomValidity("");
+  } else e.target.setCustomValidity("");
+};
+
+export const setPhoneValidity = (e) => {
+  console.dir(e);
+  if (e.target.value.length > 0) {
+    if (!isPhoneNumberValid(e.target.value))
+      e.target.setCustomValidity(
+        e.target.value + " is not valid. Try entering a different phone number"
+      );
+    else e.target.setCustomValidity("");
+  } else e.target.setCustomValidity("");
+};
+
 /**
  *
  * @param {StateUpdater<any[]>} setOrder
@@ -194,17 +216,14 @@ export const submitOrder = async (order, selectedStoreID) => {
 };
 
 export const submitModifiedOrder = async (order) => {
-  const response = await fetch(
-    "https://www.nannosfoods.codes/addToOrder.php",
-    {
-      method: "post",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify(order),
-    }
-  );
+  const response = await fetch("https://www.nannosfoods.codes/addToOrder.php", {
+    method: "post",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify(order),
+  });
   if (response.ok) {
     const responseJSON = await response.json();
     const message = JSON.parse(responseJSON);

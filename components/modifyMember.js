@@ -1,6 +1,10 @@
 import { html, component } from "haunted";
 import { useTitle, navigateTo } from "haunted-router";
-import { submitForm, isEmailValid, isPhoneNumberValid } from "../functions/functions.js";
+import {
+  submitForm,
+  setPhoneValidity,
+  setEmailValidity,
+} from "../functions/functions.js";
 import { States } from "./virtual/States";
 
 export function ModifyMember() {
@@ -105,17 +109,7 @@ export function ModifyMember() {
           name="Phone"
           required
           value="${JSON.parse(sessionStorage.cust).Phone}"
-          @blur="${(e) => {
-                console.dir(e);
-                if (e.target.value.length > 0) {
-                  if (!isPhoneNumberValid(e.target.value))
-                    e.target.setCustomValidity(
-                      e.target.value +
-                        " is not valid. Try entering a different phone number"
-                    );
-                  else e.target.setCustomValidity("");
-                } else e.target.setCustomValidity("");
-              }}"
+          @blur="${(e) => setPhoneValidity(e)}"
         /><br />
         <label htmlFor="Email">
           <b>Customer Email</b>
@@ -128,17 +122,7 @@ export function ModifyMember() {
           name="Email"
           required
           value="${JSON.parse(sessionStorage.cust).Email}"
-          @blur="${(e) => {
-                console.dir(e);
-                if (e.target.value.length > 0) {
-                  if (!isEmailValid(e.target.value))
-                    e.target.setCustomValidity(
-                      e.target.value +
-                        " is not valid. Try entering a different email address"
-                    );
-                  else e.target.setCustomValidity("");
-                } else e.target.setCustomValidity("");
-              }}"
+          @blur="${(e) => setEmailValidity(e)}"
         /><br />
         
         </label>
